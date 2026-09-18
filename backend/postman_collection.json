@@ -1,0 +1,21 @@
+{
+  "info": { "name": "Heritage Explorer API", "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json" },
+  "variable": [{ "key": "baseUrl", "value": "http://localhost:5000" }, { "key": "token", "value": "" }, { "key": "userId", "value": "" }, { "key": "siteId", "value": "taj-mahal" }, { "key": "trailId", "value": "" }],
+  "item": [
+    { "name": "Register", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"name\": \"Asha Rao\",\n  \"email\": \"asha@example.com\",\n  \"password\": \"secret123\"\n}" }, "url": "{{baseUrl}}/api/auth/register" } },
+    { "name": "Login", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"email\": \"asha@example.com\",\n  \"password\": \"secret123\"\n}" }, "url": "{{baseUrl}}/api/auth/login" } },
+    { "name": "List Heritage Sites", "request": { "method": "GET", "url": "{{baseUrl}}/api/heritage-sites" } },
+    { "name": "Heritage Site Details", "request": { "method": "GET", "url": "{{baseUrl}}/api/heritage-sites/{{siteId}}" } },
+    { "name": "Add Favourite", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"userId\": \"{{userId}}\",\n  \"siteId\": \"{{siteId}}\"\n}" }, "url": "{{baseUrl}}/api/favourites" } },
+    { "name": "List Favourites", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/favourites/{{userId}}" } },
+    { "name": "Delete Favourite", "request": { "method": "DELETE", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/favourites/{{userId}}/{{siteId}}" } },
+    { "name": "Create Trail", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"userId\": \"{{userId}}\",\n  \"trailName\": \"My trail\",\n  \"siteIds\": [\"{{siteId}}\"]\n}" }, "url": "{{baseUrl}}/api/trails" } },
+    { "name": "List Trails", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/trails/{{userId}}" } },
+    { "name": "Update Trail", "request": { "method": "PUT", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"trailName\": \"Updated trail\",\n  \"siteIds\": [\"{{siteId}}\"]\n}" }, "url": "{{baseUrl}}/api/trails/{{trailId}}" } },
+    { "name": "Delete Trail", "request": { "method": "DELETE", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/trails/{{trailId}}" } },
+    { "name": "Save Quiz Score", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"userId\": \"{{userId}}\",\n  \"quizId\": \"india-heritage\",\n  \"score\": 8\n}" }, "url": "{{baseUrl}}/api/quiz-scores" } },
+    { "name": "List Quiz Scores", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/quiz-scores/{{userId}}" } },
+    { "name": "Mark Visited", "request": { "method": "POST", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"userId\": \"{{userId}}\",\n  \"siteId\": \"{{siteId}}\"\n}" }, "url": "{{baseUrl}}/api/visited-sites" } },
+    { "name": "List Visited", "request": { "method": "GET", "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }], "url": "{{baseUrl}}/api/visited-sites/{{userId}}" } }
+  ]
+}

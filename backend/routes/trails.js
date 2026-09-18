@@ -1,0 +1,11 @@
+const router = require('express').Router();
+const { body, param } = require('express-validator');
+const auth = require('../middleware/auth');
+const validate = require('../middleware/validate');
+const controller = require('../controllers/trailController');
+router.use(auth);
+router.post('/', [body('userId').isMongoId(), body('trailName').trim().isLength({ min: 2 }), body('siteIds').isArray()], validate, controller.create);
+router.get('/:userId', [param('userId').isMongoId()], validate, controller.list);
+router.put('/:trailId', [param('trailId').isMongoId(), body('trailName').optional().trim().isLength({ min: 2 }), body('siteIds').optional().isArray()], validate, controller.update);
+router.delete('/:trailId', [param('trailId').isMongoId()], validate, controller.remove);
+module.exports = router;

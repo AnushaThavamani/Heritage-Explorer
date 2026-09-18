@@ -1,0 +1,6 @@
+const Trail = require('../models/Trail');
+const own = (req, id) => req.user.id === id.toString();
+exports.create = async (req, res, next) => { try { if (!own(req, req.body.userId)) return res.status(403).json({ message: 'You can only create your own trails.' }); res.status(201).json(await Trail.create(req.body)); } catch (error) { next(error); } };
+exports.list = async (req, res, next) => { try { if (!own(req, req.params.userId)) return res.status(403).json({ message: 'Access denied.' }); res.json(await Trail.find({ userId: req.params.userId }).sort({ updatedAt: -1 })); } catch (error) { next(error); } };
+exports.update = async (req, res, next) => { try { const trail = await Trail.findById(req.params.trailId); if (!trail) return res.status(404).json({ message: 'Trail not found.' }); if (!own(req, trail.userId)) return res.status(403).json({ message: 'Access denied.' }); Object.assign(trail, req.body); res.json(await trail.save()); } catch (error) { next(error); } };
+exports.remove = async (req, res, next) => { try { const trail = await Trail.findById(req.params.trailId); if (!trail) return res.status(404).json({ message: 'Trail not found.' }); if (!own(req, trail.userId)) return res.status(403).json({ message: 'Access denied.' }); await trail.deleteOne(); res.status(204).send(); } catch (error) { next(error); } };

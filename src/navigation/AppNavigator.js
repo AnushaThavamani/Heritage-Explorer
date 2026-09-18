@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { useHeritage } from '../context/HeritageContext';
+import { useAuth } from '../context/AuthContext';
 import SplashScreen from '../screens/Splash';
 import WelcomeScreen from '../screens/Welcome';
 import LoginScreen from '../screens/Login';
@@ -22,11 +23,12 @@ const openDetails = (navigation, site) => navigation.getParent()?.navigate('Deta
 
 function TimedSplash({ navigation }) {
   const { isHydrated, user } = useHeritage();
+  const { isLoading: isAuthLoading, user: authUser } = useAuth();
   useEffect(() => {
-    if (!isHydrated) return undefined;
-    const timer = setTimeout(() => navigation.replace(user ? 'MainTabs' : 'Welcome'), 1100);
+    if (!isHydrated || isAuthLoading) return undefined;
+    const timer = setTimeout(() => navigation.replace(authUser || user ? 'MainTabs' : 'Welcome'), 1100);
     return () => clearTimeout(timer);
-  }, [isHydrated, navigation, user]);
+  }, [authUser, isAuthLoading, isHydrated, navigation, user]);
   return <SplashScreen />;
 }
 function WelcomeRoute({ navigation }) { return <WelcomeScreen onStart={() => navigation.navigate('Login')} />; }
@@ -36,7 +38,7 @@ function HomeRoute({ navigation }) { return <HomeScreen onOpenDetails={site => o
 function ExploreRoute({ navigation }) { return <ExploreScreen onOpenDetails={site => openDetails(navigation, site)} />; }
 function TrailRoute({ navigation }) { return <TrailScreen onOpenDetails={site => openDetails(navigation, site)} />; }
 function FavoritesRoute({ navigation }) { return <FavoritesScreen onOpenDetails={site => openDetails(navigation, site)} onOpenTrail={() => navigation.navigate('Trail')} />; }
-function ProfileRoute({ navigation }) { const { logout } = useHeritage(); return <ProfileScreen onLogout={async () => { await logout(); navigation.getParent()?.reset({ index: 0, routes: [{ name: 'Login' }] }); }} />; }
+function ProfileRoute({ navigation }) { const { logout: clearLocal } = useHeritage(); const { logout } = useAuth(); return <ProfileScreen onLogout={async () => { await logout(); await clearLocal(); navigation.getParent()?.reset({ index: 0, routes: [{ name: 'Login' }] }); }} />; }
 
 export function MainTabs() {
   return <Tab.Navigator screenOptions={{ headerShown: false, tabBarStyle: styles.tabBar, tabBarItemStyle: styles.tabItem, tabBarLabelStyle: styles.tabLabel, tabBarActiveTintColor: '#B9572B', tabBarInactiveTintColor: '#8A7161', tabBarHideOnKeyboard: true }}>

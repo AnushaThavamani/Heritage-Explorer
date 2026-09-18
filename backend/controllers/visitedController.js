@@ -1,0 +1,3 @@
+const VisitedSite = require('../models/VisitedSite');
+exports.add = async (req, res, next) => { try { if (req.user.id !== req.body.userId) return res.status(403).json({ message: 'You can only update your own visited sites.' }); res.status(201).json(await VisitedSite.findOneAndUpdate({ userId: req.body.userId, siteId: req.body.siteId }, { $setOnInsert: req.body }, { upsert: true, new: true })); } catch (error) { next(error); } };
+exports.list = async (req, res, next) => { try { if (req.user.id !== req.params.userId) return res.status(403).json({ message: 'Access denied.' }); res.json(await VisitedSite.find({ userId: req.params.userId })); } catch (error) { next(error); } };
