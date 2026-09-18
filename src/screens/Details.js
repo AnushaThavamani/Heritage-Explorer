@@ -12,12 +12,15 @@ export default function DetailsScreen({ item, onBack, onOpenTrail }) {
   const inTrail = trail.includes(item.id);
   const visit = visited.find(entry => entry.id === item.id);
   const openMap = async () => {
-    const url = `https://www.google.com/maps/search/?api=1&query=${item.latitude},${item.longitude}`;
+    const query = encodeURIComponent(`${item.name}, ${item.location}`);
+    const geoUrl = `geo:${item.latitude},${item.longitude}?q=${item.latitude},${item.longitude}(${query})`;
+    const webUrl = `https://www.openstreetmap.org/?mlat=${item.latitude}&mlon=${item.longitude}#map=16/${item.latitude}/${item.longitude}`;
     try {
-      const supported = await Linking.canOpenURL(url);
-      if (!supported) throw new Error('Unsupported URL');
-      await Linking.openURL(url);
-    } catch (error) { Alert.alert('Unable to open map', 'We could not open a map app for this location. Please try again later.'); }
+      await Linking.openURL(geoUrl);
+    } catch (error) {
+      try { await Linking.openURL(webUrl); }
+      catch (webError) { Alert.alert('Map unavailable', 'Install or enable a browser or map app to view this location.'); }
+    }
   };
   return <View style={styles.screen}><FlatList data={details} keyExtractor={row => row.label} contentContainerStyle={styles.content} ListHeaderComponent={<><Pressable onPress={onBack}><Text style={styles.back}>← Back to explore</Text></Pressable><View style={styles.imageWrap}><HeritageImage uri={item.image} style={styles.image} accessibilityLabel={item.name} /></View><View style={styles.titleRow}><View style={styles.titleCopy}><Text style={styles.title}>{item.name}</Text><Text style={styles.type}>{item.type} · {item.state}</Text>{item.unesco ? <Text style={styles.unesco}>UNESCO World Heritage Site</Text> : null}</View><Pressable style={styles.heartButton} onPress={() => toggleFavorite(item.id)}><Text style={styles.heart}>{saved ? '♥' : '♡'}</Text></Pressable></View><Text style={styles.intro}>{item.description}</Text></>} renderItem={({ item: row }) => <View style={[styles.infoCard, row.long && styles.longCard]}><Text style={styles.infoIcon}>{row.icon}</Text><View style={styles.infoCopy}><Text style={styles.infoLabel}>{row.label}</Text><Text style={styles.infoValue}>{row.value}</Text></View></View>} ListFooterComponent={<View style={styles.actions}><PrimaryButton onPress={() => { if (!inTrail) toggleTrail(item.id); onOpenTrail(); }}>{inTrail ? 'View My Trail' : 'Add to My Trail'}</PrimaryButton><Pressable style={styles.secondary} onPress={openMap}><Text style={styles.secondaryText}>View on Map</Text></Pressable><Pressable style={styles.visited} onPress={() => markVisited(item)}><Text style={styles.visitedText}>{visit ? `✓ Visited ${new Date(visit.visitedAt).toLocaleDateString()}` : '✓ Mark as visited'}</Text></Pressable></View>} /></View>;
 }

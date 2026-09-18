@@ -51,7 +51,7 @@ export function MainTabs() {
 }
 function DetailsRoute({ navigation, route }) { return <DetailsScreen item={route.params?.site} onBack={() => navigation.goBack()} onOpenTrail={() => navigation.navigate('MainTabs', { screen: 'Trail' })} />; }
 export default function AppNavigator() {
-  return <NavigationContainer><Stack.Navigator screenOptions={{ headerShown: false, animation: 'fade' }} initialRouteName="Splash">
+  return <NavigationContainer><Stack.Navigator screenOptions={{ headerShown: false, animation: 'slide_from_right', animationDuration: 220, gestureEnabled: true, freezeOnBlur: true }} initialRouteName="Splash">
     <Stack.Screen name="Splash" component={TimedSplash} /><Stack.Screen name="Welcome" component={WelcomeRoute} /><Stack.Screen name="Login" component={LoginRoute} /><Stack.Screen name="Register" component={RegisterRoute} /><Stack.Screen name="MainTabs" component={MainTabs} /><Stack.Screen name="Details" component={DetailsRoute} />
   </Stack.Navigator></NavigationContainer>;
 }

@@ -1,13 +1,54 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 const HeritageSite = require('./models/HeritageSite');
+const sites = require('./data/heritageSites');
 
-const sites = [
-  { siteId: 'meenakshi-amman-temple', name: 'Meenakshi Amman Temple', title: 'Meenakshi Amman Temple', location: 'Madurai, Tamil Nadu', city: 'Madurai', district: 'Madurai', state: 'Tamil Nadu', stateCode: 'TN', category: 'Temples', type: 'Dravidian Temple', timings: '5:00 AM - 9:30 PM', visitorTimings: '5:00 AM - 9:30 PM', duration: '2 - 3 hours', description: 'A celebrated historic temple complex known for its monumental gopurams and detailed Dravidian sculpture.', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Meenakshi_Amman_Temple.jpg', imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Meenakshi_Amman_Temple.jpg', unesco: false, latitude: 9.9195, longitude: 78.1193 },
-  { siteId: 'taj-mahal', name: 'Taj Mahal', title: 'Taj Mahal', location: 'Agra, Uttar Pradesh', city: 'Agra', district: 'Agra', state: 'Uttar Pradesh', stateCode: 'UP', category: 'UNESCO Sites', type: 'Mausoleum', timings: 'Sunrise - Sunset (closed Fridays)', visitorTimings: 'Sunrise - Sunset (closed Fridays)', duration: '2 - 3 hours', description: 'An ivory-white marble mausoleum commissioned by Shah Jahan and one of India’s best-known UNESCO landmarks.', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Taj_Mahal_in_March_2004.jpg', imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Taj_Mahal_in_March_2004.jpg', unesco: true, latitude: 27.1751, longitude: 78.0421 },
-  { siteId: 'hampi', name: 'Hampi', title: 'Hampi', location: 'Hampi, Karnataka', city: 'Hampi', district: 'Vijayanagara', state: 'Karnataka', stateCode: 'KA', category: 'UNESCO Sites', type: 'Heritage Complex', timings: 'Sunrise - Sunset', visitorTimings: 'Sunrise - Sunset', duration: 'Half day', description: 'The evocative ruins of the Vijayanagara capital spread across a dramatic boulder-strewn landscape.', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Virupaksha_Temple_Hampi.jpg', imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Virupaksha_Temple_Hampi.jpg', unesco: true, latitude: 15.335, longitude: 76.46 },
-  { siteId: 'mysore-palace', name: 'Mysore Palace', title: 'Mysore Palace', location: 'Mysuru, Karnataka', city: 'Mysuru', district: 'Mysuru', state: 'Karnataka', stateCode: 'KA', category: 'Palaces', type: 'Palace', timings: '10:00 AM - 5:30 PM', visitorTimings: '10:00 AM - 5:30 PM', duration: '2 hours', description: 'A richly decorated royal residence blending Indo-Saracenic architecture with ceremonial interiors.', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mysore_Palace.jpg', imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mysore_Palace.jpg', unesco: false, latitude: 12.3052, longitude: 76.6552 },
-  { siteId: 'qutb-minar', name: 'Qutb Minar', title: 'Qutb Minar', location: 'New Delhi, Delhi', city: 'New Delhi', district: 'South Delhi', state: 'Delhi', stateCode: 'DL', category: 'UNESCO Sites', type: 'Minaret', timings: '7:00 AM - 5:00 PM', visitorTimings: '7:00 AM - 5:00 PM', duration: '1.5 - 2 hours', description: 'A soaring medieval minaret and archaeological complex that records several layers of Delhi’s history.', image: 'https://commons.wikimedia.org/wiki/Special:FilePath/Qutb_Minar.jpg', imageUrl: 'https://commons.wikimedia.org/wiki/Special:FilePath/Qutb_Minar.jpg', unesco: true, latitude: 28.5244, longitude: 77.1855 },
-];
+const summaryFor = async title => {
+	try {
+		const response = await fetch(`https://en.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title.replace(/[’]/g, "'"))}`, { headers: { 'User-Agent': 'HeritageExplorer/1.0 (educational project)' } });
+		if (!response.ok) return null;
+		const summary = await response.json();
+		return summary;
+	} catch (error) {
+		return null;
+	}
+};
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/heritage_explorer').then(async () => { await HeritageSite.deleteMany({}); await HeritageSite.insertMany(sites); console.log(`Seeded ${sites.length} heritage sites.`); await mongoose.disconnect(); }).catch(error => { console.error(error); process.exit(1); });
+const commonsImageFor = async record => {
+	try {
+		const query = encodeURIComponent(`${record.name} ${record.city}`);
+		const url = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=${query}&gsrnamespace=6&gsrlimit=5&prop=imageinfo&iiprop=url&iiurlwidth=1200&format=json&origin=*`;
+		const response = await fetch(url, { headers: { 'User-Agent': 'HeritageExplorer/1.0 (educational project)' } });
+		const data = await response.json();
+		const pages = Object.values(data.query?.pages || {});
+		const page = pages.find(candidate => candidate.imageinfo?.[0]?.thumburl || candidate.imageinfo?.[0]?.url);
+		return page?.imageinfo?.[0]?.thumburl || page?.imageinfo?.[0]?.url || '';
+	} catch (error) {
+		return '';
+	}
+};
+
+const enrichImages = async records => Promise.all(records.map(async record => {
+	let summary = await summaryFor(record.name);
+	if (!summary?.originalimage?.source && !summary?.thumbnail?.source) {
+		try {
+			const searchResponse = await fetch(`https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(record.name)}&format=json&origin=*`, { headers: { 'User-Agent': 'HeritageExplorer/1.0 (educational project)' } });
+			const search = await searchResponse.json();
+			const bestTitle = search.query?.search?.[0]?.title;
+			if (bestTitle) summary = await summaryFor(bestTitle);
+		} catch (error) {
+			summary = null;
+		}
+	}
+	const image = summary?.originalimage?.source || summary?.thumbnail?.source || await commonsImageFor(record);
+	return image ? { ...record, image, imageUrl: image, wikipediaUrl: summary.content_urls?.desktop?.page || '' } : record;
+}));
+
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/heritage_explorer').then(async () => {
+	const enrichedSites = await enrichImages(sites);
+	await HeritageSite.deleteMany({});
+	await HeritageSite.insertMany(enrichedSites);
+	const commonsImages = enrichedSites.filter(site => site.image.includes('wikimedia.org')).length;
+	console.log(`Seeded ${enrichedSites.length} heritage sites with ${commonsImages} Wikimedia place-specific images.`);
+	await mongoose.disconnect();
+}).catch(error => { console.error(error); process.exit(1); });
