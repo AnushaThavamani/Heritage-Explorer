@@ -2,6 +2,13 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const HeritageSite = require('./models/HeritageSite');
 const sites = require('./data/heritageSites');
+const imageOverrides = {
+	'akbars-tomb': "https://commons.wikimedia.org/wiki/Special:Redirect/file/Akbar's_Tomb_in_Sikandra_15.jpg",
+	'itmad-ud-daulah': "https://commons.wikimedia.org/wiki/Special:Redirect/file/I'timad-ud-Daulah,_Agra.jpg",
+	'national-museum-delhi': 'https://commons.wikimedia.org/wiki/Special:Redirect/file/National_Museum,_New_Delhi_main_reception_hall.jpg',
+	pattadakal: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Pattadakal_000.JPG',
+	'thirumalai-nayakkar-palace': 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Madurai_Nayak_Palace_Collage.jpg',
+};
 
 const summaryFor = async title => {
 	try {
@@ -16,7 +23,7 @@ const summaryFor = async title => {
 
 const commonsImageFor = async record => {
 	try {
-		const query = encodeURIComponent(`${record.name} ${record.city}`);
+		const query = encodeURIComponent(`"${record.wikipediaTitle || record.name}"`);
 		const url = `https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=${query}&gsrnamespace=6&gsrlimit=5&prop=imageinfo&iiprop=url&iiurlwidth=1200&format=json&origin=*`;
 		const response = await fetch(url, { headers: { 'User-Agent': 'HeritageExplorer/1.0 (educational project)' } });
 		const data = await response.json();
@@ -29,19 +36,9 @@ const commonsImageFor = async record => {
 };
 
 const enrichImages = async records => Promise.all(records.map(async record => {
-	let summary = await summaryFor(record.name);
-	if (!summary?.originalimage?.source && !summary?.thumbnail?.source) {
-		try {
-			const searchResponse = await fetch(`https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(record.name)}&format=json&origin=*`, { headers: { 'User-Agent': 'HeritageExplorer/1.0 (educational project)' } });
-			const search = await searchResponse.json();
-			const bestTitle = search.query?.search?.[0]?.title;
-			if (bestTitle) summary = await summaryFor(bestTitle);
-		} catch (error) {
-			summary = null;
-		}
-	}
-	const image = summary?.originalimage?.source || summary?.thumbnail?.source || await commonsImageFor(record);
-	return image ? { ...record, image, imageUrl: image, wikipediaUrl: summary.content_urls?.desktop?.page || '' } : record;
+	const summary = await summaryFor(record.wikipediaTitle || record.name);
+	const image = imageOverrides[record.siteId] || summary?.originalimage?.source || summary?.thumbnail?.source || await commonsImageFor(record);
+	return image ? { ...record, image, imageUrl: image, wikipediaUrl: summary?.content_urls?.desktop?.page || '' } : record;
 }));
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/heritage_explorer').then(async () => {

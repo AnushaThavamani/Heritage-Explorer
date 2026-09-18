@@ -11,7 +11,16 @@ const site = (siteId, name, location, city, district, state, stateCode, category
   siteId, name, title: name, location, city, district, state, stateCode, category, type, timings, visitorTimings: timings, duration, description, image: images[image], imageUrl: images[image], unesco, latitude, longitude,
 });
 
-module.exports = [
+const wikipediaTitles = {
+  'meenakshi-amman-temple': 'Meenakshi Temple', 'brihadeeswarar-temple': 'Brihadisvara Temple', 'shore-temple': 'Shore Temple', 'gangaikonda-cholapuram': 'Gangaikonda Cholapuram', 'thirumalai-nayakkar-palace': 'Thirumalai Nayak Palace',
+  'taj-mahal': 'Taj Mahal', 'agra-fort': 'Agra Fort', 'fatehpur-sikri': 'Fatehpur Sikri', 'itmad-ud-daulah': "Tomb of I'timad-ud-Daulah", 'akbars-tomb': "Akbar's tomb",
+  hampi: 'Group of Monuments at Hampi', 'mysore-palace': 'Mysore Palace', 'gol-gumbaz': 'Gol Gumbaz', pattadakal: 'Group of monuments at Pattadakal', 'badami-cave-temples': 'Badami cave temples',
+  'qutb-minar': 'Qutb Minar', 'red-fort': 'Red Fort', 'humayuns-tomb': "Humayun's Tomb", 'national-museum-delhi': 'National Museum, New Delhi', 'jantar-mantar-delhi': 'Jantar Mantar, Delhi',
+  'victoria-memorial': 'Victoria Memorial, Kolkata', 'konark-sun-temple': 'Konark Sun Temple', charminar: 'Charminar', 'sanchi-stupa': 'Sanchi', 'ranakpur-temple': 'Ranakpur Jain temple',
+  'amer-fort': 'Amber Fort', 'city-palace-jaipur': 'City Palace, Jaipur', 'hawa-mahal': 'Hawa Mahal', 'mehrangarh-fort': 'Mehrangarh',
+};
+
+const sites = [
   site('meenakshi-amman-temple', 'Meenakshi Amman Temple', 'Madurai, Tamil Nadu', 'Madurai', 'Madurai', 'Tamil Nadu', 'TN', 'Temples', 'Dravidian Temple', '5:00 AM - 9:30 PM', '2 - 3 hours', 'A celebrated temple complex known for monumental gopurams and detailed Dravidian sculpture.', 'temple', false, 9.9195, 78.1193),
   site('brihadeeswarar-temple', 'Brihadeeswarar Temple', 'Thanjavur, Tamil Nadu', 'Thanjavur', 'Thanjavur', 'Tamil Nadu', 'TN', 'Temples', 'Chola Temple', '6:00 AM - 8:30 PM', '2 hours', 'A Chola-era architectural masterpiece with a towering vimana and historic murals.', 'temple', true, 10.7828, 79.1318),
   site('shore-temple', 'Shore Temple', 'Mahabalipuram, Tamil Nadu', 'Mahabalipuram', 'Chengalpattu', 'Tamil Nadu', 'TN', 'Temples', 'Pallava Temple', '6:00 AM - 6:00 PM', '2 hours', 'A stone temple overlooking the Bay of Bengal and a defining monument of Pallava art.', 'temple', true, 12.6169, 80.1927),
@@ -42,3 +51,5 @@ module.exports = [
   site('hawa-mahal', 'Hawa Mahal', 'Jaipur, Rajasthan', 'Jaipur', 'Jaipur', 'Rajasthan', 'RJ', 'Palaces', 'Rajput Palace', '9:00 AM - 4:30 PM', '1 hour', 'The iconic Palace of Winds, built with a honeycomb facade overlooking Jaipur’s old city.', 'palace', false, 26.9239, 75.8267),
   site('mehrangarh-fort', 'Mehrangarh Fort', 'Jodhpur, Rajasthan', 'Jodhpur', 'Jodhpur', 'Rajasthan', 'RJ', 'Forts', 'Rajput Fort', '9:00 AM - 5:00 PM', '3 hours', 'A massive hilltop fort with formidable walls, royal galleries, and sweeping views of the blue city.', 'fort', false, 26.2988, 73.0185),
 ];
+
+module.exports = sites.map(record => ({ ...record, wikipediaTitle: wikipediaTitles[record.siteId] || record.name }));
