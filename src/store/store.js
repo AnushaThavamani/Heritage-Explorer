@@ -11,7 +11,7 @@ const userSlice = createSlice({
 
 const heritageSlice = createSlice({
   name: 'heritage',
-  initialState: { favorites: ['modhera-sun-temple'], trail: [] },
+  initialState: { favorites: [], trail: [] },
   reducers: {
     setFavorites: (state, action) => { state.favorites = action.payload; },
     setTrail: (state, action) => { state.trail = action.payload; },

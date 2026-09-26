@@ -1,27 +1,143 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { Alert, FlatList, Pressable, RefreshControl, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
-import { CATEGORIES } from '../data/sampleData';
-import { useHeritage } from '../context/HeritageContext';
-import HeritageImage from '../components/HeritageImage';
+import React, { useState, useEffect } from 'react';
+import { View, Text, StyleSheet, FlatList, Pressable, ActivityIndicator, ScrollView } from 'react-native';
+import api from '../services/api';
 import SiteCard from '../components/SiteCard';
 
-const options = (label, values) => [label, ...new Set(values.filter(Boolean))];
+const SEED_DATA = {
+  "Tamil Nadu": ["Madurai", "Thanjavur", "Kancheepuram"],
+  "Kerala": ["Thrissur", "Kozhikode", "Ernakulam"],
+  "Karnataka": ["Mysuru", "Vijayanagara", "Dakshina Kannada"],
+  "Maharashtra": ["Chhatrapati Sambhajinagar", "Pune", "Kolhapur"],
+  "Andhra Pradesh": ["Anantapur", "Kurnool", "Visakhapatnam"]
+};
+const STATES = Object.keys(SEED_DATA);
+const CATEGORIES = ['fort', 'palace', 'monument', 'temple', 'archaeological site', 'stone carving'];
 
-export default function HomeScreen({ onOpenDetails, onOpenFavorites }) {
-  const { sites, user, favorites, refreshSites, isLoadingSites } = useHeritage();
-  const [search, setSearch] = useState('');
-  const [category, setCategory] = useState('All');
-  const [state, setState] = useState('All States');
-  const [district, setDistrict] = useState('All Districts');
-  const [welcomed, setWelcomed] = useState(false);
-  useEffect(() => { if (sites.length && !welcomed) { setWelcomed(true); Alert.alert('Welcome to Heritage Explorer', 'Search places by name, city, state or category.'); } }, [sites.length, welcomed]);
-  const states = useMemo(() => options('All States', sites.map(site => site.state)), [sites]);
-  const districts = useMemo(() => options('All Districts', sites.map(site => site.district)), [sites]);
-  const results = useMemo(() => sites.filter(site => { const text = `${site.name} ${site.city} ${site.category} ${site.state} ${site.district}`.toLowerCase(); return text.includes(search.trim().toLowerCase()) && (category === 'All' || site.category === category) && (state === 'All States' || site.state === state) && (district === 'All Districts' || site.district === district); }), [sites, search, category, state, district]);
-  const chips = (items, selected, update) => <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>{items.map(item => <Pressable key={item} onPress={() => update(item)} style={[styles.chip, selected === item && styles.chipOn]}><Text style={[styles.chipText, selected === item && styles.chipTextOn]}>{item}</Text></Pressable>)}</ScrollView>;
-  const day = sites[0];
-  const header = <><View style={styles.header}><View><Text style={styles.kicker}>NAMASTE, {(user?.name || 'TRAVELLER').toUpperCase()}</Text><Text style={styles.title}>Explore heritage</Text></View></View><View style={styles.search}><Text style={styles.searchLabel}>Search</Text><TextInput value={search} onChangeText={setSearch} placeholder="Search name, city, state or category" style={styles.input} /></View>{day ? <View style={styles.day}><Text style={styles.dayKicker}>HERITAGE OF THE DAY</Text><HeritageImage uri={day.image} style={styles.dayImage} accessibilityLabel={day.name} /><Text style={styles.dayName}>{day.name}</Text><Text style={styles.dayMeta}>{day.city} · {day.category}</Text><Text style={styles.dayFact}>{day.description}</Text><Pressable onPress={() => onOpenDetails(day)}><Text style={styles.dayLink}>Explore site</Text></Pressable></View> : null}<View style={styles.row}><Text style={styles.section}>Heritage categories</Text><Text style={styles.count}>{results.length} places</Text></View>{chips(CATEGORIES, category, setCategory)}<Text style={styles.label}>STATE</Text>{chips(states, state, setState)}<Text style={styles.label}>DISTRICT</Text>{chips(districts, district, setDistrict)}<View style={styles.row}><Text style={styles.section}>Popular historical sites</Text><Pressable onPress={onOpenFavorites}><Text style={styles.saved}>Saved: {favorites.length}</Text></Pressable></View></>;
-  return <View style={styles.screen}><FlatList data={results} keyExtractor={site => site.id} numColumns={2} renderItem={({ item: site }) => <SiteCard site={site} onPress={onOpenDetails} />} ListHeaderComponent={header} ListEmptyComponent={<View style={styles.empty}><Text style={styles.section}>No sites found</Text><Text>Try another search or filter.</Text></View>} columnWrapperStyle={styles.gridRow} contentContainerStyle={styles.content} nestedScrollEnabled keyboardDismissMode="on-drag" keyboardShouldPersistTaps="handled" showsVerticalScrollIndicator={false} refreshControl={<RefreshControl refreshing={isLoadingSites} onRefresh={refreshSites} />} /></View>;
+export default function HomeScreen({ onOpenDetails }) {
+  const [selectedState, setSelectedState] = useState('');
+  const [selectedDistrict, setSelectedDistrict] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('');
+  
+  const [sites, setSites] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+
+  const fetchSites = React.useCallback(async () => {
+    if (!selectedState || !selectedDistrict) return;
+    setLoading(true);
+    setError('');
+    try {
+      let url = `/heritage-sites?state=${selectedState}&district=${selectedDistrict}`;
+      if (selectedCategory) {
+        url += `&category=${selectedCategory}`;
+      }
+      const response = await api.get(url);
+      setSites(response.data.map(site => ({ ...site, id: site.siteId || site.id, title: site.title || site.name, image: site.image_url || site.image })));
+    } catch (err) {
+      setError('Failed to load heritage sites.');
+    } finally {
+      setLoading(false);
+    }
+  }, [selectedState, selectedDistrict, selectedCategory]);
+
+  useEffect(() => {
+    fetchSites();
+  }, [fetchSites]);
+
+  const handleStateChange = (state) => {
+    setSelectedState(state);
+    setSelectedDistrict(''); // Reset district
+    setSites([]);
+  };
+
+  const chips = (items, selected, update, disabled = false) => (
+    <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>
+      {items.map(item => (
+        <Pressable 
+          key={item} 
+          disabled={disabled}
+          onPress={() => update(item === selected ? '' : item)} 
+          style={[styles.chip, selected === item && styles.chipOn, disabled && styles.chipDisabled]}
+        >
+          <Text style={[styles.chipText, selected === item && styles.chipTextOn, disabled && styles.chipTextDisabled]}>
+            {item}
+          </Text>
+        </Pressable>
+      ))}
+    </ScrollView>
+  );
+
+  const header = (
+    <View style={styles.headerContainer}>
+      <Text style={styles.title}>Location Browser</Text>
+      <Text style={styles.subtitle}>Select a State</Text>
+      {chips(STATES, selectedState, handleStateChange)}
+      
+      <Text style={[styles.subtitle, styles.marginTop10]}>Select a District</Text>
+      {chips(
+        selectedState ? SEED_DATA[selectedState] : [], 
+        selectedDistrict, 
+        setSelectedDistrict,
+        !selectedState
+      )}
+
+      {selectedDistrict ? (
+        <>
+          <Text style={[styles.subtitle, styles.marginTop10]}>Filter by Category</Text>
+          {chips(CATEGORIES, selectedCategory, setSelectedCategory)}
+        </>
+      ) : null}
+
+      {!selectedState || !selectedDistrict ? (
+        <View style={styles.prompt}>
+          <Text style={styles.promptText}>Select a state and district to explore heritage sites.</Text>
+        </View>
+      ) : null}
+    </View>
+  );
+
+  return (
+    <View style={styles.screen}>
+      <FlatList
+        data={sites}
+        keyExtractor={item => item.id}
+        numColumns={2}
+        ListHeaderComponent={header}
+        renderItem={({ item }) => <SiteCard site={item} onPress={onOpenDetails} />}
+        columnWrapperStyle={styles.gridRow}
+        contentContainerStyle={styles.content}
+        ListEmptyComponent={
+          selectedState && selectedDistrict && !loading ? (
+            <View style={styles.empty}>
+              <Text style={styles.emptyText}>No sites found for this selection.</Text>
+            </View>
+          ) : null
+        }
+        ListFooterComponent={loading ? <ActivityIndicator size="large" color="#B9572B" style={styles.footerLoader}/> : error ? <Text style={styles.error}>{error}</Text> : null}
+      />
+    </View>
+  );
 }
 
-const styles = StyleSheet.create({ screen: { flex: 1, backgroundColor: '#F7EFE6' }, content: { padding: 16, paddingBottom: 28 }, header: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }, kicker: { color: '#8B4A24', fontSize: 10, fontWeight: '900', letterSpacing: 1 }, title: { color: '#4B2E23', fontSize: 27, fontWeight: '900', marginTop: 4 }, menu: { backgroundColor: '#FFF', padding: 12, borderRadius: 20 }, search: { flexDirection: 'row', alignItems: 'center', backgroundColor: '#FFF', borderRadius: 15, paddingHorizontal: 14, marginTop: 16 }, searchLabel: { color: '#8B4A24', fontWeight: '800', marginRight: 8 }, input: { flex: 1, paddingVertical: 13, color: '#4B2E23' }, day: { backgroundColor: '#4B2E23', borderRadius: 18, padding: 14, marginTop: 16 }, dayKicker: { color: '#D9B44A', fontSize: 10, fontWeight: '900', letterSpacing: 1 }, dayImage: { width: '100%', height: 125, borderRadius: 12, marginTop: 10 }, dayName: { color: '#FFF', fontSize: 19, fontWeight: '900', marginTop: 10 }, dayMeta: { color: '#D9B44A', fontWeight: '800', marginTop: 4 }, dayFact: { color: '#EBDCD0', lineHeight: 19, marginTop: 7 }, dayLink: { color: '#FFF', fontWeight: '900', marginTop: 10 }, row: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 20, marginBottom: 7 }, section: { color: '#4B2E23', fontSize: 17, fontWeight: '900' }, count: { color: '#8B4A24', fontWeight: '800' }, saved: { color: '#B9572B', fontWeight: '800' }, label: { color: '#8B4A24', fontSize: 10, fontWeight: '900', letterSpacing: 1, marginTop: 8 }, chips: { paddingBottom: 4 }, chip: { backgroundColor: '#FFF8F0', borderColor: '#E8D6C3', borderWidth: 1, borderRadius: 17, paddingHorizontal: 13, paddingVertical: 8, marginRight: 8 }, chipOn: { backgroundColor: '#B9572B', borderColor: '#B9572B' }, chipText: { color: '#6F594A', fontWeight: '700', fontSize: 12 }, chipTextOn: { color: '#FFF' }, grid: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-between' }, empty: { backgroundColor: '#FFF', padding: 20, borderRadius: 15, marginTop: 10 } });
+const styles = StyleSheet.create({
+  screen: { flex: 1, backgroundColor: '#F7EFE6' },
+  content: { padding: 16, paddingBottom: 28 },
+  headerContainer: { marginBottom: 16 },
+  title: { color: '#4B2E23', fontSize: 27, fontWeight: '900', marginBottom: 16 },
+  subtitle: { color: '#8B4A24', fontSize: 12, fontWeight: '900', letterSpacing: 1, marginBottom: 8 },
+  marginTop10: { marginTop: 10 },
+  chips: { paddingBottom: 8 },
+  chip: { backgroundColor: '#FFF8F0', borderColor: '#E8D6C3', borderWidth: 1, borderRadius: 17, paddingHorizontal: 13, paddingVertical: 8, marginRight: 8 },
+  chipOn: { backgroundColor: '#B9572B', borderColor: '#B9572B' },
+  chipDisabled: { opacity: 0.5 },
+  chipText: { color: '#6F594A', fontWeight: '700', fontSize: 12 },
+  chipTextOn: { color: '#FFF' },
+  chipTextDisabled: { color: '#A0A0A0' },
+  prompt: { marginTop: 40, alignItems: 'center' },
+  promptText: { color: '#6F594A', fontSize: 16, textAlign: 'center', fontWeight: '600' },
+  gridRow: { flexDirection: 'row', justifyContent: 'space-between' },
+  empty: { marginTop: 20, alignItems: 'center' },
+  emptyText: { color: '#6F594A', fontSize: 14 },
+  error: { color: 'red', textAlign: 'center', marginTop: 10 },
+  footerLoader: { marginTop: 20 }
+});

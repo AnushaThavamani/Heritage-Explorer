@@ -1,100 +1,135 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Heritage Explorer
 
-# Getting Started
+Heritage Explorer is a React Native app and Express API for discovering Indian heritage sites, building saved trails, and tracking favourites and visits. Experiments 11–12 move all account, site, favourite, trail, and visited-site CRUD to MongoDB through a JWT-protected REST API.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+## Installation
 
-## Step 1: Start Metro
+Install the React Native app dependencies from the project root:
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+```bash
+npm install
+```
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+Install API dependencies:
 
-```sh
-# Using npm
+```bash
+cd backend
+npm install
+```
+
+## Environment setup
+
+1. Copy `backend/.env.example` to `backend/.env`.
+2. Set `MONGO_URI` to a local MongoDB or MongoDB Atlas connection string.
+3. Set a long, private `JWT_SECRET`.
+4. Set `PORT` if 5000 is already in use.
+5. `ADMIN_NAME`, `ADMIN_EMAIL`, and `ADMIN_PASSWORD` are development seed credentials; change them before using a shared database.
+
+Never commit `.env`. It is ignored by Git.
+
+The mobile API address is configured once in `src/config/api.js`:
+
+- Android emulator uses `http://10.0.2.2:5000/api`.
+- iOS simulator uses `http://localhost:5000/api`.
+- On a physical Android device, replace `10.0.2.2:5000` in that file with the development PC’s LAN address, such as `192.168.1.20:5000`. Do not use `localhost` on a phone.
+
+## Database setup
+
+Start MongoDB, then seed the database from `backend/`:
+
+```bash
+npm run seed
+```
+
+The idempotent seed command creates/updates the heritage sites and a development admin user. It logs `MongoDB connected successfully` and does not duplicate sites when rerun.
+
+In MongoDB Compass, connect using the same `MONGO_URI` and open the `heritage_explorer` database (or the database named in your URI).
+
+## Run the app
+
+Start the backend in one terminal:
+
+```bash
+cd backend
 npm start
-
-# OR using Yarn
-yarn start
 ```
 
-## Step 2: Build and run your app
+Start Metro from the project root in another terminal:
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+```bash
+npm start
+```
 
-### Android
+Run Android:
 
-```sh
-# Using npm
+```bash
 npm run android
-
-# OR using Yarn
-yarn android
 ```
 
+For iOS, install pods in `ios/` first if required, then run `npm run ios`.
 
-Enable Maps SDK for Android for the key in Google Cloud Console. The app reads this value into the Android manifest at build time, so do not commit the key to this repository.
+## Experiments 11–12 implementation
 
-### iOS
+- Mongoose models persist `users`, `heritagesites`, `favourites`, `trails`, and `visitedsites`.
+- Passwords are bcrypt hashes; login returns a seven-day JWT containing the user role.
+- Protected APIs identify the owner from the JWT, not a client-supplied user ID.
+- Unique compound indexes prevent duplicate favourites and duplicate visited records.
+- Stable string site IDs (such as `taj-mahal`) and latitude/longitude fields are retained for current detail, map, favourite, trail, and visited UI compatibility.
+- Admin-only heritage-site creation, editing, and deletion are enforced by both role middleware and an admin mobile screen.
+- The existing tab/stack UI remains in use. Profile, favourites, trails, visited sites, and admin actions refresh from the REST API after a mutation.
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+## API documentation
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+Protected calls require `Authorization: Bearer <token>`.
 
-```sh
-bundle install
-```
+| Method | Endpoint | Authentication | Purpose |
+| --- | --- | --- | --- |
+| POST | `/api/auth/register` | Public | Register and receive JWT |
+| POST | `/api/auth/login` | Public | Login and receive JWT |
+| GET | `/api/users/profile` | User | Get current profile |
+| PUT | `/api/users/profile` | User | Update current profile |
+| POST | `/api/favourites` | User | Add favourite (`siteId`) |
+| GET | `/api/favourites` | User | List current user favourites |
+| DELETE | `/api/favourites/:siteId` | User | Remove favourite |
+| POST | `/api/trails` | User | Create ordered trail |
+| GET | `/api/trails` | User | List current user trails |
+| GET | `/api/trails/:id` | User | Get one owned trail |
+| PUT | `/api/trails/:id` | User | Update owned trail |
+| DELETE | `/api/trails/:id` | User | Delete owned trail |
+| POST | `/api/visitedsites` | User | Mark site visited |
+| GET | `/api/visitedsites` | User | List visited sites |
+| DELETE | `/api/visitedsites/:siteId` | User | Unmark visited |
+| GET | `/api/heritagesites` | Public | List heritage sites |
+| GET | `/api/heritagesites/:id` | Public | Get site by stable ID |
+| POST | `/api/heritagesites` | Admin | Create heritage site |
+| PUT | `/api/heritagesites/:id` | Admin | Update heritage site |
+| DELETE | `/api/heritagesites/:id` | Admin | Delete heritage site |
 
-Then, and every time you update your native dependencies, run:
+`/api/heritage-sites` and `/api/visited-sites` are retained as compatibility aliases for the existing app path style; new frontend code uses the documented paths.
 
-```sh
-bundle exec pod install
-```
+## Lab demonstration checklist
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+1. Start MongoDB, seed it, and start the API. Confirm the server prints `MongoDB connected successfully`.
+2. Register a new user. Confirm a successful alert and automatic transition to the main tabs.
+3. Edit the profile and save it; reload the app to confirm the latest server profile remains.
+4. Open a site, add/remove it from favourites, and open the Favourites tab to confirm the refreshed list.
+5. Mark a site visited, open Profile → View visited sites, then unmark it.
+6. On Trail, generate/select a draft, use the arrows to alter order, save it, edit it, and delete it.
+7. Log in with the development admin email/password configured in `backend/.env`, open Profile → Manage heritage sites, and add, edit, then delete a test site.
+8. Use a normal user token in Postman to call an admin endpoint and confirm the `403` JSON response.
+9. Try favouriting or marking the same site twice and confirm the `409` JSON response.
+10. Use the detail page’s View on Map action to verify latitude/longitude links still open correctly.
 
-```sh
-# Using npm
-npm run ios
+## MongoDB Compass checklist
 
-# OR using Yarn
-yarn ios
-```
+Open the database named by `MONGO_URI` and capture these collections:
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+- `users`: seeded admin and registered users. `password` is a bcrypt hash, never plaintext; admin has `role: "admin"`.
+- `heritagesites`: seeded Indian sites with `siteId`, location/state, images, `latitude`, `longitude`, and `coordinates`.
+- `favourites`: a user/site relation with one record per `userId` + `siteId`.
+- `trails`: owned trails with `trailName`, `description`, and an ordered `siteIds` array.
+- `visitedsites`: user/site relation with a `visitedAt` date and no duplicate user/site pair.
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## Verification notes
 
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+`node --check` was run on all backend JavaScript files and `npm run lint` completed successfully. A live API/seed run requires a reachable MongoDB URI, which is intentionally not stored in this repository.

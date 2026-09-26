@@ -1,4 +1,19 @@
 const Favourite = require('../models/Favourite');
-exports.add = async (req, res, next) => { try { if (req.user.id !== req.body.userId) return res.status(403).json({ message: 'You can only edit your own favourites.' }); const item = await Favourite.findOneAndUpdate({ userId: req.body.userId, siteId: req.body.siteId }, { userId: req.body.userId, siteId: req.body.siteId }, { upsert: true, new: true, setDefaultsOnInsert: true }); res.status(201).json(item); } catch (error) { next(error); } };
-exports.list = async (req, res, next) => { try { if (req.user.id !== req.params.userId) return res.status(403).json({ message: 'Access denied.' }); res.json(await Favourite.find({ userId: req.params.userId })); } catch (error) { next(error); } };
-exports.remove = async (req, res, next) => { try { if (req.user.id !== req.params.userId) return res.status(403).json({ message: 'Access denied.' }); const item = await Favourite.findOneAndDelete({ userId: req.params.userId, siteId: req.params.siteId }); if (!item) return res.status(404).json({ message: 'Favourite not found.' }); res.status(204).send(); } catch (error) { next(error); } };
+const HeritageSite = require('../models/HeritageSite');
+
+exports.add = async (req, res, next) => {
+  try {
+    if (!(await HeritageSite.exists({ siteId: req.body.siteId }))) return res.status(404).json({ message: 'Heritage site not found.' });
+    if (await Favourite.exists({ userId: req.user.id, siteId: req.body.siteId })) return res.status(409).json({ message: 'This site is already in your favourites.' });
+    const item = await Favourite.create({ userId: req.user.id, siteId: req.body.siteId });
+    res.status(201).json(item);
+  } catch (error) { next(error); }
+};
+exports.list = async (req, res, next) => { try { res.json(await Favourite.find({ userId: req.user.id }).sort({ createdAt: -1 })); } catch (error) { next(error); } };
+exports.remove = async (req, res, next) => {
+  try {
+    const item = await Favourite.findOneAndDelete({ userId: req.user.id, siteId: req.params.siteId });
+    if (!item) return res.status(404).json({ message: 'Favourite not found.' });
+    res.json({ message: 'Favourite removed successfully.' });
+  } catch (error) { next(error); }
+};

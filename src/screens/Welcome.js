@@ -36,7 +36,7 @@ export default function WelcomeScreen({ onStart }) {
           </View>
         </View>
 
-        <PrimaryButton onPress={onStart} style={{ marginTop: 22 }}>
+        <PrimaryButton onPress={onStart} style={styles.startButton}>
           Get Started
         </PrimaryButton>
       </View>
@@ -79,6 +79,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     width: '100%',
   },
+  startButton: { marginTop: 22 },
   logoShell: {
     marginBottom: 14,
     padding: 14,

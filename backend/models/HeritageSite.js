@@ -2,25 +2,19 @@ const mongoose = require('mongoose');
 
 const heritageSiteSchema = new mongoose.Schema({
   siteId: { type: String, required: true, unique: true, trim: true },
+  state: { type: String, required: true },
+  district: { type: String, required: true },
   name: { type: String, required: true, trim: true },
-  title: String,
-  location: { type: String, required: true },
-  city: String,
-  district: String,
-  state: String,
-  stateCode: String,
-  image: String,
-  imageUrl: String,
-  timings: String,
-  visitorTimings: String,
-  duration: String,
-  description: { type: String, required: true },
   category: { type: String, required: true },
-  type: String,
-  unesco: Boolean,
-  latitude: Number,
-  longitude: Number,
-  wikipediaUrl: String,
+  description: { type: String },
+  latitude: { type: Number },
+  longitude: { type: Number },
+  image_url: { type: String },
+  image_status: { type: String }, // e.g. "missing", "valid"
+  wikidata_qid: { type: String },
+  osm_id: { type: String },
+  category_status: { type: String }, // e.g. "ambiguous", "valid"
+  source: { type: String } // e.g. "wikidata", "osm", "merged"
 }, { timestamps: true });
 
 module.exports = mongoose.model('HeritageSite', heritageSiteSchema);
