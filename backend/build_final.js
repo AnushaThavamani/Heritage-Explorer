@@ -1,0 +1,187 @@
+const fs = require('fs');
+const oldMadurai = require('./data/tamilnadu_heritage_sites.js').filter(s => s.district === 'Madurai');
+
+const newSites = [
+  // Vellore
+  {
+    siteId: 'vellore-fort', name: 'Vellore Fort', title: 'Vellore Fort', location: 'Vellore, Tamil Nadu', city: 'Vellore', district: 'Vellore', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Forts', type: 'Granite Fort', visitorTimings: '8:00 AM - 6:00 PM', duration: '2 hours',
+    description: 'A large 16th-century fort situated in heart of the Vellore city. Known for its grand ramparts, wide moat and robust masonry.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/7/77/Vellore_Fort.jpg', unesco: false, latitude: 12.9229, longitude: 79.1288
+  },
+  {
+    siteId: 'jalakandeswarar-temple', name: 'Jalakandeswarar Temple', title: 'Jalakandeswarar Temple', location: 'Vellore, Tamil Nadu', city: 'Vellore', district: 'Vellore', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Temples', type: 'Vijayanagaram Temple', visitorTimings: '6:30 AM - 8:00 PM', duration: '1 hour',
+    description: 'A beautiful temple located inside the Vellore Fort, noted for its intricate stone carvings and rich history.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/6/69/Jalakandeswarar_Temple.jpg', unesco: false, latitude: 12.9231, longitude: 79.1292
+  },
+  {
+    siteId: 'government-museum-vellore', name: 'Government Museum, Vellore', title: 'Government Museum, Vellore', location: 'Vellore, Tamil Nadu', city: 'Vellore', district: 'Vellore', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Museums', type: 'Museum', visitorTimings: '9:00 AM - 5:00 PM', duration: '1.5 hours',
+    description: 'A multi-purpose museum showcasing archaeology, history, geology, and botany of the Vellore region.',
+    image_url: 'https://media-cdn.tripadvisor.com/media/photo-s/0d/18/88/54/government-museum.jpg', unesco: false, latitude: 12.9240, longitude: 79.1290
+  },
+  
+  // Thanjavur
+  {
+    siteId: 'brihadeeswarar-temple', name: 'Brihadeeswarar Temple', title: 'Brihadeeswarar Temple', location: 'Thanjavur, Tamil Nadu', city: 'Thanjavur', district: 'Thanjavur', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Temples', type: 'Chola Temple', visitorTimings: '6:00 AM - 8:30 PM', duration: '2 hours',
+    description: 'A Chola-era architectural masterpiece with a towering vimana and historic murals. It is a UNESCO World Heritage site.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/9/9f/Brihadisvara_Temple_Thanjavur.jpg', unesco: true, latitude: 10.7828, longitude: 79.1318
+  },
+  {
+    siteId: 'thanjavur-maratha-palace', name: 'Thanjavur Maratha Palace', title: 'Thanjavur Maratha Palace', location: 'Thanjavur, Tamil Nadu', city: 'Thanjavur', district: 'Thanjavur', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Palaces', type: 'Royal Palace', visitorTimings: '9:00 AM - 5:00 PM', duration: '2 hours',
+    description: 'The official residence of the Bhonsle family who ruled over the Tanjore region from 1674 to 1855.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Thanjavur_Maratha_Palace-WUS02790.jpg', unesco: false, latitude: 10.7905, longitude: 79.1352
+  },
+  {
+    siteId: 'saraswathi-mahal-library', name: 'Saraswathi Mahal Library', title: 'Saraswathi Mahal Library', location: 'Thanjavur, Tamil Nadu', city: 'Thanjavur', district: 'Thanjavur', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Museums', type: 'Library', visitorTimings: '10:00 AM - 1:00 PM, 1:30 PM - 5:30 PM', duration: '1.5 hours',
+    description: 'One of the oldest libraries in Asia, displaying a rare collection of Palm leaf manuscripts and paper written in Tamil, Hindi, Telugu, Marathi, and English.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/7/76/2013-Sarasvati-Mahal-Library-101.JPG', unesco: false, latitude: 10.7906, longitude: 79.1354
+  },
+  
+  // Kancheepuram
+  {
+    siteId: 'kailasanathar-temple', name: 'Kailasanathar Temple', title: 'Kailasanathar Temple', location: 'Kancheepuram, Tamil Nadu', city: 'Kancheepuram', district: 'Kancheepuram', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Temples', type: 'Pallava Temple', visitorTimings: '6:00 AM - 12:00 PM, 4:00 PM - 7:00 PM', duration: '1 hour',
+    description: 'The oldest structure in Kancheepuram. Built by the Pallavas, it features stunning sandstone carvings.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/2/23/Kanchi_Kailasanathar_Temple.jpg', unesco: false, latitude: 12.8421, longitude: 79.6908
+  },
+  {
+    siteId: 'ekambareswarar-temple', name: 'Ekambareswarar Temple', title: 'Ekambareswarar Temple', location: 'Kancheepuram, Tamil Nadu', city: 'Kancheepuram', district: 'Kancheepuram', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Temples', type: 'Dravidian Temple', visitorTimings: '6:00 AM - 12:30 PM, 4:00 PM - 8:30 PM', duration: '2 hours',
+    description: 'One of the Pancha Bhoota Stalas associated with the element of Earth, known for its massive 59-meter tall gopuram.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/3/30/Ekambareswarar_Temple_Gopuram.jpg', unesco: false, latitude: 12.8475, longitude: 79.6999
+  },
+  {
+    siteId: 'varadharaja-perumal-temple', name: 'Varadharaja Perumal Temple', title: 'Varadharaja Perumal Temple', location: 'Kancheepuram, Tamil Nadu', city: 'Kancheepuram', district: 'Kancheepuram', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Temples', type: 'Divya Desam', visitorTimings: '6:00 AM - 12:00 PM, 3:30 PM - 8:00 PM', duration: '2 hours',
+    description: 'A massive temple complex dedicated to Lord Vishnu, featuring a 100-pillared hall with incredibly intricate sculptures.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/d/dd/Varadharaja_Perumal_Temple_8.jpg', unesco: false, latitude: 12.8193, longitude: 79.7246
+  },
+  
+  // Coimbatore
+  {
+    siteId: 'marudamalai-temple', name: 'Marudamalai Temple', title: 'Marudamalai Temple', location: 'Coimbatore, Tamil Nadu', city: 'Coimbatore', district: 'Coimbatore', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Temples', type: 'Hill Temple', visitorTimings: '5:30 AM - 1:00 PM, 2:00 PM - 8:30 PM', duration: '2 hours',
+    description: 'A 12th-century hill temple dedicated to Lord Murugan, set amidst lush green surroundings on a hillock.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/Marudamalai.jpg', unesco: false, latitude: 11.0450, longitude: 76.8524
+  },
+  {
+    siteId: 'perur-pateeswarar-temple', name: 'Perur Pateeswarar Temple', title: 'Perur Pateeswarar Temple', location: 'Coimbatore, Tamil Nadu', city: 'Coimbatore', district: 'Coimbatore', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Temples', type: 'Dravidian Temple', visitorTimings: '5:00 AM - 12:00 PM, 4:00 PM - 9:00 PM', duration: '1 hour',
+    description: 'An ancient temple dedicated to Lord Shiva, known for the Kanaka Sabha (Golden Hall) featuring a beautiful Nataraja idol.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/4/4b/Perur_Pateeswarar_Temple.jpg', unesco: false, latitude: 10.9856, longitude: 76.9248
+  },
+  {
+    siteId: 'gass-forest-museum', name: 'Gass Forest Museum', title: 'Gass Forest Museum', location: 'Coimbatore, Tamil Nadu', city: 'Coimbatore', district: 'Coimbatore', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Museums', type: 'Natural History', visitorTimings: '9:00 AM - 1:00 PM, 2:00 PM - 5:00 PM (Closed Sundays)', duration: '1 hour',
+    description: 'A government-run natural history museum situated at the Forest College Campus, exhibiting a fascinating array of forestry and wildlife artifacts.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/f/fb/Gauss_museum.jpg', unesco: false, latitude: 11.0150, longitude: 76.9419
+  },
+  
+  // Ramanathapuram
+  {
+    siteId: 'ramanathaswamy-temple', name: 'Ramanathaswamy Temple', title: 'Ramanathaswamy Temple', location: 'Rameswaram, Tamil Nadu', city: 'Rameswaram', district: 'Ramanathapuram', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Temples', type: 'Jyotirlinga', visitorTimings: '4:30 AM - 1:00 PM, 3:00 PM - 8:30 PM', duration: '2 hours',
+    description: 'A Hindu temple dedicated to the god Shiva located on Rameswaram island. It has the longest corridor among all Hindu temples in India.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/8/84/Ramanathaswamy_temple7.JPG', unesco: false, latitude: 9.2881, longitude: 79.3174
+  },
+  {
+    siteId: 'ramalinga-vilasam-palace', name: 'Ramalinga Vilasam Palace', title: 'Ramalinga Vilasam Palace', location: 'Ramanathapuram, Tamil Nadu', city: 'Ramanathapuram', district: 'Ramanathapuram', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Palaces', type: 'Royal Palace', visitorTimings: '10:00 AM - 5:00 PM', duration: '1 hour',
+    description: 'The palace of the Sethupathi kings, renowned for its exceptional mural paintings depicting the life and times of the royals.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Ramalinga_Vilasam_Palace.jpg', unesco: false, latitude: 9.3662, longitude: 78.8354
+  },
+  {
+    siteId: 'uthirakosamangai-temple', name: 'Uthirakosamangai Temple', title: 'Uthirakosamangai Temple', location: 'Uthirakosamangai, Tamil Nadu', city: 'Uthirakosamangai', district: 'Ramanathapuram', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Temples', type: 'Ancient Temple', visitorTimings: '6:00 AM - 12:00 PM, 4:00 PM - 8:00 PM', duration: '1.5 hours',
+    description: 'An ancient Shiva temple considered to be one of the oldest in the world, featuring a rare 5.5-foot tall emerald Nataraja idol.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/5/5d/Uthirakosamangai_entrance_vihmana.JPG', unesco: false, latitude: 9.3190, longitude: 78.7369
+  },
+
+  // Thoothukudi
+  {
+    siteId: 'adichanallur', name: 'Adichanallur Archaeological Site', title: 'Adichanallur Archaeological Site', location: 'Adichanallur, Tamil Nadu', city: 'Adichanallur', district: 'Thoothukudi', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Monuments', type: 'Archaeological Site', visitorTimings: '9:00 AM - 5:00 PM', duration: '1 hour',
+    description: 'An ancient iron-age burial site that provided crucial evidence of an advanced civilization dating back over 3000 years.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/4/46/Adichanallur_Urn.jpg', unesco: false, latitude: 8.6277, longitude: 77.8761
+  },
+  {
+    siteId: 'kazhugumalai', name: 'Kazhugumalai (Vettuvankoil)', title: 'Kazhugumalai', location: 'Kazhugumalai, Tamil Nadu', city: 'Kazhugumalai', district: 'Thoothukudi', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Temples', type: 'Rock-cut Temple', visitorTimings: '8:00 AM - 5:00 PM', duration: '1.5 hours',
+    description: 'An unfinished rock-cut Hindu temple carved from a single granite rock during the Pandyan era, often called the "Ellora of the South".',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/5/5d/Vettuvan_Kovil_%283%29.jpg', unesco: false, latitude: 9.1557, longitude: 77.7121
+  },
+  {
+    siteId: 'panchalankurichi-fort', name: 'Panchalankurichi Fort', title: 'Panchalankurichi Fort', location: 'Panchalankurichi, Tamil Nadu', city: 'Panchalankurichi', district: 'Thoothukudi', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Forts', type: 'Historical Fort', visitorTimings: '8:00 AM - 6:00 PM', duration: '1 hour',
+    description: 'A historic fort that belonged to Veerapandiya Kattabomman, a legendary 18th-century chieftain who fought against the British.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/a/ab/Kattabomman_fort_entrance.jpg', unesco: false, latitude: 8.9248, longitude: 78.0264
+  },
+
+  // Tiruchirappalli
+  {
+    siteId: 'rockfort-temple', name: 'Rockfort Temple', title: 'Rockfort Temple', location: 'Tiruchirappalli, Tamil Nadu', city: 'Tiruchirappalli', district: 'Tiruchirappalli', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Forts', type: 'Rock Fort & Temple', visitorTimings: '6:00 AM - 8:00 PM', duration: '2 hours',
+    description: 'A historic fortification and temple complex built on an ancient rock overlooking the city, offering panoramic views.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/6/62/The_tank_and_Rockfort_Trichinopoly.jpg', unesco: false, latitude: 10.8277, longitude: 78.6973
+  },
+  {
+    siteId: 'sri-ranganathaswamy-temple', name: 'Sri Ranganathaswamy Temple', title: 'Sri Ranganathaswamy Temple', location: 'Srirangam, Tamil Nadu', city: 'Srirangam', district: 'Tiruchirappalli', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Temples', type: 'Dravidian Temple', visitorTimings: '6:00 AM - 9:00 PM', duration: '3 hours',
+    description: 'The largest functioning Hindu temple in the world, renowned for its massive gopurams and seven concentric walled sections.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Ranganathaswamy_temple_tiruchirappalli.jpg', unesco: true, latitude: 10.8624, longitude: 78.6901
+  },
+  {
+    siteId: 'jambukeswarar-temple', name: 'Jambukeswarar Temple', title: 'Jambukeswarar Temple', location: 'Thiruvanaikaval, Tamil Nadu', city: 'Thiruvanaikaval', district: 'Tiruchirappalli', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Temples', type: 'Pancha Bhoota Stalam', visitorTimings: '5:30 AM - 1:00 PM, 3:00 PM - 8:30 PM', duration: '2 hours',
+    description: 'A famous Shiva temple representing the element of water (Appu Lingam), showcasing exquisite Chola architecture.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/6/68/Tiruvanaikaval5.jpg', unesco: false, latitude: 10.8533, longitude: 78.7055
+  },
+
+  // Kanyakumari
+  {
+    siteId: 'vivekananda-rock-memorial', name: 'Vivekananda Rock Memorial', title: 'Vivekananda Rock Memorial', location: 'Kanyakumari, Tamil Nadu', city: 'Kanyakumari', district: 'Kanyakumari', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Monuments', type: 'Memorial', visitorTimings: '8:00 AM - 4:00 PM', duration: '2 hours',
+    description: 'A popular tourist monument built on a rock situated in the ocean, honoring Swami Vivekananda who attained enlightenment here.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/b/b6/RockMemorial.jpg', unesco: false, latitude: 8.0780, longitude: 77.5552
+  },
+  {
+    siteId: 'thiruvalluvar-statue', name: 'Thiruvalluvar Statue', title: 'Thiruvalluvar Statue', location: 'Kanyakumari, Tamil Nadu', city: 'Kanyakumari', district: 'Kanyakumari', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Monuments', type: 'Colossal Statue', visitorTimings: '8:00 AM - 4:00 PM', duration: '1 hour',
+    description: 'A 133-feet tall stone sculpture of the Tamil poet and philosopher Valluvar, author of the Tirukkural.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/d/d7/Thiruvalluvar_Statue_at_Kanyakumari_02.jpg', unesco: false, latitude: 8.0777, longitude: 77.5540
+  },
+  {
+    siteId: 'suchindram-temple', name: 'Suchindram Thanumalayan Temple', title: 'Suchindram Thanumalayan Temple', location: 'Suchindram, Tamil Nadu', city: 'Suchindram', district: 'Kanyakumari', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Temples', type: 'Dravidian Temple', visitorTimings: '4:30 AM - 11:30 AM, 5:00 PM - 8:30 PM', duration: '1.5 hours',
+    description: 'A unique temple dedicated to the Trimurti (Brahma, Vishnu, and Shiva) represented by a single image, known for its musical pillars.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/8/82/SUCHINDAM_%283%29.jpg', unesco: false, latitude: 8.1557, longitude: 77.4645
+  },
+
+  // Pudukkottai
+  {
+    siteId: 'thirumayam-fort', name: 'Thirumayam Fort', title: 'Thirumayam Fort', location: 'Thirumayam, Tamil Nadu', city: 'Thirumayam', district: 'Pudukkottai', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Forts', type: 'Hill Fort', visitorTimings: '8:00 AM - 5:00 PM', duration: '1.5 hours',
+    description: 'A 40-acre fortress originally built by the Setupati of Ramanathapuram, featuring rock-cut temples and historical significance.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/4/4b/Fort_of_thirumayam.jpg', unesco: false, latitude: 10.2447, longitude: 78.7503
+  },
+  {
+    siteId: 'sittannavasal-cave', name: 'Sittannavasal Cave', title: 'Sittannavasal Cave', location: 'Sittannavasal, Tamil Nadu', city: 'Sittannavasal', district: 'Pudukkottai', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Monuments', type: 'Rock-cut Jain Temple', visitorTimings: '9:00 AM - 5:30 PM', duration: '1 hour',
+    description: 'A 2nd-century Jain complex of caves featuring exquisite fresco paintings similar to those in Ajanta.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/2/22/%E0%AE%9A%E0%AE%BF%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AE%A9%E0%AF%8D%E0%AE%A9%E0%AE%B5%E0%AE%BE%E0%AE%9A%E0%AE%B2%E0%AF%8D.jpg', unesco: false, latitude: 10.4578, longitude: 78.7230
+  },
+  {
+    siteId: 'narthamalai', name: 'Narthamalai', title: 'Narthamalai', location: 'Narthamalai, Tamil Nadu', city: 'Narthamalai', district: 'Pudukkottai', state: 'Tamil Nadu', stateCode: 'TN',
+    category: 'Temples', type: 'Chola Rock-cut Temple', visitorTimings: '8:00 AM - 6:00 PM', duration: '1.5 hours',
+    description: 'One of the oldest structural stone temples in South India, featuring the majestic Vijayalaya Choleeswaram built by the early Cholas.',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/4/4a/Nathamalai_siva_temple.jpg', unesco: false, latitude: 10.5186, longitude: 78.7562
+  }
+];
+
+const finalData = [...oldMadurai, ...newSites];
+fs.writeFileSync('./data/tamilnadu_heritage_sites.js', 'module.exports = ' + JSON.stringify(finalData, null, 2) + ';');

@@ -14,7 +14,7 @@ export default function AdminSitesScreen({ onBack }) {
   const save = async () => {
     if (!form.siteId || !form.name || !form.description || !form.location || !form.category || form.latitude === '' || form.longitude === '') return Alert.alert('Required fields', 'Complete the ID, name, description, location, category, latitude and longitude.');
     setSaving(true);
-    const payload = { ...form, latitude: Number(form.latitude), longitude: Number(form.longitude), images: form.image ? [form.image] : [] };
+    const payload = { ...form, district: form.location, latitude: Number(form.latitude), longitude: Number(form.longitude), images: form.image ? [form.image] : [] };
     const result = editing ? await updateSite(editing, payload) : await createSite(payload);
     setSaving(false);
     if (result) { Alert.alert(editing ? 'Site updated' : 'Site created', 'The heritage-site list has been refreshed.'); setEditing(null); setForm(blank); }

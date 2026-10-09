@@ -3,11 +3,9 @@ const HeritageSite = require('../models/HeritageSite');
 exports.list = async (req, res, next) => {
   try {
     const { state, district, category } = req.query;
-    if (!state || !district) {
-      return res.status(400).json({ message: 'State and district are required.' });
-    }
-
-    const query = { state, district };
+    const query = {};
+    if (state) query.state = state;
+    if (district) query.district = district;
     if (category) {
       query.category = category;
     }

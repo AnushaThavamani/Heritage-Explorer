@@ -1,29 +1,34 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useState } from 'react';
 import { Image, Text, View, StyleSheet } from 'react-native';
-
-function normalizeUri(uri) {
-  if (!uri || typeof uri !== 'string') {
-    return '';
-  }
-
-  return encodeURI(uri.trim());
-}
-
-const FALLBACK_IMAGE = 'https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1200&q=80';
+import { API_URL } from '../config/api';
 
 export default function HeritageImage({ uri, style, fallbackText = 'Image unavailable', accessibilityLabel }) {
   const [hasError, setHasError] = useState(false);
-  const [sourceUri, setSourceUri] = useState('');
-  const [usingFallback, setUsingFallback] = useState(false);
-  const safeUri = useMemo(() => normalizeUri(uri), [uri]);
+  const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    setHasError(false);
-    setUsingFallback(false);
-    setSourceUri(safeUri);
-  }, [safeUri]);
+  const safeUri = (uri || '').trim();
+  const isWiki = safeUri.includes('wikimedia.org') || safeUri.includes('wikipedia.org');
+  
+  let finalUri = safeUri;
+  if (isWiki) {
+    try {
+      const decoded = decodeURIComponent(safeUri);
+      finalUri = `https://wsrv.nl/?url=${encodeURIComponent(decoded)}&w=600&output=webp`;
+    } catch {
+      finalUri = `https://wsrv.nl/?url=${encodeURIComponent(safeUri)}&w=600&output=webp`;
+    }
+  } else if (safeUri) {
+    finalUri = safeUri.includes('?') ? `${safeUri}&cb=6` : `${safeUri}?cb=6`;
+  }
+  
+  const source = { 
+    uri: finalUri,
+    headers: {
+      'User-Agent': 'HeritageExplorer/1.0'
+    }
+  };
 
-  if (hasError || !sourceUri) {
+  if (hasError || !safeUri) {
     return (
       <View style={[styles.fallback, style]}>
         <Text style={styles.fallbackText}>{fallbackText}</Text>
@@ -33,13 +38,23 @@ export default function HeritageImage({ uri, style, fallbackText = 'Image unavai
 
   return (
     <Image
-      source={{ uri: sourceUri }}
+      source={source}
       style={style}
       resizeMode="cover"
       accessibilityLabel={accessibilityLabel || fallbackText}
-      onError={() => {
-        if (usingFallback) setHasError(true);
-        else { setUsingFallback(true); setSourceUri(FALLBACK_IMAGE); }
+      onLoadStart={() => {
+        setLoading(true);
+        console.log('IMAGE LOAD START:', safeUri);
+      }}
+      onLoad={() => {
+        setLoading(false);
+        console.log('IMAGE LOAD SUCCESS:', safeUri);
+      }}
+      onError={(e) => {
+        setLoading(false);
+        setHasError(true);
+        console.log('IMAGE LOAD ERROR:', e.nativeEvent.error);
+        console.log('FAILED URL:', safeUri);
       }}
     />
   );

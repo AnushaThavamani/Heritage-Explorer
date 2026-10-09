@@ -17,6 +17,7 @@ import ProfileScreen from '../screens/Profile';
 import DetailsScreen from '../screens/Details';
 import InfoScreen from '../screens/Info';
 import AdminSitesScreen from '../screens/AdminSites';
+import StorageViewerScreen from '../screens/StorageViewer';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -40,7 +41,7 @@ function HomeRoute({ navigation }) { return <HomeScreen onOpenDetails={site => o
 function ExploreRoute({ navigation }) { return <ExploreScreen onOpenDetails={site => openDetails(navigation, site)} />; }
 function TrailRoute({ navigation }) { return <TrailScreen onOpenDetails={site => openDetails(navigation, site)} />; }
 function FavoritesRoute({ navigation }) { return <FavoritesScreen onOpenDetails={site => openDetails(navigation, site)} onOpenTrail={() => navigation.navigate('Trail')} />; }
-function ProfileRoute({ navigation }) { const { logout: clearLocal } = useHeritage(); const { logout } = useAuth(); return <ProfileScreen onOpenVisited={() => navigation.getParent()?.navigate('Visited')} onOpenAdmin={() => navigation.getParent()?.navigate('AdminSites')} onLogout={async () => { await logout(); await clearLocal(); navigation.getParent()?.reset({ index: 0, routes: [{ name: 'Login' }] }); }} />; }
+function ProfileRoute({ navigation }) { const { logout: clearLocal } = useHeritage(); const { logout } = useAuth(); return <ProfileScreen onOpenStorage={() => navigation.getParent()?.navigate('StorageViewer')} onOpenVisited={() => navigation.getParent()?.navigate('Visited')} onOpenAdmin={() => navigation.getParent()?.navigate('AdminSites')} onLogout={async () => { await logout(); await clearLocal(); navigation.getParent()?.reset({ index: 0, routes: [{ name: 'Login' }] }); }} />; }
 
 export function MainTabs() {
   return <Tab.Navigator screenOptions={{ headerShown: false, tabBarStyle: styles.tabBar, tabBarItemStyle: styles.tabItem, tabBarLabelStyle: styles.tabLabel, tabBarActiveTintColor: '#B9572B', tabBarInactiveTintColor: '#8A7161', tabBarHideOnKeyboard: true }}>
@@ -54,9 +55,11 @@ export function MainTabs() {
 function DetailsRoute({ navigation, route }) { return <DetailsScreen item={route.params?.site} onBack={() => navigation.goBack()} onOpenTrail={() => navigation.navigate('MainTabs', { screen: 'Trail' })} />; }
 function VisitedRoute({ navigation }) { return <InfoScreen type="visited" onBack={() => navigation.goBack()} />; }
 function AdminSitesRoute({ navigation }) { return <AdminSitesScreen onBack={() => navigation.goBack()} />; }
+function StorageViewerRoute({ navigation }) { return <StorageViewerScreen onBack={() => navigation.goBack()} />; }
+
 export default function AppNavigator() {
   return <NavigationContainer><Stack.Navigator screenOptions={{ headerShown: false, animation: 'slide_from_right', animationDuration: 220, gestureEnabled: true, freezeOnBlur: true }} initialRouteName="Splash">
-    <Stack.Screen name="Splash" component={TimedSplash} /><Stack.Screen name="Welcome" component={WelcomeRoute} /><Stack.Screen name="Login" component={LoginRoute} /><Stack.Screen name="Register" component={RegisterRoute} /><Stack.Screen name="MainTabs" component={MainTabs} /><Stack.Screen name="Details" component={DetailsRoute} /><Stack.Screen name="Visited" component={VisitedRoute} /><Stack.Screen name="AdminSites" component={AdminSitesRoute} />
+    <Stack.Screen name="Splash" component={TimedSplash} /><Stack.Screen name="Welcome" component={WelcomeRoute} /><Stack.Screen name="Login" component={LoginRoute} /><Stack.Screen name="Register" component={RegisterRoute} /><Stack.Screen name="MainTabs" component={MainTabs} /><Stack.Screen name="Details" component={DetailsRoute} /><Stack.Screen name="Visited" component={VisitedRoute} /><Stack.Screen name="AdminSites" component={AdminSitesRoute} /><Stack.Screen name="StorageViewer" component={StorageViewerRoute} />
   </Stack.Navigator></NavigationContainer>;
 }
 const styles = StyleSheet.create({

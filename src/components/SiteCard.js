@@ -6,9 +6,12 @@ import { useHeritage } from '../context/HeritageContext';
 export default function SiteCard({ site, onPress, compact = false }) {
   const { favorites, visited, toggleFavorite } = useHeritage();
   const saved = favorites.includes(site.id);
+  
+  console.log(`\nSITE ID: ${site.siteId || site.id}\nSITE NAME: ${site.name}\nIMAGE URL: ${site.image_url || site.image}\n`);
+  
   return (
     <Pressable style={[styles.card, compact && styles.compact]} onPress={() => onPress(site)}>
-      <HeritageImage uri={site.image} style={styles.image} accessibilityLabel={site.name} />
+      <HeritageImage uri={site.image_url || site.image} style={styles.image} accessibilityLabel={site.name} />
       <View style={styles.body}>
         <View style={styles.topRow}><Text numberOfLines={2} style={styles.name}>{site.name}</Text><Pressable hitSlop={8} onPress={() => toggleFavorite(site.id)}><Text style={styles.heart}>{saved ? '♥' : '♡'}</Text></Pressable></View>
         <Text numberOfLines={1} style={styles.location}>⌖ {site.location}</Text>

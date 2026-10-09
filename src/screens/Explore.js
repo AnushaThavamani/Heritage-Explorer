@@ -13,8 +13,10 @@ export default function ExploreScreen({ onOpenDetails }) {
   const [selectedCategory, setSelectedCategory] = useState('');
 
   const fetchExploreSites = React.useCallback(async (isLoadMore = false) => {
-    if (loading) return;
-    setLoading(true);
+    setLoading(prev => {
+      if (prev) return true;
+      return true;
+    });
     setError('');
     try {
       let url = `/heritage-sites/explore?limit=${LIMIT}`;
@@ -34,14 +36,14 @@ export default function ExploreScreen({ onOpenDetails }) {
     } finally {
       setLoading(false);
     }
-  }, [loading, selectedCategory]);
+  }, [selectedCategory]);
 
   useEffect(() => {
     fetchExploreSites(false);
-  }, [fetchExploreSites]);
+  }, [selectedCategory]); // Only re-fetch when category changes
 
   const handleLoadMore = () => {
-    fetchExploreSites(true);
+    if (!loading) fetchExploreSites(true);
   };
 
   const chips = (items, selected, update) => (
@@ -74,7 +76,7 @@ export default function ExploreScreen({ onOpenDetails }) {
     <View style={styles.screen}>
       <FlatList
         data={sites}
-        keyExtractor={(item, index) => `${item.id}-${index}`} // random may return same item on infinite scroll
+        keyExtractor={(item) => String(item.id)} 
         numColumns={2}
         ListHeaderComponent={header}
         renderItem={({ item }) => <SiteCard site={item} onPress={onOpenDetails} />}
