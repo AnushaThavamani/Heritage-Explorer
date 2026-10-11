@@ -2,7 +2,7 @@ import React from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { useHeritage } from '../context/HeritageContext';
 
-const copy = { settings: ['Settings', 'Personalise your Heritage Explorer', 'Notifications, language and account preferences can be connected here when backend settings are introduced.'], about: ['About Heritage Explorer', 'Discover India’s living history', 'Heritage Explorer helps visitors explore historical places, save favourites and build personal trails.'], help: ['Help & Support', 'How can we help?', 'For assistance with planning a visit or using the app, contact support@heritageexplorer.in.'] };
+const copy = { settings: ['Settings', 'Personalise your Heritage Explorer', 'Notifications, language and account preferences can be connected here when backend settings are introduced.'], about: ['About Heritage Explorer', 'Discover the Heritage of Tamil Nadu', 'Heritage Explorer helps visitors discover authentic historical monuments, rock-cut caves, forts, and archaeological wonders across all 38 districts of Tamil Nadu.'], help: ['Help & Support', 'How can we help?', 'For assistance with planning a visit or using the app, contact support@heritageexplorer.in.'] };
 export default function InfoScreen({ type, onBack }) {
   const { sites, visited, unmarkVisited } = useHeritage();
   if (type === 'visited') {

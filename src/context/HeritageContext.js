@@ -7,7 +7,21 @@ import api, { apiMessage } from '../services/api';
 
 const HeritageContext = createContext(null);
 const initialState = { sites: [], favorites: [], visited: [], trails: [], trail: [], isHydrated: false, isLoadingSites: true, sitesError: '', isLoadingUserData: false };
-const normalizeSite = site => ({ ...site, id: site.siteId || site.id, title: site.title || site.name, timings: site.timings || site.visitorTimings, image: site.image || site.imageUrl || site.images?.[0], latitude: site.latitude ?? site.coordinates?.latitude, longitude: site.longitude ?? site.coordinates?.longitude });
+const normalizeSite = site => {
+  const siteId = site.siteId || site.id;
+  return {
+    ...site,
+    id: siteId,
+    siteId: siteId,
+    city: site.city || site.district,
+    district: site.district || site.city,
+    title: site.title || site.name,
+    timings: site.timings || site.visitorTimings,
+    image: site.image_url || site.image || site.imageUrl || site.images?.[0],
+    latitude: site.latitude ?? site.coordinates?.latitude,
+    longitude: site.longitude ?? site.coordinates?.longitude,
+  };
+};
 function reducer(state, action) {
   switch (action.type) {
     case 'SITES_LOADING': return { ...state, isLoadingSites: true, sitesError: '' };
@@ -83,8 +97,14 @@ export function HeritageProvider({ children }) {
     refreshUserData,
     logout: () => dispatch({ type: 'CLEAR_USER_DATA' }),
   }), [refreshSites, refreshUserData, requireUser, state.favorites, state.trail, state.visited]);
-  const citiesExplored = [...new Set(state.visited.map(visit => state.sites.find(site => site.id === visit.id)?.city).filter(Boolean))].length;
-  const categoriesExplored = [...new Set(state.visited.map(visit => state.sites.find(site => site.id === visit.id)?.category).filter(Boolean))].length;
+  const citiesExplored = [...new Set(state.visited.map(visit => {
+    const site = state.sites.find(s => (s.siteId || s.id) === visit.id);
+    return site?.district || site?.city;
+  }).filter(Boolean))].length;
+  const categoriesExplored = [...new Set(state.visited.map(visit => {
+    const site = state.sites.find(s => (s.siteId || s.id) === visit.id);
+    return site?.category;
+  }).filter(Boolean))].length;
   return <HeritageContext.Provider value={{ ...state, user, reduxFavorites, citiesExplored, categoriesExplored, ...actions }}>{children}</HeritageContext.Provider>;
 }
 export function useHeritage() { const context = useContext(HeritageContext); if (!context) throw new Error('useHeritage must be used within HeritageProvider'); return context; }

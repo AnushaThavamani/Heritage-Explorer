@@ -1,73 +1,110 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, FlatList, Pressable, ActivityIndicator, ScrollView } from 'react-native';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  Pressable,
+  ActivityIndicator,
+  ScrollView
+} from 'react-native';
 import api from '../services/api';
 import SiteCard from '../components/SiteCard';
+import { EXPLORE_CATEGORIES } from '../data/categories';
 
-const CATEGORIES = ['fort', 'palace', 'monument', 'temple', 'archaeological site', 'stone carving'];
 const LIMIT = 10;
 
 export default function ExploreScreen({ onOpenDetails }) {
   const [sites, setSites] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
 
-  const fetchExploreSites = React.useCallback(async (isLoadMore = false) => {
-    setLoading(prev => {
-      if (prev) return true;
-      return true;
-    });
-    setError('');
+  // Race condition guard: ignore stale async responses
+  const activeRequestId = useRef(0);
+
+  const fetchExploreSites = useCallback(async (isLoadMore = false) => {
+    const requestId = ++activeRequestId.current;
+
+    if (isLoadMore) {
+      setLoadingMore(true);
+    } else {
+      setLoading(true);
+      setError('');
+    }
+
     try {
       let url = `/heritage-sites/explore?limit=${LIMIT}`;
       if (selectedCategory) {
-        url += `&category=${selectedCategory}`;
+        url += `&category=${encodeURIComponent(selectedCategory)}`;
       }
+
       const response = await api.get(url);
-      const newSites = response.data.map(site => ({ ...site, id: site.siteId || site.id, title: site.title || site.name, image: site.image_url || site.image }));
-      
-      if (isLoadMore) {
-        setSites(prev => [...prev, ...newSites]);
-      } else {
-        setSites(newSites);
+
+      if (requestId === activeRequestId.current) {
+        const rawList = Array.isArray(response.data) ? response.data : (response.data?.data || []);
+        const newSites = rawList.map(site => ({
+          ...site,
+          id: site.siteId || site.id,
+          title: site.title || site.name,
+          image: site.image_url || site.image
+        }));
+
+        if (isLoadMore) {
+          // Deduplicate by site ID
+          setSites(prev => {
+            const existingIds = new Set(prev.map(s => s.id));
+            const uniqueIncoming = newSites.filter(s => !existingIds.has(s.id));
+            return [...prev, ...uniqueIncoming];
+          });
+        } else {
+          setSites(newSites);
+        }
       }
     } catch (err) {
-      setError('Failed to load discovery feed.');
+      if (requestId === activeRequestId.current) {
+        setError('Failed to load discovery feed. Tap retry below.');
+      }
     } finally {
-      setLoading(false);
+      if (requestId === activeRequestId.current) {
+        setLoading(false);
+        setLoadingMore(false);
+      }
     }
   }, [selectedCategory]);
 
   useEffect(() => {
     fetchExploreSites(false);
-  }, [selectedCategory]); // Only re-fetch when category changes
+  }, [fetchExploreSites]);
 
   const handleLoadMore = () => {
-    if (!loading) fetchExploreSites(true);
+    if (!loading && !loadingMore && sites.length >= LIMIT) {
+      fetchExploreSites(true);
+    }
   };
-
-  const chips = (items, selected, update) => (
-    <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>
-      {items.map(item => (
-        <Pressable 
-          key={item} 
-          onPress={() => update(item === selected ? '' : item)} 
-          style={[styles.chip, selected === item && styles.chipOn]}
-        >
-          <Text style={[styles.chipText, selected === item && styles.chipTextOn]}>
-            {item}
-          </Text>
-        </Pressable>
-      ))}
-    </ScrollView>
-  );
 
   const header = (
     <View style={styles.headerContainer}>
-      <Text style={styles.title}>Global Explorer</Text>
-      <Text style={styles.subtitle}>Discover heritage randomly from all around.</Text>
+      <Text style={styles.title}>Heritage Discovery Feed</Text>
+      <Text style={styles.subtitle}>Discover ancient monuments, rock-cut shrines, and archaeological wonders across Tamil Nadu.</Text>
       <View style={styles.chipsContainer}>
-        {chips(CATEGORIES, selectedCategory, setSelectedCategory)}
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.chips}>
+          {EXPLORE_CATEGORIES.map(cat => {
+            const isSelected = selectedCategory === cat.id;
+            return (
+              <Pressable
+                key={cat.id || 'all'}
+                onPress={() => setSelectedCategory(isSelected ? '' : cat.id)}
+                style={[styles.chip, isSelected && styles.chipOn]}
+              >
+                <Text style={[styles.chipText, isSelected && styles.chipTextOn]}>
+                  {cat.label}
+                </Text>
+              </Pressable>
+            );
+          })}
+        </ScrollView>
       </View>
     </View>
   );
@@ -76,7 +113,7 @@ export default function ExploreScreen({ onOpenDetails }) {
     <View style={styles.screen}>
       <FlatList
         data={sites}
-        keyExtractor={(item) => String(item.id)} 
+        keyExtractor={item => String(item.siteId || item.id)}
         numColumns={2}
         ListHeaderComponent={header}
         renderItem={({ item }) => <SiteCard site={item} onPress={onOpenDetails} />}
@@ -87,11 +124,38 @@ export default function ExploreScreen({ onOpenDetails }) {
         ListEmptyComponent={
           !loading ? (
             <View style={styles.empty}>
-              <Text style={styles.emptyText}>No sites found for this category.</Text>
+              {error ? (
+                <>
+                  <Text style={styles.errorText}>{error}</Text>
+                  <Pressable style={styles.retryButton} onPress={() => fetchExploreSites(false)}>
+                    <Text style={styles.retryButtonText}>↻ Retry</Text>
+                  </Pressable>
+                </>
+              ) : (
+                <>
+                  <Text style={styles.emptyIcon}>🏛</Text>
+                  <Text style={styles.emptyTitle}>No sites found for this category</Text>
+                  <Text style={styles.emptySubtitle}>Try switching to another category or view all.</Text>
+                  {selectedCategory ? (
+                    <Pressable style={styles.clearButton} onPress={() => setSelectedCategory('')}>
+                      <Text style={styles.clearButtonText}>View All</Text>
+                    </Pressable>
+                  ) : null}
+                </>
+              )}
             </View>
           ) : null
         }
-        ListFooterComponent={loading ? <ActivityIndicator size="large" color="#B9572B" style={styles.footerLoader}/> : error ? <Text style={styles.error}>{error}</Text> : null}
+        ListFooterComponent={
+          loadingMore ? (
+            <View style={styles.footerLoaderWrap}>
+              <ActivityIndicator size="small" color="#B9572B" />
+              <Text style={styles.footerLoaderText}>Loading more discoveries...</Text>
+            </View>
+          ) : loading && sites.length === 0 ? (
+            <ActivityIndicator size="large" color="#B9572B" style={styles.footerLoader} />
+          ) : null
+        }
       />
     </View>
   );
@@ -102,16 +166,24 @@ const styles = StyleSheet.create({
   content: { padding: 16, paddingBottom: 28 },
   headerContainer: { marginBottom: 16 },
   title: { color: '#4B2E23', fontSize: 27, fontWeight: '900', marginBottom: 4 },
-  subtitle: { color: '#6F594A', fontSize: 14, fontWeight: '600' },
-  chipsContainer: { marginTop: 10 },
+  subtitle: { color: '#8A7161', fontSize: 13, fontWeight: '600' },
+  chipsContainer: { marginTop: 12 },
   chips: { paddingBottom: 8 },
-  chip: { backgroundColor: '#FFF8F0', borderColor: '#E8D6C3', borderWidth: 1, borderRadius: 17, paddingHorizontal: 13, paddingVertical: 8, marginRight: 8 },
+  chip: { backgroundColor: '#FFF', borderColor: '#E8D6C3', borderWidth: 1, borderRadius: 17, paddingHorizontal: 13, paddingVertical: 8, marginRight: 8 },
   chipOn: { backgroundColor: '#B9572B', borderColor: '#B9572B' },
   chipText: { color: '#6F594A', fontWeight: '700', fontSize: 12 },
-  chipTextOn: { color: '#FFF' },
+  chipTextOn: { color: '#FFF', fontWeight: '800' },
   gridRow: { flexDirection: 'row', justifyContent: 'space-between' },
-  empty: { marginTop: 40, alignItems: 'center' },
-  emptyText: { color: '#6F594A', fontSize: 14 },
-  error: { color: 'red', textAlign: 'center', marginTop: 10 },
-  footerLoader: { marginVertical: 20 }
+  empty: { marginTop: 40, alignItems: 'center', paddingHorizontal: 20 },
+  emptyIcon: { fontSize: 36, marginBottom: 8 },
+  emptyTitle: { color: '#4B2E23', fontSize: 16, fontWeight: '800', textAlign: 'center', marginBottom: 4 },
+  emptySubtitle: { color: '#8A7161', fontSize: 13, textAlign: 'center', marginBottom: 12 },
+  clearButton: { borderWidth: 1, borderColor: '#B9572B', paddingHorizontal: 14, paddingVertical: 7, borderRadius: 8 },
+  clearButtonText: { color: '#B9572B', fontWeight: '700', fontSize: 12 },
+  errorText: { color: '#B23B2B', fontSize: 14, fontWeight: '700', textAlign: 'center', marginBottom: 12 },
+  retryButton: { backgroundColor: '#B9572B', paddingHorizontal: 18, paddingVertical: 9, borderRadius: 10 },
+  retryButtonText: { color: '#FFF', fontWeight: '800', fontSize: 13 },
+  footerLoader: { marginVertical: 30 },
+  footerLoaderWrap: { flexDirection: 'row', justifyContent: 'center', alignItems: 'center', paddingVertical: 16 },
+  footerLoaderText: { color: '#8A7161', fontSize: 12, marginLeft: 8, fontWeight: '600' }
 });

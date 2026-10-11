@@ -5,19 +5,31 @@ import { useHeritage } from '../context/HeritageContext';
 
 export default function SiteCard({ site, onPress, compact = false }) {
   const { favorites, visited, toggleFavorite } = useHeritage();
-  const saved = favorites.includes(site.id);
-  
-  console.log(`\nSITE ID: ${site.siteId || site.id}\nSITE NAME: ${site.name}\nIMAGE URL: ${site.image_url || site.image}\n`);
+  const siteKey = site.siteId || site.id;
+  const saved = favorites.includes(siteKey);
   
   return (
     <Pressable style={[styles.card, compact && styles.compact]} onPress={() => onPress(site)}>
-      <HeritageImage uri={site.image_url || site.image} style={styles.image} accessibilityLabel={site.name} />
+      <HeritageImage
+        uri={site.image_url || site.image}
+        style={styles.image}
+        accessibilityLabel={site.name}
+        fallbackText="Tamil Nadu Heritage Archive"
+      />
       <View style={styles.body}>
-        <View style={styles.topRow}><Text numberOfLines={2} style={styles.name}>{site.name}</Text><Pressable hitSlop={8} onPress={() => toggleFavorite(site.id)}><Text style={styles.heart}>{saved ? '♥' : '♡'}</Text></Pressable></View>
+        <View style={styles.topRow}>
+          <Text numberOfLines={2} style={styles.name}>{site.name}</Text>
+          <Pressable hitSlop={10} onPress={() => toggleFavorite(siteKey)} accessibilityRole="button" accessibilityLabel={saved ? "Remove from favorites" : "Save to favorites"}>
+            <Text style={[styles.heart, saved && styles.heartActive]}>{saved ? '♥' : '♡'}</Text>
+          </Pressable>
+        </View>
         <Text numberOfLines={1} style={styles.location}>⌖ {site.location}</Text>
         <Text numberOfLines={1} style={styles.district}>District: {site.district || site.city}</Text>
-        <View style={styles.badges}><Text style={styles.category}>{site.category}</Text>{visited.some(visit => visit.id === site.id) ? <Text style={styles.visited}>Visited</Text> : null}</View>
-        {!compact ? <Text numberOfLines={1} style={styles.timing}>◷ {site.timings}</Text> : null}
+        <View style={styles.badges}>
+          <Text style={styles.category}>{site.category}</Text>
+          {visited.some(visit => (visit.siteId || visit.id) === siteKey) ? <Text style={styles.visited}>✓ Visited</Text> : null}
+        </View>
+        {!compact ? <Text numberOfLines={1} style={styles.timing}>◷ {site.timings || 'Timings available on site'}</Text> : null}
       </View>
     </Pressable>
   );

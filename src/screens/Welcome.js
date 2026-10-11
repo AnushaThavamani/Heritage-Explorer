@@ -15,34 +15,34 @@ export default function WelcomeScreen({ onStart }) {
         </View>
 
         <Text style={styles.appTitle}>Heritage Explorer</Text>
-        <Text style={styles.tagline}>Discover India's Timeless Heritage</Text>
+        <Text style={styles.tagline}>Discover the Heritage of Tamil Nadu</Text>
 
         <Text style={styles.welcomeMessage}>
-          Explore historic monuments, discover fascinating stories, and create your own heritage journey.
+          Journey through ancient temples, forgotten caves, mighty forts, royal palaces, stone inscriptions, and archaeological wonders that preserve the stories of Tamil Nadu.
         </Text>
 
         <View style={styles.statRow}>
           <View style={styles.statCard}>
-            <Text style={styles.statValue}>06</Text>
+            <Text style={styles.statValue}>38</Text>
+            <Text style={styles.statLabel}>Districts</Text>
+          </View>
+          <View style={styles.statCard}>
+            <Text style={styles.statValue}>230+</Text>
             <Text style={styles.statLabel}>Sites</Text>
           </View>
           <View style={styles.statCard}>
-            <Text style={styles.statValue}>04</Text>
-            <Text style={styles.statLabel}>Views</Text>
-          </View>
-          <View style={styles.statCard}>
-            <Text style={styles.statValue}>01</Text>
-            <Text style={styles.statLabel}>Trail</Text>
+            <Text style={styles.statValue}>7</Text>
+            <Text style={styles.statLabel}>Categories</Text>
           </View>
         </View>
 
         <PrimaryButton onPress={onStart} style={styles.startButton}>
-          Get Started
+          Begin Your Journey
         </PrimaryButton>
       </View>
 
       <View style={styles.footer}>
-        <Text style={styles.footerText}>Explore • Discover • Remember</Text>
+        <Text style={styles.footerText}>Stories Etched in Stone • Explore Across Tamil Nadu</Text>
       </View>
     </ScrollView>
   );
