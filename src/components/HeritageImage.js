@@ -39,8 +39,18 @@ export default function HeritageImage({
     }
   }, [uri, directUri]);
 
-  // Compute effective URI based on stage
-  const effectiveUri = stage === 0 ? directUri : stage === 1 ? proxyUri : null;
+  // Determine whether to use proxy first (Wikimedia requires compliant backend User-Agent)
+  const isWikimedia = Boolean(
+    directUri && (directUri.includes('wikimedia.org') || directUri.includes('wikipedia.org'))
+  );
+
+  // Stage 0: preferred URL (proxy for wikimedia, direct otherwise)
+  // Stage 1: fallback URL (direct for wikimedia, proxy otherwise)
+  // Stage 2: placeholder
+  const primaryUri = isWikimedia && proxyUri ? proxyUri : directUri;
+  const secondaryUri = isWikimedia ? directUri : proxyUri;
+
+  const effectiveUri = stage === 0 ? primaryUri : stage === 1 ? secondaryUri : null;
 
   // Handle unavailable image: show architectural placeholder
   if (!effectiveUri || stage >= 2) {
@@ -57,12 +67,12 @@ export default function HeritageImage({
 
   const handleError = () => {
     setLoading(false);
-    if (stage === 0 && proxyUri) {
-      // Retry via backend proxy
+    if (stage === 0 && secondaryUri && secondaryUri !== primaryUri) {
+      // Retry with alternative URL
       setStage(1);
       setLoading(true);
     } else {
-      // Both direct and proxy failed → show placeholder
+      // Both failed → show placeholder
       setStage(2);
     }
   };
@@ -71,14 +81,8 @@ export default function HeritageImage({
     <View style={[styles.wrapper, style]}>
       <Image
         key={effectiveUri}
-        source={{
-          uri: effectiveUri,
-          headers: {
-            'User-Agent': 'HeritageExplorer/1.0 (https://github.com/AnushaThavamani/Heritage-Explorer; developer@heritageexplorer.app)',
-            'Accept': 'image/webp,image/jpeg,image/*,*/*',
-          },
-        }}
-        style={StyleSheet.absoluteFillObject}
+        source={{ uri: effectiveUri }}
+        style={[StyleSheet.absoluteFillObject, styles.imageFull]}
         resizeMode="cover"
         accessibilityRole="image"
         accessibilityLabel={accessibilityLabel || 'Heritage site photograph'}
@@ -106,6 +110,10 @@ export default function HeritageImage({
 }
 
 const styles = StyleSheet.create({
+  imageFull: {
+    width: '100%',
+    height: '100%',
+  },
   wrapper: {
     backgroundColor: '#EADCCF',
     overflow: 'hidden',
