@@ -72,6 +72,9 @@ yarn-error.log
 # testing
 /coverage
 
+# runtime cache
+backend/cache/
+
 # Yarn
 .yarn/*
 !.yarn/patches

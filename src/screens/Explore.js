@@ -11,6 +11,7 @@ import {
 import api from '../services/api';
 import SiteCard from '../components/SiteCard';
 import { EXPLORE_CATEGORIES } from '../data/categories';
+import { normalizeImageUrl } from '../utils/imageUtils';
 
 const LIMIT = 10;
 
@@ -48,7 +49,8 @@ export default function ExploreScreen({ onOpenDetails }) {
           ...site,
           id: site.siteId || site.id,
           title: site.title || site.name,
-          image: site.image_url || site.image
+          image_url: normalizeImageUrl(site.image_url || site.image),
+          image: normalizeImageUrl(site.image_url || site.image),
         }));
 
         if (isLoadMore) {

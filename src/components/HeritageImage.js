@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ActivityIndicator, Image, StyleSheet, Text, View } from 'react-native';
+import { normalizeImageUrl, buildProxyUrl } from '../utils/imageUtils';
 
 /**
  * Resilient HeritageImage Component
- * 
+ *
  * Features:
- * - Direct, lightweight image loading without sluggish third-party proxies
- * - Authentic sandstone-toned architectural fallback for missing/unverified images
+ * - Normalises Wikimedia thumb URLs → direct upload URLs (eliminates UTM/CORS issues)
+ * - Two-stage loading: direct URL first, backend proxy fallback on failure
+ * - Authentic sandstone-toned architectural placeholder for unavailable images
  * - Smooth, non-blocking loading indicator
- * - Clean cards without intrusive error overlays or credit text
- * - Complete URI change reactivity
+ * - Full URI change reactivity with proper state reset
  */
 export default function HeritageImage({
   uri,
@@ -20,23 +21,29 @@ export default function HeritageImage({
   license,
   showAttributionBadge = false,
 }) {
-  const [hasError, setHasError] = useState(false);
+  // Stage 0 = direct URL, Stage 1 = proxy URL, Stage 2 = placeholder
+  const [stage, setStage] = useState(0);
   const [loading, setLoading] = useState(false);
+  const prevUri = useRef(null);
 
-  // Normalize URI and ensure HTTPS
-  let safeUri = (uri || '').trim();
-  if (safeUri.startsWith('http://')) {
-    safeUri = 'https://' + safeUri.slice(7);
-  }
+  // Normalise the raw URI: convert wiki thumb → upload URL, strip UTM params, force HTTPS
+  const directUri = normalizeImageUrl(uri);
+  const proxyUri = directUri ? buildProxyUrl(directUri) : null;
 
-  // Reset state whenever target URI changes
+  // Reset stage whenever the source URI changes
   useEffect(() => {
-    setHasError(false);
-    setLoading(Boolean(safeUri));
-  }, [safeUri]);
+    if (prevUri.current !== (uri || '')) {
+      prevUri.current = uri || '';
+      setStage(0);
+      setLoading(Boolean(directUri));
+    }
+  }, [uri, directUri]);
 
-  // Handle missing or failed image gracefully with authentic heritage architectural placeholder
-  if (!safeUri || hasError) {
+  // Compute effective URI based on stage
+  const effectiveUri = stage === 0 ? directUri : stage === 1 ? proxyUri : null;
+
+  // Handle unavailable image: show architectural placeholder
+  if (!effectiveUri || stage >= 2) {
     return (
       <View style={[styles.placeholderContainer, style]}>
         <Text style={styles.placeholderIcon}>🏛</Text>
@@ -48,28 +55,36 @@ export default function HeritageImage({
     );
   }
 
-  const source = {
-    uri: safeUri,
-    headers: {
-      'User-Agent': 'HeritageExplorer/1.0 (Mobile App; Cultural Heritage Discovery)'
+  const handleError = () => {
+    setLoading(false);
+    if (stage === 0 && proxyUri) {
+      // Retry via backend proxy
+      setStage(1);
+      setLoading(true);
+    } else {
+      // Both direct and proxy failed → show placeholder
+      setStage(2);
     }
   };
 
   return (
     <View style={[styles.wrapper, style]}>
       <Image
-        key={safeUri}
-        source={source}
+        key={effectiveUri}
+        source={{
+          uri: effectiveUri,
+          headers: {
+            'User-Agent': 'HeritageExplorer/1.0 (https://github.com/AnushaThavamani/Heritage-Explorer; developer@heritageexplorer.app)',
+            'Accept': 'image/webp,image/jpeg,image/*,*/*',
+          },
+        }}
         style={StyleSheet.absoluteFillObject}
         resizeMode="cover"
         accessibilityRole="image"
         accessibilityLabel={accessibilityLabel || 'Heritage site photograph'}
         onLoadStart={() => setLoading(true)}
         onLoad={() => setLoading(false)}
-        onError={() => {
-          setLoading(false);
-          setHasError(true);
-        }}
+        onError={handleError}
       />
 
       {loading ? (
@@ -78,7 +93,7 @@ export default function HeritageImage({
         </View>
       ) : null}
 
-      {/* Attribution badge ONLY if explicitly requested (e.g. details hero modal), never on cards */}
+      {/* Attribution badge ONLY if explicitly requested (e.g. details hero), never on cards */}
       {showAttributionBadge && attribution ? (
         <View style={styles.attributionPill}>
           <Text style={styles.attributionPillText} numberOfLines={1}>

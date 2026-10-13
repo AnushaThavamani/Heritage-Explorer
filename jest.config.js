@@ -7,6 +7,7 @@ module.exports = {
   transformIgnorePatterns: [
     'node_modules/(?!((jest-)?react-native|@react-native(-community)?|@react-navigation|react-native-safe-area-context|react-redux|@reduxjs|redux|immer|reselect|use-sync-external-store)/)',
   ],
+  testPathIgnorePatterns: ['/node_modules/', '<rootDir>/backend/'],
   moduleNameMapper: {
     '@react-native-async-storage/async-storage': '<rootDir>/__mocks__/asyncStorage.js',
   },

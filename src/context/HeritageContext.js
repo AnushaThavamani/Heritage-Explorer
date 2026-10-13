@@ -4,11 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { clearUser, setFavorites, setTrail, setUser } from '../store/store';
 import { useAuth } from './AuthContext';
 import api, { apiMessage } from '../services/api';
+import { normalizeImageUrl } from '../utils/imageUtils';
 
 const HeritageContext = createContext(null);
 const initialState = { sites: [], favorites: [], visited: [], trails: [], trail: [], isHydrated: false, isLoadingSites: true, sitesError: '', isLoadingUserData: false };
 const normalizeSite = site => {
   const siteId = site.siteId || site.id;
+  const rawImage = site.image_url || site.image || site.imageUrl || site.images?.[0];
   return {
     ...site,
     id: siteId,
@@ -17,11 +19,13 @@ const normalizeSite = site => {
     district: site.district || site.city,
     title: site.title || site.name,
     timings: site.timings || site.visitorTimings,
-    image: site.image_url || site.image || site.imageUrl || site.images?.[0],
+    image_url: normalizeImageUrl(rawImage),
+    image: normalizeImageUrl(rawImage),
     latitude: site.latitude ?? site.coordinates?.latitude,
     longitude: site.longitude ?? site.coordinates?.longitude,
   };
 };
+
 function reducer(state, action) {
   switch (action.type) {
     case 'SITES_LOADING': return { ...state, isLoadingSites: true, sitesError: '' };

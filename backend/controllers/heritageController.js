@@ -20,6 +20,56 @@ function sanitizeInput(val) {
   return '';
 }
 
+/**
+ * Convert a Wikimedia Commons thumbnail URL to the direct full-resolution upload URL.
+ * thumb.wikimedia.org/wikipedia/commons/thumb/X/YY/File.jpg/330px-File.jpg
+ * -> upload.wikimedia.org/wikipedia/commons/X/YY/File.jpg
+ */
+function wikiThumbToUpload(url) {
+  if (!url || typeof url !== 'string') return null;
+  const thumbMatch = url.match(
+    /(?:thumb|upload)\.wikimedia\.org\/(wikipedia\/[^/]+\/)thumb\/([^/]+\/[^/]+\/)([^/?#]+)(?:\/[^/?#]+)?/
+  );
+  if (!thumbMatch) return null;
+  return `https://upload.wikimedia.org/${thumbMatch[1]}${thumbMatch[2]}${thumbMatch[3]}`;
+}
+
+/**
+ * Normalise an image URL:
+ * 1. Wikimedia thumb -> direct upload URL
+ * 2. Strip UTM/tracking query parameters
+ * 3. Force HTTPS
+ */
+function normalizeImageUrl(url) {
+  if (!url || typeof url !== 'string') return url;
+  let result = url.trim();
+
+  // Convert Wikimedia thumb to direct upload URL
+  const uploadUrl = wikiThumbToUpload(result);
+  if (uploadUrl) {
+    result = uploadUrl;
+  } else {
+    // Strip UTM/tracking parameters from non-thumb URLs
+    try {
+      const parsed = new URL(result);
+      ['utm_source', 'utm_campaign', 'utm_content', 'utm_medium', 'utm_term'].forEach(
+        k => parsed.searchParams.delete(k)
+      );
+      result = parsed.toString();
+      if (result.endsWith('?')) result = result.slice(0, -1);
+    } catch {
+      // Leave as-is if URL is not parseable
+    }
+  }
+
+  // Force HTTPS
+  if (result.startsWith('http://')) {
+    result = 'https://' + result.slice(7);
+  }
+
+  return result || null;
+}
+
 const fs = require('fs');
 const path = require('path');
 
@@ -74,6 +124,17 @@ function formatSiteDocument(site) {
       doc.image_url = cached.imageUrl || cached.resolvedUrl;
       doc.image_status = 'resolved';
     }
+  }
+
+  // Fallback between image_url and legacy image field
+  if (!doc.image_url && doc.image) {
+    doc.image_url = doc.image;
+  }
+
+  // Normalise image_url: convert wiki thumb URLs, strip UTM params, force HTTPS
+  if (doc.image_url) {
+    doc.image_url = normalizeImageUrl(doc.image_url);
+    doc.image = doc.image_url;
   }
 
   // Ensure image license is explicitly marked for Wikimedia Commons assets

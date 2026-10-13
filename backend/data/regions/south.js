@@ -24,7 +24,7 @@ module.exports = [
     "source_urls": [
       "https://asichennaicircle.gov.in/monuments_dindigul.html"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/24Dindigul.jpg/330px-24Dindigul.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/24Dindigul.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -60,7 +60,7 @@ module.exports = [
     "source_urls": [
       "https://palanimurugantemple.tnhrce.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Palanihills.JPG/330px-Palanihills.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/76/Palanihills.JPG",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -97,7 +97,7 @@ module.exports = [
     "source_urls": [
       "https://www.tnarch.gov.in/monuments-subnames"
     ],
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Soundarapandian_Nadar.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Soundarapandian_Nadar.jpg",
     "tags": [
       "nayak_architecture",
       "fort_shrine",
@@ -134,7 +134,7 @@ module.exports = [
     "source_urls": [
       "https://dindigul.nic.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Begampur_Mosque1.JPG/330px-Begampur_Mosque1.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/80/Begampur_Mosque1.JPG",
     "tags": [
       "hyder_ali",
       "mysore_heritage",
@@ -170,7 +170,7 @@ module.exports = [
     "source_urls": [
       "https://www.tnarch.gov.in/"
     ],
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Madurai_Nayak_Palace_Collage.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Madurai_Nayak_Palace_Collage.jpg",
     "tags": [
       "polygar_palace",
       "nayak_feudatory",
@@ -206,7 +206,7 @@ module.exports = [
     "source_urls": [
       "https://www.tnarch.gov.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Archaeological_remains_and_artifacts_of_Keeladi_6.jpg/960px-Archaeological_remains_and_artifacts_of_Keeladi_6.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Archaeological_remains_and_artifacts_of_Keeladi_6.jpg",
     "tags": [
       "megaliths",
       "iron_age",
@@ -245,7 +245,7 @@ module.exports = [
     "source_urls": [
       "https://www.tamilnadutourism.tn.gov.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Vivekananda_rock_kanyakumari_251.jpg/960px-Vivekananda_rock_kanyakumari_251.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Vivekananda_rock_kanyakumari_251.jpg",
     "image_attribution": "Sanchit",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -359,7 +359,7 @@ module.exports = [
     "source_urls": [
       "https://whc.unesco.org/en/tentativelists/5897/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Padmanabhapuram_main_entrance.jpg/330px-Padmanabhapuram_main_entrance.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Padmanabhapuram_main_entrance.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -396,7 +396,7 @@ module.exports = [
     "source_urls": [
       "https://asichennaicircle.gov.in/monuments_vattakottai.html"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Vattakottai_Fort_Entrance.jpg/330px-Vattakottai_Fort_Entrance.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Vattakottai_Fort_Entrance.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -433,7 +433,7 @@ module.exports = [
     "source_urls": [
       "https://kanyakumariammantemple.tnhrce.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Kanyakumari_temple.jpg/800px-Kanyakumari_temple.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Kanyakumari_temple.jpg",
     "image_attribution": "Kannan (Wikimedia Commons)",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -474,7 +474,7 @@ module.exports = [
     "source_urls": [
       "https://asichennaicircle.gov.in/monuments_samanarmalai.html"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/10th_century_Samanar_Malai_Jain_monuments%2C_Madurai_district%2C_Tamil_Nadu_India_-_01.jpg/330px-10th_century_Samanar_Malai_Jain_monuments%2C_Madurai_district%2C_Tamil_Nadu_India_-_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/10th_century_Samanar_Malai_Jain_monuments%2C_Madurai_district%2C_Tamil_Nadu_India_-_01.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -514,7 +514,7 @@ module.exports = [
     "source_urls": [
       "https://asichennaicircle.gov.in/monuments_yanaimalai.html"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Yanaimalai_from_samanar_hills.jpg/330px-Yanaimalai_from_samanar_hills.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Yanaimalai_from_samanar_hills.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -554,7 +554,7 @@ module.exports = [
     "source_urls": [
       "https://www.tnarch.gov.in/monuments-subnames"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/N-TN-C88_Rock_cut_cave_and_Inscription_Thenparankundram.jpg/960px-N-TN-C88_Rock_cut_cave_and_Inscription_Thenparankundram.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/bd/N-TN-C88_Rock_cut_cave_and_Inscription_Thenparankundram.jpg",
     "image_attribution": "R.K.Lakshmi",
     "image_license": "CC BY-SA 4.0",
     "tags": [
@@ -594,7 +594,7 @@ module.exports = [
     "source_urls": [
       "https://www.tnarch.gov.in/monuments-subnames"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/7th_century_rock_cut_Shiva_Lakulisa_Ganesha_Idaichchi_Mandapam_temple_Arittapatti_Madurai_India.jpg/960px-7th_century_rock_cut_Shiva_Lakulisa_Ganesha_Idaichchi_Mandapam_temple_Arittapatti_Madurai_India.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/7th_century_rock_cut_Shiva_Lakulisa_Ganesha_Idaichchi_Mandapam_temple_Arittapatti_Madurai_India.jpg",
     "image_attribution": "Ms Sarah Welch",
     "image_license": "CC BY-SA 4.0",
     "tags": [
@@ -634,7 +634,7 @@ module.exports = [
     "source_urls": [
       "https://asichennaicircle.gov.in/monuments_keelavalavu.html"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Kizhavalavu_%28Kilavalavu%29_-Jain_Sculptures.JPG/330px-Kizhavalavu_%28Kilavalavu%29_-Jain_Sculptures.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Kizhavalavu_%28Kilavalavu%29_-Jain_Sculptures.JPG",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -671,7 +671,7 @@ module.exports = [
     "source_urls": [
       "https://maduraimeenakshi.org/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/An_aerial_view_of_Madurai_city_from_atop_of_Meenakshi_Amman_temple.jpg/330px-An_aerial_view_of_Madurai_city_from_atop_of_Meenakshi_Amman_temple.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/An_aerial_view_of_Madurai_city_from_atop_of_Meenakshi_Amman_temple.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 4.0",
     "tags": [
@@ -708,7 +708,7 @@ module.exports = [
     "source_urls": [
       "https://www.tnarch.gov.in/site-museums-gallery"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Madurai_Nayak_Palace_Collage.jpg/330px-Madurai_Nayak_Palace_Collage.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Madurai_Nayak_Palace_Collage.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -746,7 +746,7 @@ module.exports = [
     "source_urls": [
       "https://www.tnarch.gov.in/excavation-sites"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Keezhady_%281%29.jpg/330px-Keezhady_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Keezhady_%281%29.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 4.0",
     "tags": [
@@ -824,7 +824,7 @@ module.exports = [
     "source_urls": [
       "https://www.tnarch.gov.in/site-museums-gallery"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/S-TN-44.jpg/800px-S-TN-44.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/18/S-TN-44.jpg",
     "image_attribution": "Tamil Nadu State Department of Archaeology / ASI",
     "image_license": "CC BY-SA 4.0",
     "tags": [
@@ -901,7 +901,7 @@ module.exports = [
     "source_urls": [
       "https://www.tamilnadutourism.tn.gov.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Village_martyr_d%27Oradour-sur-Glane_10.jpg/330px-Village_martyr_d%27Oradour-sur-Glane_10.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Village_martyr_d%27Oradour-sur-Glane_10.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -938,7 +938,7 @@ module.exports = [
     "source_urls": [
       "https://thiruppullanitemple.tnhrce.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Jagannatha_Perumal_temple1.JPG/330px-Jagannatha_Perumal_temple1.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Jagannatha_Perumal_temple1.JPG",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -974,7 +974,7 @@ module.exports = [
     "source_urls": [
       "https://www.tamilnadutourism.tn.gov.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Navapashanam2.jpg/330px-Navapashanam2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Navapashanam2.jpg",
     "tags": [
       "navapashanam",
       "ocean_shrine",
@@ -1011,7 +1011,7 @@ module.exports = [
     "source_urls": [
       "https://whc.unesco.org/en/tentativelists/5920/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/The_Chettinad_palace_karaikudi_2013-09-07_00-11.jpg/330px-The_Chettinad_palace_karaikudi_2013-09-07_00-11.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/The_Chettinad_palace_karaikudi_2013-09-07_00-11.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 4.0",
     "tags": [
@@ -1049,7 +1049,7 @@ module.exports = [
     "source_urls": [
       "https://kalaiyarkovilocctemple.tnhrce.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Kalayarkoil_%284%29.jpg/330px-Kalayarkoil_%284%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/68/Kalayarkoil_%284%29.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -1086,7 +1086,7 @@ module.exports = [
     "source_urls": [
       "https://sivaganga.nic.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Sivagangai_Aranmanai.jpg/330px-Sivagangai_Aranmanai.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Sivagangai_Aranmanai.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -1125,7 +1125,7 @@ module.exports = [
     "source_urls": [
       "https://pillayarpattitemple.tnhrce.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Karpaka_Vinayakar_temple%2C_Pillayarpatti_Pillayar_Koil%2C_Tiruppathur_Tamil_Nadu_-_2.jpg/960px-Karpaka_Vinayakar_temple%2C_Pillayarpatti_Pillayar_Koil%2C_Tiruppathur_Tamil_Nadu_-_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/cd/Karpaka_Vinayakar_temple%2C_Pillayarpatti_Pillayar_Koil%2C_Tiruppathur_Tamil_Nadu_-_2.jpg",
     "image_attribution": "Ms Sarah Welch",
     "image_license": "CC0",
     "tags": [
@@ -1163,7 +1163,7 @@ module.exports = [
     "source_urls": [
       "https://kundrakudimurugantemple.tnhrce.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/N-TN-C188_Rock_cut_Temple_Kunnakudi_Sivagangai.jpg/330px-N-TN-C188_Rock_cut_Temple_Kunnakudi_Sivagangai.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b4/N-TN-C188_Rock_cut_Temple_Kunnakudi_Sivagangai.jpg",
     "tags": [
       "hill_temple",
       "early_pandya_cave",
@@ -1199,7 +1199,7 @@ module.exports = [
     "source_urls": [
       "https://www.tnarch.gov.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Archaeological_remains_and_artifacts_of_Keeladi_6.jpg/960px-Archaeological_remains_and_artifacts_of_Keeladi_6.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Archaeological_remains_and_artifacts_of_Keeladi_6.jpg",
     "tags": [
       "megaliths",
       "iron_age",
@@ -1236,7 +1236,7 @@ module.exports = [
     "source_urls": [
       "https://kasiviswanadhartemple.tnhrce.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/The_magnificent_Kasi_Vishwanathat_Temple_Rajagopuram.jpg/330px-The_magnificent_Kasi_Vishwanathat_Temple_Rajagopuram.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f7/The_magnificent_Kasi_Vishwanathat_Temple_Rajagopuram.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -1274,7 +1274,7 @@ module.exports = [
     "source_urls": [
       "https://thirukutralanathartemple.tnhrce.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Nellaiappar_temple_tower.jpg/960px-Nellaiappar_temple_tower.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Nellaiappar_temple_tower.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 4.0 / Public Domain",
     "tags": [
@@ -1311,7 +1311,7 @@ module.exports = [
     "source_urls": [
       "https://sankaranarayanaswamytemple.tnhrce.in/"
     ],
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Skoil1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Skoil1.jpg",
     "image_attribution": "Charulathamani",
     "image_license": "CC0",
     "tags": [
@@ -1347,7 +1347,7 @@ module.exports = [
     "source_urls": [
       "https://thirumalaikoviltemple.tnhrce.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Thirumalai_Murugan_Temple-Tenkasi-Tamilnadu-IMG_8779.jpg/330px-Thirumalai_Murugan_Temple-Tenkasi-Tamilnadu-IMG_8779.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Thirumalai_Murugan_Temple-Tenkasi-Tamilnadu-IMG_8779.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -1383,7 +1383,7 @@ module.exports = [
     "source_urls": [
       "https://www.tnarch.gov.in/monuments-subnames"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg/960px-Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg",
     "tags": [
       "tiruppugazh",
       "chittar_river",
@@ -1420,7 +1420,7 @@ module.exports = [
     "source_urls": [
       "https://www.tnarch.gov.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Sadras_fort2_cannon.jpg/960px-Sadras_fort2_cannon.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/88/Sadras_fort2_cannon.jpg",
     "tags": [
       "mountain_pass",
       "travancore_border",
@@ -1457,7 +1457,7 @@ module.exports = [
     "source_urls": [
       "https://www.tnarch.gov.in/monuments-subnames"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/7th_century_rock_cut_Shiva_Lakulisa_Ganesha_Idaichchi_Mandapam_temple_Arittapatti_Madurai_India.jpg/960px-7th_century_rock_cut_Shiva_Lakulisa_Ganesha_Idaichchi_Mandapam_temple_Arittapatti_Madurai_India.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/7th_century_rock_cut_Shiva_Lakulisa_Ganesha_Idaichchi_Mandapam_temple_Arittapatti_Madurai_India.jpg",
     "image_attribution": "Ms Sarah Welch / ASI Archive",
     "image_license": "CC BY-SA 4.0",
     "tags": [
@@ -1495,7 +1495,7 @@ module.exports = [
     "source_urls": [
       "https://asi.nic.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Mangaladevi_temple_Kumily.jpg/330px-Mangaladevi_temple_Kumily.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/81/Mangaladevi_temple_Kumily.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -1532,7 +1532,7 @@ module.exports = [
     "source_urls": [
       "https://kuchanursanibagavantemple.tnhrce.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg/960px-Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg",
     "image_attribution": "ASI Chennai Circle / Tamil Nadu Tourism Archive",
     "image_license": "CC BY-SA 4.0",
     "tags": [
@@ -1568,7 +1568,7 @@ module.exports = [
     "source_urls": [
       "https://www.tnarch.gov.in/monuments-subnames"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg/960px-Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg",
     "tags": [
       "natural_spring",
       "nayak_heritage",
@@ -1604,7 +1604,7 @@ module.exports = [
     "source_urls": [
       "https://kalahasteeswarartemple.tnhrce.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg/960px-Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg",
     "tags": [
       "then_kalahasti",
       "polygar_history",
@@ -1640,7 +1640,7 @@ module.exports = [
     "source_urls": [
       "https://devadanapattikamakshitemple.tnhrce.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Kodaikanal_2.jpg/330px-Kodaikanal_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Kodaikanal_2.jpg",
     "tags": [
       "moongil_anai",
       "shakta_heritage",
@@ -1758,7 +1758,7 @@ module.exports = [
     "source_urls": [
       "https://www.tnarch.gov.in/monuments-subnames"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Veerapandiya_Kattabomman_1999_stamp_of_India.jpg/330px-Veerapandiya_Kattabomman_1999_stamp_of_India.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Veerapandiya_Kattabomman_1999_stamp_of_India.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -1795,7 +1795,7 @@ module.exports = [
     "source_urls": [
       "https://www.tnarch.gov.in/excavation-sites"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Mamallapuram_view.jpg/960px-Mamallapuram_view.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Mamallapuram_view.jpg",
     "tags": [
       "sangam_port",
       "early_pandya_capital",
@@ -1832,7 +1832,7 @@ module.exports = [
     "source_urls": [
       "https://tiruchendurmurugantemple.tnhrce.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Thiruchendur11.jpg/330px-Thiruchendur11.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Thiruchendur11.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -1870,7 +1870,7 @@ module.exports = [
     "source_urls": [
       "https://www.tamilnadutourism.tn.gov.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Sadras_fort2_cannon.jpg/960px-Sadras_fort2_cannon.jpg",
+    "image_url": null,
     "image_attribution": "Tamil Nadu Tourism Archive",
     "image_license": "CC BY-SA 4.0",
     "tags": [
@@ -1907,7 +1907,7 @@ module.exports = [
     "source_urls": [
       "https://nellaiappartemple.tnhrce.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Nellaiappar_temple_tower.jpg/330px-Nellaiappar_temple_tower.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Nellaiappar_temple_tower.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -1944,7 +1944,7 @@ module.exports = [
     "source_urls": [
       "https://asichennaicircle.gov.in/monuments_krishnapuram.html"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Krishnapuram1.jpg/330px-Krishnapuram1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Krishnapuram1.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -1982,7 +1982,7 @@ module.exports = [
     "source_urls": [
       "https://www.tnarch.gov.in/monuments-subnames"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Kizhavalavu_%28Kilavalavu%29_-Jain_Sculptures.JPG/960px-Kizhavalavu_%28Kilavalavu%29_-Jain_Sculptures.JPG",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Kizhavalavu_%28Kilavalavu%29_-Jain_Sculptures.JPG",
     "tags": [
       "democratic_election",
       "village_assembly",
@@ -2019,7 +2019,7 @@ module.exports = [
     "source_urls": [
       "https://kalakkadsathyavageeswarartemple.tnhrce.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Kalakkad18.jpg/330px-Kalakkad18.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Kalakkad18.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -2055,7 +2055,7 @@ module.exports = [
     "source_urls": [
       "https://vanamamalaitemple.tnhrce.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Naguneri18.jpg/330px-Naguneri18.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Naguneri18.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -2093,7 +2093,7 @@ module.exports = [
     "source_urls": [
       "https://tirunelveli.nic.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Sadras_fort2_cannon.jpg/960px-Sadras_fort2_cannon.jpg",
+    "image_url": null,
     "tags": [
       "polygar_wars",
       "military_ramparts",
@@ -2129,7 +2129,7 @@ module.exports = [
     "source_urls": [
       "https://srivilliputhurtemple.tnhrce.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Srivilliputhur_Andal_temple_%2829%29.jpg/330px-Srivilliputhur_Andal_temple_%2829%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Srivilliputhur_Andal_temple_%2829%29.jpg",
     "image_attribution": "Wikimedia Commons Contributor",
     "image_license": "CC BY-SA 3.0",
     "tags": [
@@ -2166,7 +2166,7 @@ module.exports = [
     "source_urls": [
       "https://bhuminathartemple.tnhrce.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg/960px-Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg",
     "image_attribution": "ASI Chennai Circle / Tamil Nadu Tourism Archive",
     "image_license": "CC BY-SA 4.0",
     "tags": [
@@ -2203,7 +2203,7 @@ module.exports = [
     "source_urls": [
       "https://www.tnarch.gov.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Sadras_fort2_cannon.jpg/960px-Sadras_fort2_cannon.jpg",
+    "image_url": null,
     "tags": [
       "polygar_outpost",
       "arjuna_river",
@@ -2239,7 +2239,7 @@ module.exports = [
     "source_urls": [
       "https://www.tnarch.gov.in/monuments-subnames"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg/960px-Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg",
     "tags": [
       "vaippar_river",
       "pandya_inscriptions",
@@ -2275,7 +2275,7 @@ module.exports = [
     "source_urls": [
       "https://www.tnarch.gov.in/"
     ],
-    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Archaeological_remains_and_artifacts_of_Keeladi_6.jpg/960px-Archaeological_remains_and_artifacts_of_Keeladi_6.jpg",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Archaeological_remains_and_artifacts_of_Keeladi_6.jpg",
     "tags": [
       "megaliths",
       "iron_age",
@@ -2313,7 +2313,7 @@ module.exports = [
     "source_urls": [
       "https://virudhunagar.nic.in/"
     ],
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Madurai_Nayak_Palace_Collage.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/87/Madurai_Nayak_Palace_Collage.jpg",
     "tags": [
       "polygar_estate",
       "seithur_zamin",

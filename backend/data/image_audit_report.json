@@ -1,0 +1,2381 @@
+{
+  "totalAudited": 230,
+  "verifiedExisting": 157,
+  "replacedOrUpdated": 5,
+  "newlyFound": 18,
+  "unresolvedCount": 50,
+  "unresolvedList": [
+    {
+      "siteId": "kaveripakkam-historic-tank",
+      "name": "Kaveripakkam Historic Tank & Chola Inscriptions",
+      "district": "Ranipet",
+      "category": "Historic Monuments"
+    },
+    {
+      "siteId": "melpadi-arinjaya-chola-pallipadai",
+      "name": "Melpadi Arinjaya Chola Pallipadai Temple (Arinjisvara)",
+      "district": "Ranipet",
+      "category": "Historic Monuments"
+    },
+    {
+      "siteId": "walajapet-stone-mandapams",
+      "name": "Walajapet Stone Mandapams & Chhatris",
+      "district": "Ranipet",
+      "category": "Historic Monuments"
+    },
+    {
+      "siteId": "vaniyambadi-historic-fort-remains",
+      "name": "Vaniyambadi Historic Fort Remains & Mosque",
+      "district": "Tirupathur",
+      "category": "Forts"
+    },
+    {
+      "siteId": "yelagiri-swamimalai-megaliths",
+      "name": "Yelagiri Swamimalai Megalithic Remains",
+      "district": "Tirupathur",
+      "category": "Archaeological"
+    },
+    {
+      "siteId": "natrampalli-megalithic-dolmens",
+      "name": "Natrampalli Prehistoric Stone Dolmens",
+      "district": "Tirupathur",
+      "category": "Archaeological"
+    },
+    {
+      "siteId": "poondi-archaeological-museum",
+      "name": "Poondi Archaeological Museum & Paleolithic Site",
+      "district": "Tiruvallur",
+      "category": "Archaeological"
+    },
+    {
+      "siteId": "nedungunam-ramar-temple",
+      "name": "Nedungunam Yoga Ramachandra Swamy Temple",
+      "district": "Tiruvannamalai",
+      "category": "Temples"
+    },
+    {
+      "siteId": "kamarasavalli-karkotakeswarar-temple",
+      "name": "Kamarasavalli Karkotakeswarar Temple",
+      "district": "Ariyalur",
+      "category": "Temples"
+    },
+    {
+      "siteId": "sendurai-megalithic-site",
+      "name": "Sendurai Megalithic Urn Burial Site",
+      "district": "Ariyalur",
+      "category": "Archaeological"
+    },
+    {
+      "siteId": "melapaluvur-agneeswarar-temple",
+      "name": "Melapaluvur Agneeswarar Temple",
+      "district": "Ariyalur",
+      "category": "Temples"
+    },
+    {
+      "siteId": "padaleeswarar-temple-cuddalore",
+      "name": "Padaleeswarar Temple, Tirupathiripuliyur",
+      "district": "Cuddalore",
+      "category": "Temples"
+    },
+    {
+      "siteId": "bhuvanagiri-heritage-settlement",
+      "name": "Bhuvanagiri Heritage Settlement & Sri Raghavendra Birthplace",
+      "district": "Cuddalore",
+      "category": "Historic Monuments"
+    },
+    {
+      "siteId": "vriddhagiriswarar-temple-vriddhachalam",
+      "name": "Vriddhagiriswarar Temple, Vriddhachalam",
+      "district": "Cuddalore",
+      "category": "Temples"
+    },
+    {
+      "siteId": "rishivandiyam-ardhanareeswarar-temple",
+      "name": "Rishivandiyam Ardhanareeswarar Temple",
+      "district": "Kallakurichi",
+      "category": "Temples"
+    },
+    {
+      "siteId": "kalvarayan-megalithic-rock-art",
+      "name": "Kalvarayan Hills Prehistoric Rock Paintings & Dolmens",
+      "district": "Kallakurichi",
+      "category": "Caves & Rock-Cut Heritage"
+    },
+    {
+      "siteId": "chinnasalem-swarnakaleswarar-temple",
+      "name": "Chinnasalem Swarnakaleswarar Temple",
+      "district": "Kallakurichi",
+      "category": "Temples"
+    },
+    {
+      "siteId": "pugazhimalai-murugan-temple",
+      "name": "Pugazhimalai Murugan Temple",
+      "district": "Karur",
+      "category": "Temples"
+    },
+    {
+      "siteId": "mayanur-cauvery-barrage-inscriptions",
+      "name": "Mayanur Historic Cauvery Barrage & Inscriptions",
+      "district": "Karur",
+      "category": "Historic Monuments"
+    },
+    {
+      "siteId": "valikondapuram-valiswarar-temple",
+      "name": "Valikondapuram Valiswarar Temple",
+      "district": "Perambalur",
+      "category": "Temples"
+    },
+    {
+      "siteId": "perambalur-megalithic-stone-circles",
+      "name": "Perambalur Megalithic Stone Circles & Urn Burials",
+      "district": "Perambalur",
+      "category": "Archaeological"
+    },
+    {
+      "siteId": "avudaiyarkoil-atmanatha-temple",
+      "name": "Avudaiyarkoil (Thiruperunturai) Atmanatha Swamy Temple",
+      "district": "Pudukkottai",
+      "category": "Temples"
+    },
+    {
+      "siteId": "enkan-murugan-temple",
+      "name": "Enkan Subramanya Swamy Temple",
+      "district": "Tiruvarur",
+      "category": "Temples"
+    },
+    {
+      "siteId": "muthupet-mangrove-historic-watchtower",
+      "name": "Muthupet Historic Watchtower & Coastal Port",
+      "district": "Tiruvarur",
+      "category": "Historic Monuments"
+    },
+    {
+      "siteId": "thalavanur-satrumalla-cave",
+      "name": "Thalavanur Satrumalla Pallavaneswara Cave Temple",
+      "district": "Viluppuram",
+      "category": "Caves & Rock-Cut Heritage"
+    },
+    {
+      "siteId": "kottai-eswaran-temple-cbe",
+      "name": "Kottai Sangameswarar Temple (Old Fort Shiva Shrine)",
+      "district": "Coimbatore",
+      "category": "Temples"
+    },
+    {
+      "siteId": "adhiyamankottai-fort",
+      "name": "Adhiyamankottai Fort & Chenraya Perumal Temple",
+      "district": "Dharmapuri",
+      "category": "Forts"
+    },
+    {
+      "siteId": "modhur-archaeological-site",
+      "name": "Modhur Archaeological Excavation Site",
+      "district": "Dharmapuri",
+      "category": "Archaeological"
+    },
+    {
+      "siteId": "hogenakkal-ancient-watchtower",
+      "name": "Hogenakkal Chola Inscriptions & Ancient Watchtower",
+      "district": "Dharmapuri",
+      "category": "Historic Monuments"
+    },
+    {
+      "siteId": "karimangalam-hero-stone-site",
+      "name": "Karimangalam Hero Stones & Memorial Site",
+      "district": "Dharmapuri",
+      "category": "Stone Inscriptions & Epigraphical Sites"
+    },
+    {
+      "siteId": "arachalur-musical-inscriptions",
+      "name": "Arachalur Rock-Cut Caves & Musical Inscriptions",
+      "district": "Erode",
+      "category": "Stone Inscriptions & Epigraphical Sites"
+    },
+    {
+      "siteId": "mallachandram-megalithic-dolmens",
+      "name": "Mallachandram Megalithic Dolmens & Cairns",
+      "district": "Krishnagiri",
+      "category": "Archaeological"
+    },
+    {
+      "siteId": "pochampalli-archaeological-site",
+      "name": "Pochampalli Archaeological Excavation Site",
+      "district": "Krishnagiri",
+      "category": "Archaeological"
+    },
+    {
+      "siteId": "mohanur-achaladheepeshwarar-temple",
+      "name": "Mohanur Achaladheepeshwarar Temple",
+      "district": "Namakkal",
+      "category": "Temples"
+    },
+    {
+      "siteId": "dharapuram-kadu-hanumantharaya-temple",
+      "name": "Dharapuram Kadu Hanumantharaya Temple & Fort Remains",
+      "district": "Tiruppur",
+      "category": "Temples"
+    },
+    {
+      "siteId": "sivamalai-murugan-temple-kangeyam",
+      "name": "Sivamalai Subramanyaswamy Hill Temple, Kangeyam",
+      "district": "Tiruppur",
+      "category": "Temples"
+    },
+    {
+      "siteId": "koduvai-prehistoric-megalithic-site",
+      "name": "Koduvai Prehistoric Megalithic Site & Roman Coins",
+      "district": "Tiruppur",
+      "category": "Archaeological"
+    },
+    {
+      "siteId": "kannivadi-zamin-palace",
+      "name": "Kannivadi Zamin Palace & Stone Chhatris",
+      "district": "Dindigul",
+      "category": "Palaces"
+    },
+    {
+      "siteId": "sendurai-megalithic-dolmens-dindigul",
+      "name": "Sendurai & Sirumalai Megalithic Dolmens",
+      "district": "Dindigul",
+      "category": "Archaeological"
+    },
+    {
+      "siteId": "thiruppachethi-archaeological-site",
+      "name": "Thiruppachethi Iron-Age Burial Grounds & Inscriptions",
+      "district": "Sivaganga",
+      "category": "Archaeological"
+    },
+    {
+      "siteId": "courtallam-kutralanathar-temple",
+      "name": "Courtallam Kutralanathar Temple & Chitra Sabha",
+      "district": "Tenkasi",
+      "category": "Temples"
+    },
+    {
+      "siteId": "puliyarai-historic-border-temple",
+      "name": "Puliyarai Shiva Temple & Royal Travancore Border Gate",
+      "district": "Tenkasi",
+      "category": "Historic Monuments"
+    },
+    {
+      "siteId": "suruli-velparai-ancient-caves",
+      "name": "Suruli Velparai Ancient Caves & Rock Shelters",
+      "district": "Theni",
+      "category": "Caves & Rock-Cut Heritage"
+    },
+    {
+      "siteId": "theertha-thotti-subramanya-temple",
+      "name": "Theertha Thotti Subramanya Swamy Temple",
+      "district": "Theni",
+      "category": "Temples"
+    },
+    {
+      "siteId": "manur-historic-inscription-site",
+      "name": "Manur Historic Inscription Site (Ambalavana Swamy Temple)",
+      "district": "Tirunelveli",
+      "category": "Stone Inscriptions & Epigraphical Sites"
+    },
+    {
+      "siteId": "thiruchuli-bhuminathar-temple",
+      "name": "Thiruchuli Bhuminathar Temple",
+      "district": "Virudhunagar",
+      "category": "Temples"
+    },
+    {
+      "siteId": "kattabomman-memorial-bastion-vattirayiruppu",
+      "name": "Vattirayiruppu Fort Ruins & Kasi Viswanathar Temple",
+      "district": "Virudhunagar",
+      "category": "Forts"
+    },
+    {
+      "siteId": "sattur-perumal-temple-river-embankments",
+      "name": "Sattur Venkatachalapathy Temple & Vaippar Embankments",
+      "district": "Virudhunagar",
+      "category": "Temples"
+    },
+    {
+      "siteId": "pillayarnatham-prehistoric-megaliths",
+      "name": "Pillayarnatham Prehistoric Cairn Circles & Megaliths",
+      "district": "Virudhunagar",
+      "category": "Archaeological"
+    },
+    {
+      "siteId": "seithur-zamin-palace-remains",
+      "name": "Seithur Zamin Palace Remains & Sastha Temple",
+      "district": "Virudhunagar",
+      "category": "Palaces"
+    }
+  ],
+  "auditRecords": [
+    {
+      "siteId": "mahabalipuram-shore-temple",
+      "name": "Shore Temple, Mahabalipuram",
+      "district": "Chengalpattu",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg/330px-Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Shore Temple, Mahabalipuram"
+    },
+    {
+      "siteId": "mahabalipuram-pancha-rathas",
+      "name": "Pancha Rathas, Mahabalipuram",
+      "district": "Chengalpattu",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c2/Five_Rathas_at_Mahaballipuram%2CTamil_Nadu.jpg/330px-Five_Rathas_at_Mahaballipuram%2CTamil_Nadu.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Pancha Rathas, Mahabalipuram"
+    },
+    {
+      "siteId": "descent-of-the-ganges-relief",
+      "name": "Descent of the Ganges (Arjuna's Penance)",
+      "district": "Chengalpattu",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Descent_of_the_Ganges_01.jpg/330px-Descent_of_the_Ganges_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Descent of the Ganges (Arjuna's Penance)"
+    },
+    {
+      "siteId": "thirukazhukundram-vedagiriswarar-temple",
+      "name": "Thirukazhukundram Vedagiriswarar Temple",
+      "district": "Chengalpattu",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Vedhagireeswarar_temple_with_the_tank.jpg/330px-Vedhagireeswarar_temple_with_the_tank.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Thirukazhukundram Vedagiriswarar Temple"
+    },
+    {
+      "siteId": "sadras-dutch-fort",
+      "name": "Sadras Dutch Fort & Cemetery",
+      "district": "Chengalpattu",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Sadras_fort2_cannon.jpg/330px-Sadras_fort2_cannon.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Sadras Dutch Fort & Cemetery"
+    },
+    {
+      "siteId": "mamandur-rock-cut-caves",
+      "name": "Mamandur Rock-Cut Cave Temples & Inscriptions",
+      "district": "Chengalpattu",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Mamandur_rock_cut_caves_5.JPG/330px-Mamandur_rock_cut_caves_5.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Mamandur Rock-Cut Cave Temples & Inscriptions"
+    },
+    {
+      "siteId": "fort-st-george-chennai",
+      "name": "Fort St. George & St. Mary's Church",
+      "district": "Chennai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Fort_St._George%2C_Chennai_2.jpg/330px-Fort_St._George%2C_Chennai_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Fort St. George & St. Mary's Church"
+    },
+    {
+      "siteId": "kapaleeshwarar-temple-mylapore",
+      "name": "Kapaleeshwarar Temple, Mylapore",
+      "district": "Chennai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Kapaleeswarar1.jpg/330px-Kapaleeswarar1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Kapaleeshwarar Temple, Mylapore"
+    },
+    {
+      "siteId": "parthasarathy-temple-triplicane",
+      "name": "Parthasarathy Temple, Triplicane",
+      "district": "Chennai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Tiruvallikeni1.jpg/330px-Tiruvallikeni1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Parthasarathy Temple, Triplicane"
+    },
+    {
+      "siteId": "government-museum-egmore",
+      "name": "Government Museum & National Art Gallery, Egmore",
+      "district": "Chennai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Chennai_National_Art_Gallery.jpg/330px-Chennai_National_Art_Gallery.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Government Museum & National Art Gallery, Egmore"
+    },
+    {
+      "siteId": "san-thome-cathedral-basilica",
+      "name": "San Thome Cathedral Basilica",
+      "district": "Chennai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/aa/Santhome_Basilica.jpg/330px-Santhome_Basilica.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "San Thome Cathedral Basilica"
+    },
+    {
+      "siteId": "ripon-building-victoria-hall",
+      "name": "Ripon Building & Victoria Public Hall",
+      "district": "Chennai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Victoria_Public_Hall%2C_Chennai.JPG/330px-Victoria_Public_Hall%2C_Chennai.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Ripon Building & Victoria Public Hall"
+    },
+    {
+      "siteId": "kailasanathar-temple",
+      "name": "Kailasanathar Temple, Kanchipuram",
+      "district": "Kanchipuram",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/19/7th_century_Sri_Kailashnathar_Temple_Kanchipuram_Tamil_Nadu_India_01_%2811%29.jpg/330px-7th_century_Sri_Kailashnathar_Temple_Kanchipuram_Tamil_Nadu_India_01_%2811%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Kailasanathar Temple, Kanchipuram"
+    },
+    {
+      "siteId": "ekambareswarar-temple",
+      "name": "Ekambareswarar Temple, Kanchipuram",
+      "district": "Kanchipuram",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Ekambareswarar5.jpg/330px-Ekambareswarar5.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Ekambareswarar Temple, Kanchipuram"
+    },
+    {
+      "siteId": "varadharaja-perumal-temple",
+      "name": "Varadharaja Perumal Temple, Kanchipuram",
+      "district": "Kanchipuram",
+      "action": "retained",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Varadharaja_Perumal_Temple_8.jpg",
+      "source": "Verified Existing",
+      "imageTitle": "Varadharaja Perumal Temple, Kanchipuram"
+    },
+    {
+      "siteId": "kanchi-kamakshi-amman-temple",
+      "name": "Kanchi Kamakshi Amman Temple",
+      "district": "Kanchipuram",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Kanchipuram.in_Kamakshi-Amman_Temple_-_panoramio_-_SINHA_%28cropped%29.jpg/330px-Kanchipuram.in_Kamakshi-Amman_Temple_-_panoramio_-_SINHA_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Kanchi Kamakshi Amman Temple"
+    },
+    {
+      "siteId": "vaikunta-perumal-temple",
+      "name": "Vaikunta Perumal Temple (Parameswara Vinnagaram)",
+      "district": "Kanchipuram",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/35/Vaikunta_Perumal%2C_Uthiramerur1.JPG/330px-Vaikunta_Perumal%2C_Uthiramerur1.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Vaikunta Perumal Temple (Parameswara Vinnagaram)"
+    },
+    {
+      "siteId": "ulagalantha-perumal-temple-kanchi",
+      "name": "Ulagalantha Perumal Temple, Kanchipuram",
+      "district": "Kanchipuram",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/Kanchipuram-temple-ulagalandar.jpg/330px-Kanchipuram-temple-ulagalandar.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Ulagalantha Perumal Temple, Kanchipuram"
+    },
+    {
+      "siteId": "sholinghur-yoga-narasimha-temple",
+      "name": "Sholinghur Yoga Narasimha Swamy Hill Temple",
+      "district": "Ranipet",
+      "action": "newly_found",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/94/Thirukadigai.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "source": "Wikimedia Commons MediaWiki API",
+      "imageTitle": "File:Thirukadigai.JPG"
+    },
+    {
+      "siteId": "kaveripakkam-historic-tank",
+      "name": "Kaveripakkam Historic Tank & Chola Inscriptions",
+      "district": "Ranipet",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "thakkolam-jalanatheeswarar-temple",
+      "name": "Thakkolam Jalanatheeswarar Temple",
+      "district": "Ranipet",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Atakur_inscription_%28cropped%29.jpg/330px-Atakur_inscription_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Thakkolam Jalanatheeswarar Temple"
+    },
+    {
+      "siteId": "mahendrawadi-rock-cut-cave",
+      "name": "Mahendrawadi Mahendra Vishnu Rock-Cut Cave Temple",
+      "district": "Ranipet",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Rock_Cut_Temple.jpeg/330px-Rock_Cut_Temple.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Mahendrawadi Mahendra Vishnu Rock-Cut Cave Temple"
+    },
+    {
+      "siteId": "melpadi-arinjaya-chola-pallipadai",
+      "name": "Melpadi Arinjaya Chola Pallipadai Temple (Arinjisvara)",
+      "district": "Ranipet",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "walajapet-stone-mandapams",
+      "name": "Walajapet Stone Mandapams & Chhatris",
+      "district": "Ranipet",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "ambur-fort-battlegrounds",
+      "name": "Ambur Fort & Historic Battlegrounds",
+      "district": "Tirupathur",
+      "action": "newly_found",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Ambur_Station.jpg/330px-Ambur_Station.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Wikipedia REST API",
+      "imageTitle": "Ambur railway station"
+    },
+    {
+      "siteId": "vaniyambadi-historic-fort-remains",
+      "name": "Vaniyambadi Historic Fort Remains & Mosque",
+      "district": "Tirupathur",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "yelagiri-swamimalai-megaliths",
+      "name": "Yelagiri Swamimalai Megalithic Remains",
+      "district": "Tirupathur",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "jolarpet-historic-railway-junction",
+      "name": "Jolarpet Historic Railway Junction & Cabin",
+      "district": "Tirupathur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/NMR_train_at_Ketti_05-02-26_75.jpeg/330px-NMR_train_at_Ketti_05-02-26_75.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Jolarpet Historic Railway Junction & Cabin"
+    },
+    {
+      "siteId": "tirupathur-brahmapureeswarar-temple",
+      "name": "Tirupathur Sri Brahmapureeswarar Temple",
+      "district": "Tirupathur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Brahmapureeswarar_Temple%2C_Thiruppattur.jpg/330px-Brahmapureeswarar_Temple%2C_Thiruppattur.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Tirupathur Sri Brahmapureeswarar Temple"
+    },
+    {
+      "siteId": "natrampalli-megalithic-dolmens",
+      "name": "Natrampalli Prehistoric Stone Dolmens",
+      "district": "Tirupathur",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "veeraraghava-swamy-temple-tiruvallur",
+      "name": "Veeraraghava Swamy Temple, Tiruvallur",
+      "district": "Tiruvallur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Tiruvallur7.jpg/330px-Tiruvallur7.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Veeraraghava Swamy Temple, Tiruvallur"
+    },
+    {
+      "siteId": "tiruvalangadu-vadaranyeswarar-temple",
+      "name": "Tiruvalangadu Vadaranyeswarar Temple",
+      "district": "Tiruvallur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0b/Tiruvalangadu6.jpg/330px-Tiruvalangadu6.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Tiruvalangadu Vadaranyeswarar Temple"
+    },
+    {
+      "siteId": "gudiyam-prehistoric-caves",
+      "name": "Gudiyam Prehistoric Caves",
+      "district": "Tiruvallur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Gudiyam_Cave.jpg/330px-Gudiyam_Cave.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Gudiyam Prehistoric Caves"
+    },
+    {
+      "siteId": "poondi-archaeological-museum",
+      "name": "Poondi Archaeological Museum & Paleolithic Site",
+      "district": "Tiruvallur",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "vadivudai-amman-temple-tiruvottiyur",
+      "name": "Thyagaraja Swamy & Vadivudai Amman Temple, Tiruvottiyur",
+      "district": "Tiruvallur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Thyagaraswamy6.jpg/330px-Thyagaraswamy6.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Thyagaraja Swamy & Vadivudai Amman Temple, Tiruvottiyur"
+    },
+    {
+      "siteId": "pulicat-dutch-cemetery-fort-geldria",
+      "name": "Pulicat Dutch Cemetery & Fort Geldria Ruins",
+      "district": "Tiruvallur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Fort_Geldria.jpg/330px-Fort_Geldria.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Pulicat Dutch Cemetery & Fort Geldria Ruins"
+    },
+    {
+      "siteId": "annamalaiyar-temple-tiruvannamalai",
+      "name": "Annamalaiyar Temple (Arunachaleswarar Temple)",
+      "district": "Tiruvannamalai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e6/Gopuram_of_Adi_Annamalaiyar_Temple_in_Tiruvannamalai.jpg/330px-Gopuram_of_Adi_Annamalaiyar_Temple_in_Tiruvannamalai.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Annamalaiyar Temple (Arunachaleswarar Temple)"
+    },
+    {
+      "siteId": "padavedu-archaeological-site",
+      "name": "Padavedu Archaeological Site & Renukambal Temple",
+      "district": "Tiruvannamalai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Raja_Gambhira_Sambhuvarayar.jpg/330px-Raja_Gambhira_Sambhuvarayar.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Padavedu Archaeological Site & Renukambal Temple"
+    },
+    {
+      "siteId": "tirumalai-jain-cave-complex",
+      "name": "Tirumalai Jain Temple & Rock-Cut Cave Complex",
+      "district": "Tiruvannamalai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Tree_at_the_Peak_of_Tirumalai.jpg/330px-Tree_at_the_Peak_of_Tirumalai.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Tirumalai Jain Temple & Rock-Cut Cave Complex"
+    },
+    {
+      "siteId": "devikapuram-periyanayaki-amman-temple",
+      "name": "Devikapuram Periyanayaki Amman Temple",
+      "district": "Tiruvannamalai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/14/Devikapuram_back_view.jpg/330px-Devikapuram_back_view.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Devikapuram Periyanayaki Amman Temple"
+    },
+    {
+      "siteId": "nedungunam-ramar-temple",
+      "name": "Nedungunam Yoga Ramachandra Swamy Temple",
+      "district": "Tiruvannamalai",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "chengam-hero-stones-site",
+      "name": "Chengam Sangam & Medieval Hero Stones Site",
+      "district": "Tiruvannamalai",
+      "action": "newly_found",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Chengam_Herostone.jpg/960px-Chengam_Herostone.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "source": "Wikimedia Commons MediaWiki API",
+      "imageTitle": "File:Chengam Herostone.jpg"
+    },
+    {
+      "siteId": "vellore-fort",
+      "name": "Vellore Fort",
+      "district": "Vellore",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Vellorefort.jpg/330px-Vellorefort.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Vellore Fort"
+    },
+    {
+      "siteId": "jalakandeswarar-temple",
+      "name": "Jalakandeswarar Temple",
+      "district": "Vellore",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Jalakandeswari_Temple_Vellore%2C_Tamil_Nadu.jpg/330px-Jalakandeswari_Temple_Vellore%2C_Tamil_Nadu.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Jalakandeswarar Temple"
+    },
+    {
+      "siteId": "government-museum-vellore",
+      "name": "Government Museum, Vellore",
+      "district": "Vellore",
+      "action": "retained",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Vellorefort.jpg",
+      "source": "Verified Existing",
+      "imageTitle": "Government Museum, Vellore"
+    },
+    {
+      "siteId": "st-johns-church-vellore",
+      "name": "St. John's Church, Vellore Fort",
+      "district": "Vellore",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Vellorefort.jpg/330px-Vellorefort.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "St. John's Church, Vellore Fort"
+    },
+    {
+      "siteId": "virinjipuram-margabandeeswarar-temple",
+      "name": "Virinjipuram Margabandeeswarar Temple",
+      "district": "Vellore",
+      "action": "newly_found",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Virinjipuram_MargabandeeswararTemple_%281%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "source": "Wikimedia Commons MediaWiki API",
+      "imageTitle": "File:Virinjipuram MargabandeeswararTemple (1).jpg"
+    },
+    {
+      "siteId": "muthu-mandapam-vellore",
+      "name": "Muthu Mandapam (Memorial of King Sri Vikrama Rajasinha)",
+      "district": "Vellore",
+      "action": "retained",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/82/Muthu_Mandapam.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "source": "Verified Existing",
+      "imageTitle": "Muthu Mandapam (Memorial of King Sri Vikrama Rajasinha)"
+    },
+    {
+      "siteId": "gangaikonda-cholapuram",
+      "name": "Brihadisvara Temple, Gangaikonda Cholapuram",
+      "district": "Ariyalur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Gangaikondacholapuram_Temple_4.jpg/330px-Gangaikondacholapuram_Temple_4.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Brihadisvara Temple, Gangaikonda Cholapuram"
+    },
+    {
+      "siteId": "maligaimedu-excavation-site",
+      "name": "Maligaimedu Archaeological Excavation Site",
+      "district": "Ariyalur",
+      "action": "retained",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Rajendra_Chola_%28cropped%29.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "source": "Verified Existing",
+      "imageTitle": "Maligaimedu Archaeological Excavation Site"
+    },
+    {
+      "siteId": "thirumazhapadi-vaidyanatha-temple",
+      "name": "Thirumazhapadi Vaidyanatha Swamy Temple",
+      "district": "Ariyalur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Madavar_Vilagam_%286%29.jpg/330px-Madavar_Vilagam_%286%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Thirumazhapadi Vaidyanatha Swamy Temple"
+    },
+    {
+      "siteId": "kamarasavalli-karkotakeswarar-temple",
+      "name": "Kamarasavalli Karkotakeswarar Temple",
+      "district": "Ariyalur",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "sendurai-megalithic-site",
+      "name": "Sendurai Megalithic Urn Burial Site",
+      "district": "Ariyalur",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "melapaluvur-agneeswarar-temple",
+      "name": "Melapaluvur Agneeswarar Temple",
+      "district": "Ariyalur",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "thillai-nataraja-temple-chidambaram",
+      "name": "Thillai Nataraja Temple, Chidambaram",
+      "district": "Cuddalore",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/Le_temple_de_Shiva_Nataraja_%28Chidambaram%2C_Inde%29_%2814037020332%29.jpg/330px-Le_temple_de_Shiva_Nataraja_%28Chidambaram%2C_Inde%29_%2814037020332%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Thillai Nataraja Temple, Chidambaram"
+    },
+    {
+      "siteId": "fort-st-david-cuddalore",
+      "name": "Fort St. David, Cuddalore",
+      "district": "Cuddalore",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Fort_St.David.jpg/330px-Fort_St.David.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Fort St. David, Cuddalore"
+    },
+    {
+      "siteId": "veeranam-lake-chola-embankments",
+      "name": "Veeranam Lake & Historic Chola Embankments",
+      "district": "Cuddalore",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Veeranam_Lake_Sunset.jpg/330px-Veeranam_Lake_Sunset.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Veeranam Lake & Historic Chola Embankments"
+    },
+    {
+      "siteId": "padaleeswarar-temple-cuddalore",
+      "name": "Padaleeswarar Temple, Tirupathiripuliyur",
+      "district": "Cuddalore",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "bhuvanagiri-heritage-settlement",
+      "name": "Bhuvanagiri Heritage Settlement & Sri Raghavendra Birthplace",
+      "district": "Cuddalore",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "vriddhagiriswarar-temple-vriddhachalam",
+      "name": "Vriddhagiriswarar Temple, Vriddhachalam",
+      "district": "Cuddalore",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "tirukoilur-ulagalantha-perumal",
+      "name": "Tirukoilur Ulagalantha Perumal Temple",
+      "district": "Kallakurichi",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Thirukovilur_temple_view.jpg/330px-Thirukovilur_temple_view.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Tirukoilur Ulagalantha Perumal Temple"
+    },
+    {
+      "siteId": "kabilar-kundru",
+      "name": "Kabilar Kundru Rock Shelter & Memorial",
+      "district": "Kallakurichi",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Kabilar_rock.JPG/330px-Kabilar_rock.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Kabilar Kundru Rock Shelter & Memorial"
+    },
+    {
+      "siteId": "rishivandiyam-ardhanareeswarar-temple",
+      "name": "Rishivandiyam Ardhanareeswarar Temple",
+      "district": "Kallakurichi",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "koothandavar-temple-koovagam",
+      "name": "Koothandavar Temple, Koovagam",
+      "district": "Kallakurichi",
+      "action": "newly_found",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/Kovagam_koothandavar_temple.jpg/960px-Kovagam_koothandavar_temple.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "source": "Wikimedia Commons MediaWiki API",
+      "imageTitle": "File:Kovagam koothandavar temple.jpg"
+    },
+    {
+      "siteId": "kalvarayan-megalithic-rock-art",
+      "name": "Kalvarayan Hills Prehistoric Rock Paintings & Dolmens",
+      "district": "Kallakurichi",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "chinnasalem-swarnakaleswarar-temple",
+      "name": "Chinnasalem Swarnakaleswarar Temple",
+      "district": "Kallakurichi",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "karur-archaeological-site",
+      "name": "Karur Chera Capital Archaeological Site",
+      "district": "Karur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Chera_country_%28early_historic_south_India%29.jpg/330px-Chera_country_%28early_historic_south_India%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Karur Chera Capital Archaeological Site"
+    },
+    {
+      "siteId": "pasupatheeswarar-temple-karur",
+      "name": "Pasupatheeswarar Temple, Karur",
+      "district": "Karur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/86/Karuvur_%2818%29.jpg/330px-Karuvur_%2818%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Pasupatheeswarar Temple, Karur"
+    },
+    {
+      "siteId": "pugalur-tamil-brahmi-inscriptions",
+      "name": "Pugalur Tamil-Brahmi Rock Inscriptions",
+      "district": "Karur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Cavery_river.jpg/330px-Cavery_river.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Pugalur Tamil-Brahmi Rock Inscriptions"
+    },
+    {
+      "siteId": "pugazhimalai-murugan-temple",
+      "name": "Pugazhimalai Murugan Temple",
+      "district": "Karur",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "nerur-sadashiva-brahmendra",
+      "name": "Nerur Sadashiva Brahmendra Adhisthanam",
+      "district": "Karur",
+      "action": "retained",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Sadasiva_Brahmendra_%E0%AE%9A%E0%AE%A4%E0%AE%BE%E0%AE%9A%E0%AE%BF%E0%AE%B5_%E0%AE%AA%E0%AE%BF%E0%AE%B0%E0%AE%AE%E0%AF%87%E0%AE%A8%E0%AF%8D%E0%AE%A4%E0%AE%BF%E0%AE%B0%E0%AE%B0%E0%AF%8D.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "source": "Verified Existing",
+      "imageTitle": "Nerur Sadashiva Brahmendra Adhisthanam"
+    },
+    {
+      "siteId": "mayanur-cauvery-barrage-inscriptions",
+      "name": "Mayanur Historic Cauvery Barrage & Inscriptions",
+      "district": "Karur",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "poompuhar-archaeological-site",
+      "name": "Poompuhar (Kaveripoompattinam) Archaeological Site",
+      "district": "Mayiladuthurai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Sillapathikaram_Art_Gallery_in_Poombuhar%2C_Tamil_Nadu.jpg/330px-Sillapathikaram_Art_Gallery_in_Poombuhar%2C_Tamil_Nadu.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Poompuhar (Kaveripoompattinam) Archaeological Site"
+    },
+    {
+      "siteId": "fort-dansborg-tranquebar",
+      "name": "Fort Dansborg, Tharangambadi (Tranquebar)",
+      "district": "Mayiladuthurai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Fort_Dansborg.JPG/330px-Fort_Dansborg.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Fort Dansborg, Tharangambadi (Tranquebar)"
+    },
+    {
+      "siteId": "mayuranathaswamy-temple",
+      "name": "Mayuranathaswamy Temple, Mayiladuthurai",
+      "district": "Mayiladuthurai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/Main_rajagopuram.jpg/330px-Main_rajagopuram.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Mayuranathaswamy Temple, Mayiladuthurai"
+    },
+    {
+      "siteId": "vaitheeswaran-koil",
+      "name": "Vaitheeswaran Koil (Pullirukkuvelur)",
+      "district": "Mayiladuthurai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Vaitheeswarankovil5.JPG/330px-Vaitheeswarankovil5.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Vaitheeswaran Koil (Pullirukkuvelur)"
+    },
+    {
+      "siteId": "thirukadaiyur-amritaghateswarar-temple",
+      "name": "Thirukadaiyur Amritaghateswarar Abhirami Temple",
+      "district": "Mayiladuthurai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Thirukadayur_%287%29.jpg/330px-Thirukadayur_%287%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Thirukadaiyur Amritaghateswarar Abhirami Temple"
+    },
+    {
+      "siteId": "thiruvilandur-parimala-ranganatha",
+      "name": "Thiruvilandur Parimala Ranganatha Perumal Temple",
+      "district": "Mayiladuthurai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Exterior_view_of_the_rajagopuram.jpg/330px-Exterior_view_of_the_rajagopuram.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Thiruvilandur Parimala Ranganatha Perumal Temple"
+    },
+    {
+      "siteId": "nagore-dargah",
+      "name": "Nagore Dargah (Hazrat Syed Shahul Hameed Dargah)",
+      "district": "Nagapattinam",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ac/Nagore_dargah.jpg/330px-Nagore_dargah.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Nagore Dargah (Hazrat Syed Shahul Hameed Dargah)"
+    },
+    {
+      "siteId": "kayarohanaswami-temple-nagapattinam",
+      "name": "Kayarohanaswami Temple, Nagapattinam",
+      "district": "Nagapattinam",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Nagai_Karonam1.JPG/330px-Nagai_Karonam1.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Kayarohanaswami Temple, Nagapattinam"
+    },
+    {
+      "siteId": "sikkal-singaravelan-temple",
+      "name": "Sikkal Singaravelan Temple",
+      "district": "Nagapattinam",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2e/Sikkal_temple.jpg/330px-Sikkal_temple.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Sikkal Singaravelan Temple"
+    },
+    {
+      "siteId": "soundararaja-perumal-nagapattinam",
+      "name": "Soundararaja Perumal Temple, Nagapattinam",
+      "district": "Nagapattinam",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Thirunagai13.JPG/330px-Thirunagai13.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Soundararaja Perumal Temple, Nagapattinam"
+    },
+    {
+      "siteId": "dutch-cemetery-nagapattinam",
+      "name": "Dutch Cemetery & Old Town Gates, Nagapattinam",
+      "district": "Nagapattinam",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Nagapattinam_Documentary.jpg/330px-Nagapattinam_Documentary.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Dutch Cemetery & Old Town Gates, Nagapattinam"
+    },
+    {
+      "siteId": "point-calimere-chola-lighthouse",
+      "name": "Point Calimere (Kodiakkarai) Chola Lighthouse Ruins",
+      "district": "Nagapattinam",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/66/Point_Calimere_aerial.jpg/330px-Point_Calimere_aerial.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Point Calimere (Kodiakkarai) Chola Lighthouse Ruins"
+    },
+    {
+      "siteId": "ranjankudi-fort",
+      "name": "Ranjankudi Fort",
+      "district": "Perambalur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Ranjankudi_Fort-Perambalur_district-Tamil_Nadu.jpg/330px-Ranjankudi_Fort-Perambalur_district-Tamil_Nadu.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Ranjankudi Fort"
+    },
+    {
+      "siteId": "valikondapuram-valiswarar-temple",
+      "name": "Valikondapuram Valiswarar Temple",
+      "district": "Perambalur",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "sathanur-fossil-tree-monument",
+      "name": "Sathanur Fossil Tree National Geological Monument",
+      "district": "Perambalur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/en/thumb/3/35/Fossil_Tree_Middle_Body.jpeg/330px-Fossil_Tree_Middle_Body.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Sathanur Fossil Tree National Geological Monument"
+    },
+    {
+      "siteId": "siruvachur-madhurakaliamman-temple",
+      "name": "Siruvachur Madhurakaliamman Temple",
+      "district": "Perambalur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e0/Siruvachchur.jpg/330px-Siruvachchur.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Siruvachur Madhurakaliamman Temple"
+    },
+    {
+      "siteId": "chettikulam-dhandayuthapani-temple",
+      "name": "Chettikulam Dhandayuthapani Swamy & Ekambareswarar Temple",
+      "district": "Perambalur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Thousand_Pillar_Hall%2C_Ekambareshwara_Temple%2C_Kanchipuram.jpg/330px-Thousand_Pillar_Hall%2C_Ekambareshwara_Temple%2C_Kanchipuram.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Chettikulam Dhandayuthapani Swamy & Ekambareswarar Temple"
+    },
+    {
+      "siteId": "perambalur-megalithic-stone-circles",
+      "name": "Perambalur Megalithic Stone Circles & Urn Burials",
+      "district": "Perambalur",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "thirumayam-fort",
+      "name": "Thirumayam Fort",
+      "district": "Pudukkottai",
+      "action": "retained",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Fort_of_thirumayam.jpg",
+      "source": "Verified Existing",
+      "imageTitle": "Thirumayam Fort"
+    },
+    {
+      "siteId": "sittannavasal-cave",
+      "name": "Sittannavasal Cave & Arivar Koil",
+      "district": "Pudukkottai",
+      "action": "retained",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/2/22/%E0%AE%9A%E0%AE%BF%E0%AE%A4%E0%AF%8D%E0%AE%A4%E0%AE%A9%E0%AF%8D%E0%AE%A9%E0%AE%B5%E0%AE%BE%E0%AE%9A%E0%AE%B2%E0%AF%8D.jpg",
+      "source": "Verified Existing",
+      "imageTitle": "Sittannavasal Cave & Arivar Koil"
+    },
+    {
+      "siteId": "narthamalai",
+      "name": "Narthamalai Vijayalaya Choleeswaram",
+      "district": "Pudukkottai",
+      "action": "retained",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Nathamalai_siva_temple.jpg",
+      "source": "Verified Existing",
+      "imageTitle": "Narthamalai Vijayalaya Choleeswaram"
+    },
+    {
+      "siteId": "kudumiyanmalai-shikhanathar-temple",
+      "name": "Kudumiyanmalai Shikhanathar Temple & Musical Inscription",
+      "district": "Pudukkottai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/N-TN-C127_Rock_cut_shrine_Melakkoil_mandaba_Kudumiyanmalai.jpg/330px-N-TN-C127_Rock_cut_shrine_Melakkoil_mandaba_Kudumiyanmalai.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Kudumiyanmalai Shikhanathar Temple & Musical Inscription"
+    },
+    {
+      "siteId": "avudaiyarkoil-atmanatha-temple",
+      "name": "Avudaiyarkoil (Thiruperunturai) Atmanatha Swamy Temple",
+      "district": "Pudukkottai",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "kodumbalur-moovar-koil",
+      "name": "Kodumbalur Moovar Koil (Three Temples)",
+      "district": "Pudukkottai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/Moovar_Koil_Temple.jpg/330px-Moovar_Koil_Temple.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Kodumbalur Moovar Koil (Three Temples)"
+    },
+    {
+      "siteId": "brihadeeswarar-temple",
+      "name": "Brihadeeswarar Temple, Thanjavur",
+      "district": "Thanjavur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Temple_tanjore.jpg/330px-Temple_tanjore.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Brihadeeswarar Temple, Thanjavur"
+    },
+    {
+      "siteId": "thanjavur-maratha-palace",
+      "name": "Thanjavur Maratha Palace Complex",
+      "district": "Thanjavur",
+      "action": "retained",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Thanjavur_Maratha_Palace-WUS02790.jpg",
+      "source": "Verified Existing",
+      "imageTitle": "Thanjavur Maratha Palace Complex"
+    },
+    {
+      "siteId": "saraswathi-mahal-library",
+      "name": "Saraswathi Mahal Library",
+      "district": "Thanjavur",
+      "action": "retained",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/76/2013-Sarasvati-Mahal-Library-101.JPG",
+      "source": "Verified Existing",
+      "imageTitle": "Saraswathi Mahal Library"
+    },
+    {
+      "siteId": "airavatesvara-temple-darasuram",
+      "name": "Airavatesvara Temple, Darasuram",
+      "district": "Thanjavur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/A_different_view_of_Airavatesvara_Temple.jpg/330px-A_different_view_of_Airavatesvara_Temple.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Airavatesvara Temple, Darasuram"
+    },
+    {
+      "siteId": "grand-anicut-kallanai-thanjavur",
+      "name": "Grand Anicut (Kallanai)",
+      "district": "Thanjavur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Grand_Anicut%2C_Kallanai_%2811876067114%29.jpg/330px-Grand_Anicut%2C_Kallanai_%2811876067114%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Grand Anicut (Kallanai)"
+    },
+    {
+      "siteId": "swamimalai-murugan-temple",
+      "name": "Swamimalai Swaminatha Swamy Temple",
+      "district": "Thanjavur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/77/Swamimalai_Murugan_Temple.jpg/330px-Swamimalai_Murugan_Temple.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Swamimalai Swaminatha Swamy Temple"
+    },
+    {
+      "siteId": "rockfort-temple",
+      "name": "Rockfort Temple (Ucchi Pillayar & Thayumanavar)",
+      "district": "Tiruchirappalli",
+      "action": "retained",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/62/The_tank_and_Rockfort_Trichinopoly.jpg",
+      "source": "Verified Existing",
+      "imageTitle": "Rockfort Temple (Ucchi Pillayar & Thayumanavar)"
+    },
+    {
+      "siteId": "sri-ranganathaswamy-temple",
+      "name": "Sri Ranganathaswamy Temple, Srirangam",
+      "district": "Tiruchirappalli",
+      "action": "retained",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/9/99/Ranganathaswamy_temple_tiruchirappalli.jpg",
+      "source": "Verified Existing",
+      "imageTitle": "Sri Ranganathaswamy Temple, Srirangam"
+    },
+    {
+      "siteId": "jambukeswarar-temple",
+      "name": "Jambukeswarar Temple, Thiruvanaikaval",
+      "district": "Tiruchirappalli",
+      "action": "retained",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/68/Tiruvanaikaval5.jpg",
+      "source": "Verified Existing",
+      "imageTitle": "Jambukeswarar Temple, Thiruvanaikaval"
+    },
+    {
+      "siteId": "vayalur-murugan-temple",
+      "name": "Vayalur Murugan Temple",
+      "district": "Tiruchirappalli",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Vayalur11.jpg/330px-Vayalur11.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Vayalur Murugan Temple"
+    },
+    {
+      "siteId": "erumbeeswarar-temple-thiruverumbur",
+      "name": "Erumbeeswarar Temple, Thiruverumbur",
+      "district": "Tiruchirappalli",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/Siva_Temple_%28Erumbisvara_Temple%29.jpg/330px-Siva_Temple_%28Erumbisvara_Temple%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Erumbeeswarar Temple, Thiruverumbur"
+    },
+    {
+      "siteId": "kallanai-grand-anicut-trichy",
+      "name": "Kallanai (Grand Anicut) Trichy Division",
+      "district": "Tiruchirappalli",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f1/Grand_Anicut%2C_Kallanai_%2811876067114%29.jpg/330px-Grand_Anicut%2C_Kallanai_%2811876067114%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Kallanai (Grand Anicut) Trichy Division"
+    },
+    {
+      "siteId": "thyagaraja-temple-tiruvarur",
+      "name": "Thyagaraja Temple, Tiruvarur",
+      "district": "Tiruvarur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Thiruvarur001.jpg/330px-Thiruvarur001.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Thyagaraja Temple, Tiruvarur"
+    },
+    {
+      "siteId": "alangudi-apatsahayeswarar-temple",
+      "name": "Alangudi Guru Temple (Apatsahayeswarar)",
+      "district": "Tiruvarur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4a/Aalangudi_Temple.jpg/330px-Aalangudi_Temple.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Alangudi Guru Temple (Apatsahayeswarar)"
+    },
+    {
+      "siteId": "koothanur-maha-saraswathi-temple",
+      "name": "Koothanur Maha Saraswathi Temple",
+      "district": "Tiruvarur",
+      "action": "retained",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/7/79/Koothanur_sarasvathitemple1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "source": "Verified Existing",
+      "imageTitle": "Koothanur Maha Saraswathi Temple"
+    },
+    {
+      "siteId": "enkan-murugan-temple",
+      "name": "Enkan Subramanya Swamy Temple",
+      "district": "Tiruvarur",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "thirumeyachur-lalithambika-temple",
+      "name": "Thirumeyachur Meganatha Swamy & Lalithambika Temple",
+      "district": "Tiruvarur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Goddess_Lalita_Tripura_Sundari.jpg/330px-Goddess_Lalita_Tripura_Sundari.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Thirumeyachur Meganatha Swamy & Lalithambika Temple"
+    },
+    {
+      "siteId": "muthupet-mangrove-historic-watchtower",
+      "name": "Muthupet Historic Watchtower & Coastal Port",
+      "district": "Tiruvarur",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "gingee-fort",
+      "name": "Gingee Fort (Senji Fort)",
+      "district": "Viluppuram",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Gingee_Fort_Hill_view_from_road.jpg/330px-Gingee_Fort_Hill_view_from_road.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Gingee Fort (Senji Fort)"
+    },
+    {
+      "siteId": "kalyana-mahal-gingee",
+      "name": "Kalyana Mahal & Venkataramana Temple, Gingee",
+      "district": "Viluppuram",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Gingee_Fort_Hill_view_from_road.jpg/330px-Gingee_Fort_Hill_view_from_road.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Kalyana Mahal & Venkataramana Temple, Gingee"
+    },
+    {
+      "siteId": "mandagapattu-rock-cut-cave",
+      "name": "Mandagapattu Tirumurti Rock-Cut Cave Temple",
+      "district": "Viluppuram",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/N-TN-C235_Mandagapattu_Villupuram.jpg/330px-N-TN-C235_Mandagapattu_Villupuram.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Mandagapattu Tirumurti Rock-Cut Cave Temple"
+    },
+    {
+      "siteId": "thalavanur-satrumalla-cave",
+      "name": "Thalavanur Satrumalla Pallavaneswara Cave Temple",
+      "district": "Viluppuram",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "thirukovilur-veerateshwarar-temple",
+      "name": "Thirukovilur Veerateshwarar Temple",
+      "district": "Viluppuram",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Thirukovilur_Veerateeswarar5.JPG/330px-Thirukovilur_Veerateeswarar5.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Thirukovilur Veerateshwarar Temple"
+    },
+    {
+      "siteId": "ennayiram-vedic-college-inscriptions",
+      "name": "Ennayiram Historic Vedic College Inscription Site",
+      "district": "Viluppuram",
+      "action": "newly_found",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Ennayiram_vimana.JPG/960px-Ennayiram_vimana.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "source": "Wikimedia Commons MediaWiki API",
+      "imageTitle": "File:Ennayiram vimana.JPG"
+    },
+    {
+      "siteId": "perur-pateeswarar-temple",
+      "name": "Perur Pateeswarar Temple",
+      "district": "Coimbatore",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/PERUR_PATTEESHWARAR_TEMPLE.jpg/330px-PERUR_PATTEESHWARAR_TEMPLE.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Perur Pateeswarar Temple"
+    },
+    {
+      "siteId": "marudamalai-temple",
+      "name": "Marudamalai Murugan Temple",
+      "district": "Coimbatore",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Maruthamalai_Rajagopuram_1.jpg/330px-Maruthamalai_Rajagopuram_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Marudamalai Murugan Temple"
+    },
+    {
+      "siteId": "gass-forest-museum",
+      "name": "Gass Forest Museum",
+      "district": "Coimbatore",
+      "action": "replaced_unrelated_or_broken",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Gauss_museum.jpg/960px-Gauss_museum.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "source": "Wikimedia Commons MediaWiki API",
+      "imageTitle": "File:Gauss museum.jpg"
+    },
+    {
+      "siteId": "vellalore-archaeological-site",
+      "name": "Vellalore Archaeological Coin Hoard & Ancient Site",
+      "district": "Coimbatore",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0c/Vellalore_Karivaratharaja_perumal_thirukkoyil_gopuram.jpg/330px-Vellalore_Karivaratharaja_perumal_thirukkoyil_gopuram.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Vellalore Archaeological Coin Hoard & Ancient Site"
+    },
+    {
+      "siteId": "kottai-eswaran-temple-cbe",
+      "name": "Kottai Sangameswarar Temple (Old Fort Shiva Shrine)",
+      "district": "Coimbatore",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "eachanari-vinayagar-temple",
+      "name": "Eachanari Vinayagar Temple",
+      "district": "Coimbatore",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Panorama_view_of_Eachanari_Vinayakar_Temple_Coimbatore.jpg/330px-Panorama_view_of_Eachanari_Vinayakar_Temple_Coimbatore.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Eachanari Vinayagar Temple"
+    },
+    {
+      "siteId": "adhiyamankottai-fort",
+      "name": "Adhiyamankottai Fort & Chenraya Perumal Temple",
+      "district": "Dharmapuri",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "mallikarjuneswarar-temple-dharmapuri",
+      "name": "Mallikarjuneswarar & Kottai Kovil, Dharmapuri",
+      "district": "Dharmapuri",
+      "action": "newly_found",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/Ceiling_sculptures_in_Ramalingeshwara_group_of_temples_at_Avani.JPG/960px-Ceiling_sculptures_in_Ramalingeshwara_group_of_temples_at_Avani.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "source": "Wikimedia Commons MediaWiki API",
+      "imageTitle": "File:Ceiling sculptures in Ramalingeshwara group of temples at Avani.JPG"
+    },
+    {
+      "siteId": "theerthagireeswarar-temple-theerthamalai",
+      "name": "Theerthagireeswarar Temple, Theerthamalai",
+      "district": "Dharmapuri",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/View_of_Theerthamalai_from_Harur.jpg/330px-View_of_Theerthamalai_from_Harur.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Theerthagireeswarar Temple, Theerthamalai"
+    },
+    {
+      "siteId": "modhur-archaeological-site",
+      "name": "Modhur Archaeological Excavation Site",
+      "district": "Dharmapuri",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "hogenakkal-ancient-watchtower",
+      "name": "Hogenakkal Chola Inscriptions & Ancient Watchtower",
+      "district": "Dharmapuri",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "karimangalam-hero-stone-site",
+      "name": "Karimangalam Hero Stones & Memorial Site",
+      "district": "Dharmapuri",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "kodumanal-archaeological-site",
+      "name": "Kodumanal Archaeological Site",
+      "district": "Erode",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Noyyal-at-Noyyal-Cross.JPG/330px-Noyyal-at-Noyyal-Cross.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Kodumanal Archaeological Site"
+    },
+    {
+      "siteId": "bhavani-sangameshwarar-temple",
+      "name": "Bhavani Sangameshwarar Temple (Kooduthurai)",
+      "district": "Erode",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/Sangameswarar9.jpg/330px-Sangameswarar9.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Bhavani Sangameshwarar Temple (Kooduthurai)"
+    },
+    {
+      "siteId": "chennimalai-murugan-temple",
+      "name": "Chennimalai Murugan Temple (Siragiri)",
+      "district": "Erode",
+      "action": "newly_found",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Chennimalai_temple.jpg/960px-Chennimalai_temple.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "source": "Wikimedia Commons MediaWiki API",
+      "imageTitle": "File:Chennimalai temple.jpg"
+    },
+    {
+      "siteId": "vijayamangalam-jain-temple",
+      "name": "Vijayamangalam Chandraprabha Jain Basadi",
+      "district": "Erode",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/Tirthankar_Chandraprabha.jpg/330px-Tirthankar_Chandraprabha.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Vijayamangalam Chandraprabha Jain Basadi"
+    },
+    {
+      "siteId": "arachalur-musical-inscriptions",
+      "name": "Arachalur Rock-Cut Caves & Musical Inscriptions",
+      "district": "Erode",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "thindal-murugan-temple",
+      "name": "Thindalmalai Murugan Temple",
+      "district": "Erode",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Thindal_Temple_Gopuram.jpg/330px-Thindal_Temple_Gopuram.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Thindalmalai Murugan Temple"
+    },
+    {
+      "siteId": "krishnagiri-fort",
+      "name": "Krishnagiri Fort (Syed Basha Hill Fort)",
+      "district": "Krishnagiri",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Krishnagiri_temple.jpg/330px-Krishnagiri_temple.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Krishnagiri Fort (Syed Basha Hill Fort)"
+    },
+    {
+      "siteId": "rayakottai-fort",
+      "name": "Rayakottai Fort",
+      "district": "Krishnagiri",
+      "action": "newly_found",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/View_of_the_Fort_at_Rayakottai%2C_Baramahal_Hills._3_February_1804.jpg/960px-View_of_the_Fort_at_Rayakottai%2C_Baramahal_Hills._3_February_1804.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "source": "Wikimedia Commons MediaWiki API",
+      "imageTitle": "File:View of the Fort at Rayakottai, Baramahal Hills. 3 February 1804.jpg"
+    },
+    {
+      "siteId": "mallachandram-megalithic-dolmens",
+      "name": "Mallachandram Megalithic Dolmens & Cairns",
+      "district": "Krishnagiri",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "chandra-choodeswarar-temple-hosur",
+      "name": "Chandra Choodeswarar Temple, Hosur",
+      "district": "Krishnagiri",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Oosor_Hosur_%2C_Salem_District.jpg/330px-Oosor_Hosur_%2C_Salem_District.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Chandra Choodeswarar Temple, Hosur"
+    },
+    {
+      "siteId": "thally-venugopala-swamy-temple",
+      "name": "Thally Historic Venugopala Swamy Temple",
+      "district": "Krishnagiri",
+      "action": "newly_found",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/1/10/Poster_of_the_movie_The_Little_Princess.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "source": "Wikipedia REST API",
+      "imageTitle": "The Little Princess (1939 film)"
+    },
+    {
+      "siteId": "pochampalli-archaeological-site",
+      "name": "Pochampalli Archaeological Excavation Site",
+      "district": "Krishnagiri",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "namakkal-rock-fort",
+      "name": "Namakkal Rock Fort",
+      "district": "Namakkal",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ca/Namakkal_Fort_%281%29.jpg/330px-Namakkal_Fort_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Namakkal Rock Fort"
+    },
+    {
+      "siteId": "namakkal-narasimhaswamy-cave",
+      "name": "Narasimhaswamy Rock-Cut Cave Temple, Namakkal",
+      "district": "Namakkal",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3e/%E0%AE%A8%E0%AE%BE%E0%AE%AE%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AE%B2%E0%AE%BF%E0%AE%B2%E0%AF%8D_%E0%AE%89%E0%AE%B3%E0%AF%8D%E0%AE%B3_%E0%AE%A8%E0%AE%B0%E0%AE%9A%E0%AE%BF%E0%AE%AE%E0%AF%8D%E0%AE%AE%E0%AE%B0%E0%AF%8D_%E0%AE%86%E0%AE%B2%E0%AE%AF%E0%AE%AE%E0%AF%8D.jpg/330px-%E0%AE%A8%E0%AE%BE%E0%AE%AE%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AE%B2%E0%AE%BF%E0%AE%B2%E0%AF%8D_%E0%AE%89%E0%AE%B3%E0%AF%8D%E0%AE%B3_%E0%AE%A8%E0%AE%B0%E0%AE%9A%E0%AE%BF%E0%AE%AE%E0%AF%8D%E0%AE%AE%E0%AE%B0%E0%AF%8D_%E0%AE%86%E0%AE%B2%E0%AE%AF%E0%AE%AE%E0%AF%8D.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Narasimhaswamy Rock-Cut Cave Temple, Namakkal"
+    },
+    {
+      "siteId": "namakkal-ranganathaswamy-cave",
+      "name": "Ranganathaswamy Rock-Cut Cave Temple, Namakkal",
+      "district": "Namakkal",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Namakkal_Fort_1.jpg/330px-Namakkal_Fort_1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Ranganathaswamy Rock-Cut Cave Temple, Namakkal"
+    },
+    {
+      "siteId": "kolli-hills-arapaleeswarar-temple",
+      "name": "Kolli Hills Arapaleeswarar Temple",
+      "district": "Namakkal",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/Kollimalai_milagu_Thottam.JPG/330px-Kollimalai_milagu_Thottam.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Kolli Hills Arapaleeswarar Temple"
+    },
+    {
+      "siteId": "tiruchengode-arthanareeswarar-temple",
+      "name": "Tiruchengode Arthanareeswarar Temple",
+      "district": "Namakkal",
+      "action": "newly_found",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/01/Tiruchengode_sivan_hill_temple.JPG/960px-Tiruchengode_sivan_hill_temple.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "source": "Wikimedia Commons MediaWiki API",
+      "imageTitle": "File:Tiruchengode sivan hill temple.JPG"
+    },
+    {
+      "siteId": "mohanur-achaladheepeshwarar-temple",
+      "name": "Mohanur Achaladheepeshwarar Temple",
+      "district": "Namakkal",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "nilgiri-mountain-railway",
+      "name": "Nilgiri Mountain Railway",
+      "district": "Nilgiris",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/NMR_train_at_Ketti_05-02-26_75.jpeg/330px-NMR_train_at_Ketti_05-02-26_75.jpeg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Nilgiri Mountain Railway"
+    },
+    {
+      "siteId": "toda-traditional-sacred-munds",
+      "name": "Toda Traditional Munds & Sacred Dairy Temples",
+      "district": "Nilgiris",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Elderly_Toda_Couple%2C_William_E._Marshall%2C_1873.jpg/330px-Elderly_Toda_Couple%2C_William_E._Marshall%2C_1873.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Toda Traditional Munds & Sacred Dairy Temples"
+    },
+    {
+      "siteId": "st-stephens-church-ooty",
+      "name": "St. Stephen's Church, Ooty",
+      "district": "Nilgiris",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/Main_Gate_Stephens_Church_Ooty_Jun22_A7C_02040.jpg/330px-Main_Gate_Stephens_Church_Ooty_Jun22_A7C_02040.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "St. Stephen's Church, Ooty"
+    },
+    {
+      "siteId": "stone-house-ooty",
+      "name": "Stone House (Kal Bangala), Ooty",
+      "district": "Nilgiris",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Stone_House%2C_Ooty_2.jpg/330px-Stone_House%2C_Ooty_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Stone House (Kal Bangala), Ooty"
+    },
+    {
+      "siteId": "droog-fort-bakasura-malai",
+      "name": "Droog Fort (Bakasura Malai)",
+      "district": "Nilgiris",
+      "action": "newly_found",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/06/Sketch_of_the_hill_fort_of_Copal_Droog%2C_1819.jpg/960px-Sketch_of_the_hill_fort_of_Copal_Droog%2C_1819.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "source": "Wikimedia Commons MediaWiki API",
+      "imageTitle": "File:Sketch of the hill fort of Copal Droog, 1819.jpg"
+    },
+    {
+      "siteId": "government-botanical-gardens-heritage",
+      "name": "Historic Victorian Conservatory & Fern House, Ootacamund",
+      "district": "Nilgiris",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c1/Botanical_Gardens_-_Ootacamund_%28Ooty%29_-_India_03.JPG/330px-Botanical_Gardens_-_Ootacamund_%28Ooty%29_-_India_03.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Historic Victorian Conservatory & Fern House, Ootacamund"
+    },
+    {
+      "siteId": "kottai-mariamman-salem",
+      "name": "Kottai Mariamman Temple, Salem",
+      "district": "Salem",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Mariamman.jpg/330px-Mariamman.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Kottai Mariamman Temple, Salem"
+    },
+    {
+      "siteId": "sankagiri-fort",
+      "name": "Sankagiri Fort (Sankaridurg)",
+      "district": "Salem",
+      "action": "newly_found",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c6/Sankry_Droog_-_British_Library_X432_4%287%29.jpg/960px-Sankry_Droog_-_British_Library_X432_4%287%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "source": "Wikimedia Commons MediaWiki API",
+      "imageTitle": "File:Sankry Droog - British Library X432 4(7).jpg"
+    },
+    {
+      "siteId": "sugavaneswarar-temple-salem",
+      "name": "Sugavaneswarar Temple, Salem",
+      "district": "Salem",
+      "action": "retained",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/64/Aranmanai_Kili.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "source": "Verified Existing",
+      "imageTitle": "Sugavaneswarar Temple, Salem"
+    },
+    {
+      "siteId": "tharamangalam-kailasanathar-temple",
+      "name": "Tharamangalam Kailasanathar Temple",
+      "district": "Salem",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Sri_Kailasanathar_Temple_gopuram_in_Tharamangalam%2C_Tamil_Nadu%2C_India.jpg/330px-Sri_Kailasanathar_Temple_gopuram_in_Tharamangalam%2C_Tamil_Nadu%2C_India.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Tharamangalam Kailasanathar Temple"
+    },
+    {
+      "siteId": "belur-thanthondreeswarar-temple",
+      "name": "Belur Thanthondreeswarar Temple",
+      "district": "Salem",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/The_Courtyard_of_Chennakesava_Temple_-_Belur.jpg/330px-The_Courtyard_of_Chennakesava_Temple_-_Belur.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Belur Thanthondreeswarar Temple"
+    },
+    {
+      "siteId": "salem-government-museum",
+      "name": "Government Museum, Salem",
+      "district": "Salem",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/48/Salem-museum.jpg/330px-Salem-museum.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Government Museum, Salem"
+    },
+    {
+      "siteId": "dharapuram-kadu-hanumantharaya-temple",
+      "name": "Dharapuram Kadu Hanumantharaya Temple & Fort Remains",
+      "district": "Tiruppur",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "tiruppur-tirupurathiswarar-temple",
+      "name": "Tiruppur Tirupurathiswarar Temple",
+      "district": "Tiruppur",
+      "action": "newly_found",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Painting_of_Nataraj_at_Visweswaraswamy_Temple_in_Suryabagh.JPG/960px-Painting_of_Nataraj_at_Visweswaraswamy_Temple_in_Suryabagh.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "source": "Wikimedia Commons MediaWiki API",
+      "imageTitle": "File:Painting of Nataraj at Visweswaraswamy Temple in Suryabagh.JPG"
+    },
+    {
+      "siteId": "sivamalai-murugan-temple-kangeyam",
+      "name": "Sivamalai Subramanyaswamy Hill Temple, Kangeyam",
+      "district": "Tiruppur",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "uthukuli-kadirnarasimha-swamy-temple",
+      "name": "Uthukuli Kadirnarasimha Swamy Temple",
+      "district": "Tiruppur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Uthukuli_Murugan_temple_.jpg/330px-Uthukuli_Murugan_temple_.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Uthukuli Kadirnarasimha Swamy Temple"
+    },
+    {
+      "siteId": "koduvai-prehistoric-megalithic-site",
+      "name": "Koduvai Prehistoric Megalithic Site & Roman Coins",
+      "district": "Tiruppur",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "thirumoorthy-hills-amaralingeswarar",
+      "name": "Thirumoorthy Hills Amanalingeswarar Temple",
+      "district": "Tiruppur",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Thirumoorthi_hills_01.jpg/330px-Thirumoorthi_hills_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Thirumoorthy Hills Amanalingeswarar Temple"
+    },
+    {
+      "siteId": "dindigul-rock-fort",
+      "name": "Dindigul Rock Fort",
+      "district": "Dindigul",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/24Dindigul.jpg/330px-24Dindigul.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Dindigul Rock Fort"
+    },
+    {
+      "siteId": "palani-dhandayuthapani-temple",
+      "name": "Palani Murugan Temple (Dhandayuthapani Swamy)",
+      "district": "Dindigul",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/76/Palanihills.JPG/330px-Palanihills.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Palani Murugan Temple (Dhandayuthapani Swamy)"
+    },
+    {
+      "siteId": "abhirami-amman-temple-dindigul",
+      "name": "Sri Kottai Mariamman & Abhirami Amman Temple",
+      "district": "Dindigul",
+      "action": "replaced_unrelated_or_broken",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/32/Dindigul_fort.jpg/960px-Dindigul_fort.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "source": "Wikimedia Commons MediaWiki API",
+      "imageTitle": "File:Dindigul fort.jpg"
+    },
+    {
+      "siteId": "begambur-big-mosque",
+      "name": "Begambur Big Mosque",
+      "district": "Dindigul",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Begampur_Mosque1.JPG/330px-Begampur_Mosque1.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Begambur Big Mosque"
+    },
+    {
+      "siteId": "kannivadi-zamin-palace",
+      "name": "Kannivadi Zamin Palace & Stone Chhatris",
+      "district": "Dindigul",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "sendurai-megalithic-dolmens-dindigul",
+      "name": "Sendurai & Sirumalai Megalithic Dolmens",
+      "district": "Dindigul",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "vivekananda-rock-memorial",
+      "name": "Vivekananda Rock Memorial",
+      "district": "Kanyakumari",
+      "action": "replaced_unrelated_or_broken",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/31/Vivekananda_rock_kanyakumari_251.jpg/960px-Vivekananda_rock_kanyakumari_251.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "source": "Wikimedia Commons MediaWiki API",
+      "imageTitle": "File:Vivekananda rock kanyakumari 251.jpg"
+    },
+    {
+      "siteId": "thiruvalluvar-statue",
+      "name": "Thiruvalluvar Statue, Kanyakumari",
+      "district": "Kanyakumari",
+      "action": "retained",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Thiruvalluvar_Statue_at_Kanyakumari_02.jpg",
+      "source": "Verified Existing",
+      "imageTitle": "Thiruvalluvar Statue, Kanyakumari"
+    },
+    {
+      "siteId": "suchindram-temple",
+      "name": "Suchindram Thanumalayan Temple",
+      "district": "Kanyakumari",
+      "action": "retained",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/82/SUCHINDAM_%283%29.jpg",
+      "source": "Verified Existing",
+      "imageTitle": "Suchindram Thanumalayan Temple"
+    },
+    {
+      "siteId": "padmanabhapuram-palace",
+      "name": "Padmanabhapuram Palace",
+      "district": "Kanyakumari",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Padmanabhapuram_main_entrance.jpg/330px-Padmanabhapuram_main_entrance.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Padmanabhapuram Palace"
+    },
+    {
+      "siteId": "vattakottai-fort",
+      "name": "Vattakottai Fort",
+      "district": "Kanyakumari",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2c/Vattakottai_Fort_Entrance.jpg/330px-Vattakottai_Fort_Entrance.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Vattakottai Fort"
+    },
+    {
+      "siteId": "bhagavathi-amman-temple-kanyakumari",
+      "name": "Kanyakumari Bhagavathi Amman Temple",
+      "district": "Kanyakumari",
+      "action": "replaced_unrelated_or_broken",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/20/Kurathiyarai_Vishnu_Cave_temple%2C_Kanyakumari_district%2C_Tamil_Nadu_012.jpg/960px-Kurathiyarai_Vishnu_Cave_temple%2C_Kanyakumari_district%2C_Tamil_Nadu_012.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "source": "Wikimedia Commons MediaWiki API",
+      "imageTitle": "File:Kurathiyarai Vishnu Cave temple, Kanyakumari district, Tamil Nadu 012.jpg"
+    },
+    {
+      "siteId": "tn-mdu-01",
+      "name": "Samanar Malai (Keelakuyilkudi)",
+      "district": "Madurai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/10th_century_Samanar_Malai_Jain_monuments%2C_Madurai_district%2C_Tamil_Nadu_India_-_01.jpg/330px-10th_century_Samanar_Malai_Jain_monuments%2C_Madurai_district%2C_Tamil_Nadu_India_-_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Samanar Malai (Keelakuyilkudi)"
+    },
+    {
+      "siteId": "tn-mdu-02",
+      "name": "Yanaimalai (Narasingam & Ladan Cave)",
+      "district": "Madurai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Yanaimalai_from_samanar_hills.jpg/330px-Yanaimalai_from_samanar_hills.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Yanaimalai (Narasingam & Ladan Cave)"
+    },
+    {
+      "siteId": "tn-mdu-03",
+      "name": "Thenparankundram Rock-Cut Cave",
+      "district": "Madurai",
+      "action": "replaced_unrelated_or_broken",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bd/N-TN-C88_Rock_cut_cave_and_Inscription_Thenparankundram.jpg/960px-N-TN-C88_Rock_cut_cave_and_Inscription_Thenparankundram.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "source": "Wikimedia Commons MediaWiki API",
+      "imageTitle": "File:N-TN-C88 Rock cut cave and Inscription Thenparankundram.jpg"
+    },
+    {
+      "siteId": "tn-mdu-04",
+      "name": "Arittapatti Rock-Cut Shiva Temple",
+      "district": "Madurai",
+      "action": "newly_found",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/7th_century_rock_cut_Shiva_Lakulisa_Ganesha_Idaichchi_Mandapam_temple_Arittapatti_Madurai_India.jpg/960px-7th_century_rock_cut_Shiva_Lakulisa_Ganesha_Idaichchi_Mandapam_temple_Arittapatti_Madurai_India.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "source": "Wikimedia Commons MediaWiki API",
+      "imageTitle": "File:7th century rock cut Shiva Lakulisa Ganesha Idaichchi Mandapam temple Arittapatti Madurai India.jpg"
+    },
+    {
+      "siteId": "tn-mdu-05",
+      "name": "Keelavalavu Stone Beds & Inscriptions",
+      "district": "Madurai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d4/Kizhavalavu_%28Kilavalavu%29_-Jain_Sculptures.JPG/330px-Kizhavalavu_%28Kilavalavu%29_-Jain_Sculptures.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Keelavalavu Stone Beds & Inscriptions"
+    },
+    {
+      "siteId": "meenakshi-amman-temple",
+      "name": "Meenakshi Amman Temple, Madurai",
+      "district": "Madurai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/An_aerial_view_of_Madurai_city_from_atop_of_Meenakshi_Amman_temple.jpg/330px-An_aerial_view_of_Madurai_city_from_atop_of_Meenakshi_Amman_temple.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Meenakshi Amman Temple, Madurai"
+    },
+    {
+      "siteId": "thirumalai-nayakkar-mahal",
+      "name": "Thirumalai Nayakkar Mahal",
+      "district": "Madurai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/87/Madurai_Nayak_Palace_Collage.jpg/330px-Madurai_Nayak_Palace_Collage.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Thirumalai Nayakkar Mahal"
+    },
+    {
+      "siteId": "keeladi-excavation-site",
+      "name": "Keeladi Archaeological Excavation Site & Museum",
+      "district": "Madurai",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/Keezhady_%281%29.jpg/330px-Keezhady_%281%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Keeladi Archaeological Excavation Site & Museum"
+    },
+    {
+      "siteId": "ramanathaswamy-temple",
+      "name": "Ramanathaswamy Temple, Rameswaram",
+      "district": "Ramanathapuram",
+      "action": "retained",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/8/84/Ramanathaswamy_temple7.JPG",
+      "source": "Verified Existing",
+      "imageTitle": "Ramanathaswamy Temple, Rameswaram"
+    },
+    {
+      "siteId": "ramalinga-vilasam-palace",
+      "name": "Ramalinga Vilasam Palace",
+      "district": "Ramanathapuram",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Rameswaram_Island_from_Pamban.jpg/330px-Rameswaram_Island_from_Pamban.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Ramalinga Vilasam Palace"
+    },
+    {
+      "siteId": "uthirakosamangai-temple",
+      "name": "Uthirakosamangai Mangalanatha Swamy Temple",
+      "district": "Ramanathapuram",
+      "action": "retained",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Uthirakosamangai_entrance_vihmana.JPG",
+      "source": "Verified Existing",
+      "imageTitle": "Uthirakosamangai Mangalanatha Swamy Temple"
+    },
+    {
+      "siteId": "dhanushkodi-historic-ruins",
+      "name": "Dhanushkodi Historic Ghost Town Ruins",
+      "district": "Ramanathapuram",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Village_martyr_d%27Oradour-sur-Glane_10.jpg/330px-Village_martyr_d%27Oradour-sur-Glane_10.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Dhanushkodi Historic Ghost Town Ruins"
+    },
+    {
+      "siteId": "thiruppullani-adi-jagannatha-temple",
+      "name": "Thiruppullani Adi Jagannatha Perumal Temple",
+      "district": "Ramanathapuram",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Jagannatha_Perumal_temple1.JPG/330px-Jagannatha_Perumal_temple1.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Thiruppullani Adi Jagannatha Perumal Temple"
+    },
+    {
+      "siteId": "devipattinam-navapashanam-stone-relics",
+      "name": "Devipattinam Navapashanam Nine Coastal Stone Relics",
+      "district": "Ramanathapuram",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Navapashanam2.jpg/330px-Navapashanam2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Devipattinam Navapashanam Nine Coastal Stone Relics"
+    },
+    {
+      "siteId": "chettinad-mansions-kanadukathan",
+      "name": "Chettinad Heritage Mansions of Kanadukathan",
+      "district": "Sivaganga",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d0/The_Chettinad_palace_karaikudi_2013-09-07_00-11.jpg/330px-The_Chettinad_palace_karaikudi_2013-09-07_00-11.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Chettinad Heritage Mansions of Kanadukathan"
+    },
+    {
+      "siteId": "kalaiyar-kovil-kaleeswarar",
+      "name": "Kalaiyar Kovil Kaleeswarar Temple & Maruthu Fort",
+      "district": "Sivaganga",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/68/Kalayarkoil_%284%29.jpg/330px-Kalayarkoil_%284%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Kalaiyar Kovil Kaleeswarar Temple & Maruthu Fort"
+    },
+    {
+      "siteId": "sivaganga-palace-gowri-vilasam",
+      "name": "Sivaganga Palace (Gowri Vilasam)",
+      "district": "Sivaganga",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Sivagangai_Aranmanai.jpg/330px-Sivagangai_Aranmanai.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Sivaganga Palace (Gowri Vilasam)"
+    },
+    {
+      "siteId": "pillayarpatti-karpaga-vinayagar",
+      "name": "Pillayarpatti Karpaga Vinayagar Rock-Cut Temple",
+      "district": "Sivaganga",
+      "action": "newly_found",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Karpaka_Vinayakar_temple%2C_Pillayarpatti_Pillayar_Koil%2C_Tiruppathur_Tamil_Nadu_-_2.jpg/960px-Karpaka_Vinayakar_temple%2C_Pillayarpatti_Pillayar_Koil%2C_Tiruppathur_Tamil_Nadu_-_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "source": "Wikimedia Commons MediaWiki API",
+      "imageTitle": "File:Karpaka Vinayakar temple, Pillayarpatti Pillayar Koil, Tiruppathur Tamil Nadu - 2.jpg"
+    },
+    {
+      "siteId": "kundrakudi-shanmughanathar-temple",
+      "name": "Kundrakudi Shanmughanathar Hill Temple",
+      "district": "Sivaganga",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/N-TN-C188_Rock_cut_Temple_Kunnakudi_Sivagangai.jpg/330px-N-TN-C188_Rock_cut_Temple_Kunnakudi_Sivagangai.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Kundrakudi Shanmughanathar Hill Temple"
+    },
+    {
+      "siteId": "thiruppachethi-archaeological-site",
+      "name": "Thiruppachethi Iron-Age Burial Grounds & Inscriptions",
+      "district": "Sivaganga",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "kasi-viswanathar-temple-tenkasi",
+      "name": "Kasi Viswanathar Temple, Tenkasi",
+      "district": "Tenkasi",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/The_magnificent_Kasi_Vishwanathat_Temple_Rajagopuram.jpg/330px-The_magnificent_Kasi_Vishwanathat_Temple_Rajagopuram.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Kasi Viswanathar Temple, Tenkasi"
+    },
+    {
+      "siteId": "courtallam-kutralanathar-temple",
+      "name": "Courtallam Kutralanathar Temple & Chitra Sabha",
+      "district": "Tenkasi",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "sankarankovil-sankaranarayana-temple",
+      "name": "Sankarankovil Sankaranarayanaswamy Temple",
+      "district": "Tenkasi",
+      "action": "newly_found",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b7/Skoil1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+      "source": "Wikimedia Commons MediaWiki API",
+      "imageTitle": "File:Skoil1.jpg"
+    },
+    {
+      "siteId": "thirumalai-kovil-panpoli",
+      "name": "Thirumalai Kovil, Panpoli",
+      "district": "Tenkasi",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Thirumalai_Murugan_Temple-Tenkasi-Tamilnadu-IMG_8779.jpg/330px-Thirumalai_Murugan_Temple-Tenkasi-Tamilnadu-IMG_8779.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Thirumalai Kovil, Panpoli"
+    },
+    {
+      "siteId": "ilanji-kumarar-temple",
+      "name": "Ilanji Kumarar Temple (Varadaraja Perumal & Shiva)",
+      "district": "Tenkasi",
+      "action": "newly_found",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Sri_Sanjeevi_Raya_Hanuman_Temple.jpg/960px-Sri_Sanjeevi_Raya_Hanuman_Temple.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+      "source": "Wikimedia Commons MediaWiki API",
+      "imageTitle": "File:Sri Sanjeevi Raya Hanuman Temple.jpg"
+    },
+    {
+      "siteId": "puliyarai-historic-border-temple",
+      "name": "Puliyarai Shiva Temple & Royal Travancore Border Gate",
+      "district": "Tenkasi",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "suruli-velparai-ancient-caves",
+      "name": "Suruli Velparai Ancient Caves & Rock Shelters",
+      "district": "Theni",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "mangala-devi-kannagi-temple",
+      "name": "Mangala Devi Kannagi Temple",
+      "district": "Theni",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Mangaladevi_temple_Kumily.jpg/330px-Mangaladevi_temple_Kumily.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Mangala Devi Kannagi Temple"
+    },
+    {
+      "siteId": "kuchanur-saneeswara-temple",
+      "name": "Kuchanur Saneeswara Bhagavan Temple",
+      "district": "Theni",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Rispana.jpg/330px-Rispana.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Kuchanur Saneeswara Bhagavan Temple"
+    },
+    {
+      "siteId": "theertha-thotti-subramanya-temple",
+      "name": "Theertha Thotti Subramanya Swamy Temple",
+      "district": "Theni",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "uthamapalayam-kalahasteeswarar-temple",
+      "name": "Uthamapalayam Kalahasteeswarar Temple",
+      "district": "Theni",
+      "action": "retained",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/en/6/62/Kalahasti_Mahatyam.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+      "source": "Verified Existing",
+      "imageTitle": "Uthamapalayam Kalahasteeswarar Temple"
+    },
+    {
+      "siteId": "devadanapatti-kamakshi-amman-temple",
+      "name": "Devadanapatti Moongil Anai Kamakshi Amman Temple",
+      "district": "Theni",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Kodaikanal_2.jpg/330px-Kodaikanal_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Devadanapatti Moongil Anai Kamakshi Amman Temple"
+    },
+    {
+      "siteId": "adichanallur",
+      "name": "Adichanallur Archaeological Site",
+      "district": "Thoothukudi",
+      "action": "retained",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/4/46/Adichanallur_Urn.jpg",
+      "source": "Verified Existing",
+      "imageTitle": "Adichanallur Archaeological Site"
+    },
+    {
+      "siteId": "kazhugumalai",
+      "name": "Kazhugumalai (Vettuvan Koil & Jain Beds)",
+      "district": "Thoothukudi",
+      "action": "retained",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Vettuvan_Kovil_%283%29.jpg",
+      "source": "Verified Existing",
+      "imageTitle": "Kazhugumalai (Vettuvan Koil & Jain Beds)"
+    },
+    {
+      "siteId": "panchalankurichi-fort",
+      "name": "Panchalankurichi Kattabomman Memorial Fort",
+      "district": "Thoothukudi",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Veerapandiya_Kattabomman_1999_stamp_of_India.jpg/330px-Veerapandiya_Kattabomman_1999_stamp_of_India.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Panchalankurichi Kattabomman Memorial Fort"
+    },
+    {
+      "siteId": "korkai-ancient-sangam-port",
+      "name": "Korkai Ancient Sangam Port & Archaeological Excavations",
+      "district": "Thoothukudi",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Map_of_Pandya_dynasty_at_its_apex.png/330px-Map_of_Pandya_dynasty_at_its_apex.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Korkai Ancient Sangam Port & Archaeological Excavations"
+    },
+    {
+      "siteId": "tiruchendur-murugan-temple",
+      "name": "Tiruchendur Subramanya Swamy Temple (Jayanthipuram)",
+      "district": "Thoothukudi",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Thiruchendur11.jpg/330px-Thiruchendur11.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Tiruchendur Subramanya Swamy Temple (Jayanthipuram)"
+    },
+    {
+      "siteId": "manapad-holy-cross-church",
+      "name": "Manapad Holy Cross Church & St. Francis Xavier Cave",
+      "district": "Thoothukudi",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Church_of_the_Holy_Sepulchre_by_Gerd_Eichmann_%28cropped%29.jpg/330px-Church_of_the_Holy_Sepulchre_by_Gerd_Eichmann_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Manapad Holy Cross Church & St. Francis Xavier Cave"
+    },
+    {
+      "siteId": "nellaiappar-temple-tirunelveli",
+      "name": "Swami Nellaiappar & Kanthimathi Ambal Temple",
+      "district": "Tirunelveli",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9a/Nellaiappar_temple_tower.jpg/330px-Nellaiappar_temple_tower.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Swami Nellaiappar & Kanthimathi Ambal Temple"
+    },
+    {
+      "siteId": "krishnapuram-venkatachalapathy-temple",
+      "name": "Krishnapuram Venkatachalapathy Temple",
+      "district": "Tirunelveli",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8a/Krishnapuram1.jpg/330px-Krishnapuram1.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Krishnapuram Venkatachalapathy Temple"
+    },
+    {
+      "siteId": "manur-historic-inscription-site",
+      "name": "Manur Historic Inscription Site (Ambalavana Swamy Temple)",
+      "district": "Tirunelveli",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "kalakkad-sathyavageeswarar-temple",
+      "name": "Kalakkad Sathyavageeswarar & Gomathi Amman Temple",
+      "district": "Tirunelveli",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Kalakkad18.jpg/330px-Kalakkad18.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Kalakkad Sathyavageeswarar & Gomathi Amman Temple"
+    },
+    {
+      "siteId": "nanguneri-totadri-vanamamalai-temple",
+      "name": "Nanguneri Vanamamalai (Totadri) Perumal Temple",
+      "district": "Tirunelveli",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3a/Naguneri18.jpg/330px-Naguneri18.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Nanguneri Vanamamalai (Totadri) Perumal Temple"
+    },
+    {
+      "siteId": "palayamkottai-historic-fort-ramparts",
+      "name": "Palayamkottai Historic Fort Ramparts & St. Xavier's Cathedral",
+      "district": "Tirunelveli",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Tirumala_090615.jpg/330px-Tirumala_090615.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Palayamkottai Historic Fort Ramparts & St. Xavier's Cathedral"
+    },
+    {
+      "siteId": "andal-temple-srivilliputhur",
+      "name": "Andal Temple, Srivilliputhur",
+      "district": "Virudhunagar",
+      "action": "retained",
+      "imageUrl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1b/Srivilliputhur_Andal_temple_%2829%29.jpg/330px-Srivilliputhur_Andal_temple_%2829%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "source": "Verified Existing",
+      "imageTitle": "Andal Temple, Srivilliputhur"
+    },
+    {
+      "siteId": "thiruchuli-bhuminathar-temple",
+      "name": "Thiruchuli Bhuminathar Temple",
+      "district": "Virudhunagar",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "kattabomman-memorial-bastion-vattirayiruppu",
+      "name": "Vattirayiruppu Fort Ruins & Kasi Viswanathar Temple",
+      "district": "Virudhunagar",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "sattur-perumal-temple-river-embankments",
+      "name": "Sattur Venkatachalapathy Temple & Vaippar Embankments",
+      "district": "Virudhunagar",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "pillayarnatham-prehistoric-megaliths",
+      "name": "Pillayarnatham Prehistoric Cairn Circles & Megaliths",
+      "district": "Virudhunagar",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    },
+    {
+      "siteId": "seithur-zamin-palace-remains",
+      "name": "Seithur Zamin Palace Remains & Sastha Temple",
+      "district": "Virudhunagar",
+      "action": "marked_missing_no_fake",
+      "imageUrl": null,
+      "source": "None",
+      "imageTitle": "None"
+    }
+  ]
+}

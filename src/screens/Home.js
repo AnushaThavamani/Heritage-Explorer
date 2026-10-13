@@ -14,6 +14,7 @@ import api from '../services/api';
 import SiteCard from '../components/SiteCard';
 import { TAMIL_NADU_DISTRICTS } from '../data/districts';
 import { HERITAGE_CATEGORIES } from '../data/categories';
+import { normalizeImageUrl } from '../utils/imageUtils';
 
 const REGIONS = ['All', 'North', 'Central', 'West', 'South'];
 
@@ -68,7 +69,8 @@ export default function HomeScreen({ onOpenDetails, onOpenFavorites }) {
           ...site,
           id: site.siteId || site.id,
           title: site.title || site.name,
-          image: site.image_url || site.image
+          image_url: normalizeImageUrl(site.image_url || site.image),
+          image: normalizeImageUrl(site.image_url || site.image),
         }));
         setSites(formatted);
       }

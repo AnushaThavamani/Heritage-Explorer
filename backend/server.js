@@ -21,41 +21,105 @@ app.use('/api/quiz-scores', require('./routes/quizScores'));
 app.use('/api/visited-sites', require('./routes/visitedSites'));
 app.use('/api/visitedsites', require('./routes/visitedSites'));
 
+const fs = require('fs');
+const path = require('path');
+const crypto = require('crypto');
+
+const imageCacheDir = path.join(__dirname, 'cache', 'images');
+try {
+  if (!fs.existsSync(imageCacheDir)) {
+    fs.mkdirSync(imageCacheDir, { recursive: true });
+  }
+} catch (e) {}
+
 app.get('/api/image-proxy', async (req, res) => {
-  const url = req.query.url;
+  let url = req.query.url;
   if (!url) return res.status(400).send('URL required');
+
+  // Normalise: convert Wikimedia thumb URL to direct upload URL if needed
+  const thumbMatch = url.match(
+    /(?:thumb|upload)\.wikimedia\.org\/(wikipedia\/[^/]+\/)thumb\/([^/]+\/[^/]+\/)([^/?#]+)(?:\/[^/?#]+)?/
+  );
+  if (thumbMatch) {
+    url = `https://upload.wikimedia.org/${thumbMatch[1]}${thumbMatch[2]}${thumbMatch[3]}`;
+  }
+
+  // Strip tracking params
+  try {
+    const parsed = new URL(url);
+    ['utm_source', 'utm_campaign', 'utm_content', 'utm_medium', 'utm_term'].forEach(
+      k => parsed.searchParams.delete(k)
+    );
+    url = parsed.toString().replace(/\?$/, '');
+  } catch { /* leave as-is */ }
+
+  // Force HTTPS
+  if (url.startsWith('http://')) url = 'https://' + url.slice(7);
+
+  // Check disk cache first
+  const cacheKey = crypto.createHash('md5').update(url).digest('hex') + '.jpg';
+  const cachedFilePath = path.join(imageCacheDir, cacheKey);
+  try {
+    if (fs.existsSync(cachedFilePath)) {
+      res.set('Content-Type', 'image/jpeg');
+      res.set('Cache-Control', 'public, max-age=2592000'); // 30 days
+      res.set('Access-Control-Allow-Origin', '*');
+      return res.sendFile(cachedFilePath);
+    }
+  } catch (e) {}
+
   try {
     const response = await fetch(url, {
       method: 'GET',
+      redirect: 'follow',
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+        'User-Agent': 'HeritageExplorer/1.0 (https://github.com/AnushaThavamani/Heritage-Explorer; developer@heritageexplorer.app) Node/22.11',
+        'Accept': 'image/webp,image/jpeg,image/png,image/*,*/*;q=0.8',
+        'Referer': 'https://commons.wikimedia.org/',
       }
     });
+
     if (!response.ok) {
-      throw new Error(`Wikimedia responded with ${response.status} ${response.statusText}`);
+      console.error(`Image proxy: upstream ${response.status} for ${url}`);
+      return res.status(502).send(`Upstream error ${response.status}`);
     }
-    const contentType = response.headers.get('content-type');
-    if (contentType) res.set('Content-Type', contentType);
-    res.set('Cache-Control', 'public, max-age=31536000');
-    
-    // Convert Web ReadableStream to Node Readable stream
-    const { Readable } = require('stream');
+
+    const contentType = response.headers.get('content-type') || 'image/jpeg';
+
+    // Reject non-image responses (e.g. HTML error pages)
+    if (!contentType.startsWith('image/') && !contentType.startsWith('application/octet')) {
+      return res.status(502).send('Upstream returned non-image content');
+    }
+
+    const arrayBuffer = await response.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+
+    res.set('Cache-Control', 'public, max-age=2592000'); // 30 days
+    res.set('Access-Control-Allow-Origin', '*');
+
     try {
       const sharp = require('sharp');
+      const processed = await sharp(buffer)
+        .resize({ width: 800, withoutEnlargement: true })
+        .jpeg({ quality: 82 })
+        .toBuffer();
+
+      // Write to disk cache asynchronously
+      fs.promises.writeFile(cachedFilePath, processed).catch(() => {});
+
       res.set('Content-Type', 'image/jpeg');
-      Readable.fromWeb(response.body)
-        .pipe(sharp().resize({ width: 600, withoutEnlargement: true }).jpeg({ quality: 80 }))
-        .pipe(res);
-    } catch (e) {
-      // fallback if sharp is not installed
-      if (contentType) res.set('Content-Type', contentType);
-      Readable.fromWeb(response.body).pipe(res);
+      return res.send(processed);
+    } catch (sharpErr) {
+      // If sharp cannot process format, stream original buffer
+      res.set('Content-Type', contentType);
+      return res.send(buffer);
     }
   } catch (err) {
-    console.error('Image proxy error:', err.message);
+    console.error('Image proxy error:', err.message, 'URL:', url);
     res.status(500).send('Failed to fetch image');
   }
 });
+
 
 app.use((error, req, res, next) => {
   if (error.code === 11000) return res.status(409).json({ message: 'That record already exists.' });
